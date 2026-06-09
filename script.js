@@ -12,6 +12,28 @@
   var yearEl = document.getElementById('year');
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
+  /* ---- Theme-Umschalter (Light/Dark) ---- */
+  var themeToggle = document.getElementById('themeToggle');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  function currentTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  }
+  function syncThemeUI(t) {
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', t === 'light' ? 'Zu Dark Mode wechseln' : 'Zu Light Mode wechseln');
+    }
+    if (themeMeta) { themeMeta.setAttribute('content', t === 'light' ? '#FBF9F4' : '#0A0A0B'); }
+  }
+  syncThemeUI(currentTheme());
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var next = currentTheme() === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('eb-theme', next); } catch (e) {}
+      syncThemeUI(next);
+    });
+  }
+
   /* ---- Header-Schatten & Back-to-top ---- */
   var header = document.getElementById('siteHeader');
   var toTop = document.getElementById('toTop');
