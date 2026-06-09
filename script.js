@@ -155,4 +155,63 @@
     form.addEventListener('submit', handleSubmit(form));
   });
 
+  /* ---- Reduced-Motion Präferenz ---- */
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Zahlen hochzählen ---- */
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-count')) || 0;
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    var dur = 1400, start = null;
+    function tick(ts) {
+      if (start === null) { start = ts; }
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) { requestAnimationFrame(tick); }
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if (!prefersReduced && 'IntersectionObserver' in window && counters.length) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* ---- Sanfte Maus-Parallaxe im Hero ---- */
+  var hero = document.getElementById('start');
+  var finePointer = window.matchMedia &&
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (hero && finePointer && !prefersReduced) {
+    var layers = [
+      { el: hero.querySelector('.hero-sun'), depth: 16 },
+      { el: hero.querySelector('.palm-l'), depth: 26 },
+      { el: hero.querySelector('.palm-r'), depth: -22 }
+    ].filter(function (l) { return l.el; });
+    var raf = null, mx = 0, my = 0;
+    function applyParallax() {
+      raf = null;
+      layers.forEach(function (l) {
+        l.el.style.setProperty('--px', (mx * l.depth).toFixed(1) + 'px');
+        l.el.style.setProperty('--py', (my * l.depth).toFixed(1) + 'px');
+      });
+    }
+    hero.addEventListener('mousemove', function (ev) {
+      var r = hero.getBoundingClientRect();
+      mx = (ev.clientX - r.left) / r.width - 0.5;
+      my = (ev.clientY - r.top) / r.height - 0.5;
+      if (!raf) { raf = requestAnimationFrame(applyParallax); }
+    });
+    hero.addEventListener('mouseleave', function () {
+      mx = 0; my = 0;
+      if (!raf) { raf = requestAnimationFrame(applyParallax); }
+    });
+  }
+
 })();
