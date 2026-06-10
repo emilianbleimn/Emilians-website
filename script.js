@@ -201,8 +201,8 @@
     }
     hero.addEventListener('mousemove', function (ev) {
       var r = hero.getBoundingClientRect();
-      mx = ev.clientX - r.left;
-      my = ev.clientY - r.top;
+      mx = ev.clientX - r.left - 270;
+      my = ev.clientY - r.top - 270;
       if (!raf) { raf = requestAnimationFrame(applySpot); }
     });
   }
