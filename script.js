@@ -4,6 +4,26 @@
 (function () {
   'use strict';
 
+  /* ---- Intro / Logo-Splash bei jedem Laden ---- */
+  (function () {
+    var pl = document.getElementById('preloader');
+    if (!pl) { return; }
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var minVisible = reduced ? 300 : 1100;
+    var t0 = Date.now();
+    var done = false;
+    function hide() {
+      if (done) { return; }
+      done = true;
+      pl.classList.add('hide');
+      setTimeout(function () { pl.style.display = 'none'; }, 650);
+    }
+    function schedule() { setTimeout(hide, Math.max(0, minVisible - (Date.now() - t0))); }
+    if (document.readyState === 'complete') { schedule(); }
+    else { window.addEventListener('load', schedule); }
+    setTimeout(hide, 3500); // Sicherheitsnetz, falls 'load' ausbleibt
+  })();
+
   /* ---- Konfiguration ---- */
   var CONTACT_EMAIL = 'emilianbleimn@gmail.com';
   var PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
