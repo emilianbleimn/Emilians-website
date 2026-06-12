@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EB Web Studio — Moderne Websites, persönlich gemacht</title>
+  <meta name="description" content="EB Web Studio gestaltet moderne, individuelle Websites – klar, durchdacht und persönlich umgesetzt. Von der Landingpage bis zum Online-Shop." />
+  <meta name="theme-color" content="#0A0A0B" />
+  <script>
+    /* Theme früh setzen, um Aufblitzen zu vermeiden */
+    (function () {
+      try {
+        var t = localStorage.getItem('eb-theme');
+        if (t !== 'light' && t !== 'dark') { t = 'dark'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EB Web Studio — Moderne Websites, persönlich gemacht" />
+  <meta property="og:description" content="Moderne, individuelle Websites – persönlich umgesetzt. Von der Landingpage bis zum Online-Shop." />
+  <meta property="og:locale" content="de_DE" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+  <!-- Kritisches CSS: verhindert Aufblitzen von unstyled HTML (FOUC) beim Laden/Reload -->
+  <style>
+    html { background: #0A0A0B; }
+    html[data-theme="light"] { background: #FBF9F4; }
+    body { margin: 0; }
+    .preloader { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: #0A0A0B; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+    html[data-theme="light"] .preloader { background: #FBF9F4; }
+    .preloader-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
+    .preloader-mark { display: grid; place-items: center; width: 88px; height: 88px; border-radius: 22px; background: linear-gradient(135deg, #B8860B 0%, #D4AF37 22%, #F7EFC0 48%, #D4AF37 72%, #A8832A 100%); color: #14110a; font-weight: 800; font-size: 2.3rem; box-shadow: 0 12px 34px rgba(212, 175, 55, .4); }
+    .preloader-word { font-weight: 700; font-size: 1.45rem; letter-spacing: .04em; color: #E6C667; }
+    .preloader-bar { width: 150px; height: 2px; border-radius: 2px; background: rgba(212, 175, 55, .2); overflow: hidden; }
+    .preloader-bar i { display: block; height: 100%; width: 42%; border-radius: 2px; background: linear-gradient(135deg, #D4AF37, #F7EFC0); }
+    .preloader.hide { opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s ease; }
+  </style>
+</head>
+<body>
+  <!-- Intro / Logo-Splash (bei jedem Laden) – statisch, damit es sofort sichtbar ist -->
+  <div id="preloader" class="preloader" role="status" aria-label="Lädt …">
+    <div class="preloader-inner">
+      <span class="preloader-mark">EB</span>
+      <span class="preloader-word">EB Web Studio</span>
+      <span class="preloader-bar"><i></i></span>
+    </div>
+  </div>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
