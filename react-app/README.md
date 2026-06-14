@@ -54,3 +54,35 @@ ersetzen. Ohne Key öffnet sich automatisch das E-Mail-Programm (mailto).
 
 `npm run build` erzeugt einen statischen `dist/`-Ordner, den du überall
 hosten kannst (z. B. GitHub Pages, Netlify oder Vercel).
+
+## Als Desktop-App (Electron)
+
+Dieselbe React-App läuft auch als eigenständiges Desktop-Programm (eigenes
+Fenster, App-Icon) – **ohne Server und ohne Link**.
+
+```bash
+cd react-app
+npm install        # installiert jetzt auch Electron (einmalig ~100–200 MB)
+npm run app        # baut die App und öffnet sie als Desktop-Fenster
+```
+
+Entwicklung mit Hot-Reload (Vite + Electron zusammen):
+
+```bash
+npm run electron:dev
+```
+
+Installationsdatei erstellen (Linux: `.AppImage` / `.deb`, Windows: `.exe`):
+
+```bash
+npm run dist       # Ergebnis liegt danach im Ordner release/
+```
+
+| Befehl                 | Wirkung                                         |
+|------------------------|-------------------------------------------------|
+| `npm run app`          | Build + Desktop-App öffnen                       |
+| `npm run electron:dev` | Desktop-App im Entwicklungsmodus (Hot-Reload)    |
+| `npm run dist`         | Installer/Programmdatei nach `release/` bauen    |
+
+Der Electron-Hauptprozess liegt in `electron/main.cjs`.
+
