@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const LINKS = [
   { href: '#leistungen', label: 'Leistungen' },
   { href: '#ablauf', label: 'Ablauf' },
-  { href: '#preise', label: 'Pakete' },
+  { href: '#preise', label: 'Preis' },
   { href: '#referenzen', label: 'Referenzen' },
   { href: '#faq', label: 'FAQ' },
   { href: '#kontakt', label: 'Kontakt' },
