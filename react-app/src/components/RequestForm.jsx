@@ -28,29 +28,6 @@ export default function RequestForm() {
             <div className="field"><label htmlFor="r-phone">Telefon</label><input id="r-phone" name="Telefon" type="tel" autoComplete="tel" placeholder="Optional" /></div>
             <div className="field"><label htmlFor="r-company">Unternehmen</label><input id="r-company" name="Unternehmen" type="text" placeholder="Optional" /></div>
             <div className="field">
-              <label htmlFor="r-type">Art der Website *</label>
-              <select id="r-type" name="Art der Website" required defaultValue="">
-                <option value="" disabled>Bitte wählen …</option>
-                <option>Business-Website</option>
-                <option>Landingpage</option>
-                <option>Online-Shop</option>
-                <option>Redesign / Relaunch</option>
-                <option>Web-App / Individuell</option>
-                <option>Weiß ich noch nicht</option>
-              </select>
-            </div>
-            <div className="field">
-              <label htmlFor="r-budget">Budget</label>
-              <select id="r-budget" name="Budget" defaultValue="">
-                <option value="" disabled>Bitte wählen …</option>
-                <option>unter 500 €</option>
-                <option>500 – 1.000 €</option>
-                <option>1.000 – 2.500 €</option>
-                <option>über 2.500 €</option>
-                <option>noch unklar</option>
-              </select>
-            </div>
-            <div className="field">
               <label htmlFor="r-timeline">Zeitrahmen</label>
               <select id="r-timeline" name="Zeitrahmen" defaultValue="">
                 <option value="" disabled>Bitte wählen …</option>
