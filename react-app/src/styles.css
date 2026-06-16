@@ -312,6 +312,8 @@ img, svg { max-width: 100%; display: block; }
 .price-card h3 { color: var(--cream); margin-bottom: .25rem; font-size: 1.5rem; }
 .price-desc { color: var(--muted); font-size: .92rem; margin-bottom: 1.1rem; }
 .price { font-family: var(--display); font-size: 2.6rem; font-weight: 700; color: var(--gold); margin-bottom: 1.4rem; letter-spacing: -.01em; }
+.price-per { font-family: var(--font); font-size: 1.05rem; font-weight: 600; color: var(--muted); margin-left: .25rem; }
+.price-cycle { color: var(--muted); font-size: .9rem; margin: -1rem 0 1.4rem; }
 .price .from { font-family: var(--font); font-size: .85rem; font-weight: 500; color: var(--muted); margin-right: .4rem; vertical-align: middle; text-transform: uppercase; letter-spacing: .1em; }
 .price-list { list-style: none; padding: 0; margin: 0 0 1.8rem; display: grid; gap: .7rem; flex: 1; }
 .price-list li { position: relative; padding-left: 1.8rem; color: var(--cream); font-size: .96rem; }

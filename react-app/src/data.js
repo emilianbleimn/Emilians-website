@@ -2,9 +2,9 @@
 
 export const steps = [
   { num: '1', title: 'Anfrage & Kennenlernen', text: 'Du schilderst dein Vorhaben über das Formular. Wir klären deine Ziele und Wünsche.' },
-  { num: '2', title: 'Konzept & Angebot', text: 'Du erhältst ein klares Konzept und ein faires Festpreis-Angebot – ohne versteckte Kosten.' },
+  { num: '2', title: 'Konzept & Angebot', text: 'Du erhältst ein klares Konzept und ein faires Angebot – ohne versteckte Kosten.' },
   { num: '3', title: 'Design & Entwicklung', text: 'Ich gestalte und baue deine Website. Du gibst Feedback, bis alles sitzt.' },
-  { num: '4', title: 'Launch & Support', text: 'Deine Website geht online. Auf Wunsch übernehme ich Pflege, Updates und Erweiterungen.' },
+  { num: '4', title: 'Launch & Support', text: 'Deine Website geht online. Hosting, Pflege und Updates übernehme ich laufend.' },
 ];
 
 export const folios = [
@@ -21,9 +21,9 @@ export const testimonials = [
 
 export const faqs = [
   { q: 'Wie lange dauert die Erstellung einer Website?', a: 'Eine einfache Website ist oft in 1 Woche fertig. Umfangreichere Seiten brauchen je nach Umfang ca. 2–4 Wochen. Den genauen Zeitrahmen klären wir vorab.' },
-  { q: 'Was kostet eine Website bei dir?', a: 'Eine Website gibt es bei mir zum fairen Festpreis von 1.000 €. Größere Projekte (z. B. ein Online-Shop) kalkuliere ich individuell – immer mit klarem Festpreis ohne versteckte Kosten.' },
+  { q: 'Was kostet eine Website bei dir?', a: 'Du bekommst deine Website im Rundum-sorglos-Abo für 129 € im Monat (Jahresabo). Erstellung, Hosting, Wartung und Updates sind komplett enthalten – ich kümmere mich um alles. Größere Projekte auf Anfrage.' },
   { q: 'Übernimmst du auch Texte und Bilder?', a: 'Ja. Auf Wunsch unterstütze ich bei Texten und besorge passende, lizenzfreie Bilder, damit deine Website rundum stimmig wirkt.' },
-  { q: 'Kann ich die Website später selbst bearbeiten?', a: 'Gerne. Auf Wunsch baue ich deine Seite mit einem einfachen Content-System (CMS), sodass du Texte und Bilder selbst aktualisieren kannst.' },
-  { q: 'Bietest du auch Wartung & Pflege an?', a: 'Ja, auf Wunsch kümmere ich mich um Updates, Sicherheit, Backups und kleine Änderungen – damit deine Website immer aktuell und sicher bleibt.' },
-  { q: 'Wie läuft die Bezahlung ab?', a: 'Üblich ist eine Anzahlung bei Projektstart und die Restzahlung beim Launch. Die genauen Konditionen halten wir vorher schriftlich fest.' },
+  { q: 'Übernimmst du Hosting und Wartung?', a: 'Ja – Hosting, Updates, Sicherheit, Backups und kleine Änderungen sind im Abo enthalten. Du musst dich um nichts kümmern, das übernehme ich (Jurelin) komplett für dich.' },
+  { q: 'Bin ich an das Abo gebunden?', a: 'Das Abo läuft 12 Monate (Jahresabo) und verlängert sich danach. Die genauen Konditionen halten wir vorher schriftlich fest – transparent und fair.' },
+  { q: 'Wie läuft die Bezahlung ab?', a: 'Der Monatsbeitrag wird im Jahresabo abgerechnet. Die genauen Konditionen halten wir vorher schriftlich fest.' },
 ];

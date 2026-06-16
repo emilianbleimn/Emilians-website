@@ -26,7 +26,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="container footer-bottom">
-        <p>© {year} EB Web Studio. Alle Rechte vorbehalten.</p>
+        <p>© {year} EB Web Studio · ein Service von Jurelin. Alle Rechte vorbehalten.</p>
         <p className="footer-made">Gestaltet mit Sorgfalt.</p>
       </div>
     </footer>

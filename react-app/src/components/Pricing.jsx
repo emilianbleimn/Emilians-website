@@ -3,10 +3,10 @@ import SectionHead from './SectionHead.jsx';
 const FEATURES = [
   'Individuelles Design',
   'Für Handy, Tablet & Desktop',
-  'Bis zu 6 Unterseiten',
+  'Bis zu 12 Unterseiten',
   'Kontaktformular',
   'SEO-Grundlagen',
-  'Selbst pflegbar (CMS) auf Wunsch',
+  'Hosting, Wartung & Updates – ich übernehme alles',
 ];
 
 export default function Pricing() {
@@ -15,15 +15,16 @@ export default function Pricing() {
       <div className="container">
         <SectionHead
           eyebrow="Preis"
-          title="Ein fairer Festpreis"
-          sub="Ein klarer Preis – keine Paket-Verwirrung, keine versteckten Kosten."
+          title="Ein faires Monats-Abo"
+          sub="Ein fester Monatspreis – Website, Hosting und Pflege inklusive, ohne versteckte Kosten."
         />
         <div className="pricing single">
           <article className="price-card featured reveal">
-            <div className="ribbon">Festpreis</div>
+            <div className="ribbon">Rundum sorglos</div>
             <h3>Deine Website</h3>
-            <p className="price-desc">Alles für deinen professionellen Auftritt</p>
-            <div className="price">1.000&nbsp;€</div>
+            <p className="price-desc">Website, Hosting &amp; Pflege – alles in einem</p>
+            <div className="price">129&nbsp;€<span className="price-per">/ Monat</span></div>
+            <p className="price-cycle">im Jahresabo (12 Monate)</p>
             <ul className="price-list">
               {FEATURES.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
@@ -31,8 +32,8 @@ export default function Pricing() {
           </article>
         </div>
         <p className="price-note reveal">
-          Größere Projekte (z.&nbsp;B. ein Online-Shop) erstelle ich dir individuell – frag einfach an.
-          Zzgl. evtl. Drittkosten (z.&nbsp;B. Hosting, Domain).
+          Betreut von Jurelin – Hosting, Domain und Wartung sind im Abo enthalten.
+          Größere Projekte (z.&nbsp;B. ein Online-Shop) auf Anfrage.
         </p>
       </div>
     </section>
