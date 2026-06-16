@@ -32,7 +32,7 @@ export default function Pricing() {
           </article>
         </div>
         <p className="price-note reveal">
-          Betreut von Jurelin – Hosting, Domain und Wartung sind im Abo enthalten.
+          Hosting, Domain und Wartung sind im Abo enthalten.
           Größere Projekte (z.&nbsp;B. ein Online-Shop) auf Anfrage.
         </p>
       </div>

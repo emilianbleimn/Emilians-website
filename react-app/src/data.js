@@ -23,7 +23,7 @@ export const faqs = [
   { q: 'Wie lange dauert die Erstellung einer Website?', a: 'Eine einfache Website ist oft in 1 Woche fertig. Umfangreichere Seiten brauchen je nach Umfang ca. 2–4 Wochen. Den genauen Zeitrahmen klären wir vorab.' },
   { q: 'Was kostet eine Website bei dir?', a: 'Du bekommst deine Website im Rundum-sorglos-Abo für 129 € im Monat (Jahresabo). Erstellung, Hosting, Wartung und Updates sind komplett enthalten – ich kümmere mich um alles. Größere Projekte auf Anfrage.' },
   { q: 'Übernimmst du auch Texte und Bilder?', a: 'Ja. Auf Wunsch unterstütze ich bei Texten und besorge passende, lizenzfreie Bilder, damit deine Website rundum stimmig wirkt.' },
-  { q: 'Übernimmst du Hosting und Wartung?', a: 'Ja – Hosting, Updates, Sicherheit, Backups und kleine Änderungen sind im Abo enthalten. Du musst dich um nichts kümmern, das übernehme ich (Jurelin) komplett für dich.' },
+  { q: 'Übernimmst du Hosting und Wartung?', a: 'Ja – Hosting, Updates, Sicherheit, Backups und kleine Änderungen sind im Abo enthalten. Du musst dich um nichts kümmern, das übernehme ich komplett für dich.' },
   { q: 'Bin ich an das Abo gebunden?', a: 'Das Abo läuft 12 Monate (Jahresabo) und verlängert sich danach. Die genauen Konditionen halten wir vorher schriftlich fest – transparent und fair.' },
   { q: 'Wie läuft die Bezahlung ab?', a: 'Der Monatsbeitrag wird im Jahresabo abgerechnet. Die genauen Konditionen halten wir vorher schriftlich fest.' },
 ];

@@ -1,6 +1,6 @@
 import { useWeb3Form } from '../hooks/useWeb3Form.js';
 
-const SUBJECT = 'Neue Nachricht über EB Web Studio';
+const SUBJECT = 'Neue Nachricht über Jurelin';
 
 export default function Contact() {
   const { status, sending, handleSubmit } = useWeb3Form(SUBJECT);
@@ -34,7 +34,7 @@ export default function Contact() {
         <form className={`form card-form reveal${sending ? ' is-sending' : ''}`} onSubmit={handleSubmit}>
           <input type="hidden" name="access_key" defaultValue="YOUR_WEB3FORMS_ACCESS_KEY" />
           <input type="hidden" name="subject" defaultValue={SUBJECT} />
-          <input type="hidden" name="from_name" defaultValue="EB Web Studio Website" />
+          <input type="hidden" name="from_name" defaultValue="Jurelin Website" />
           <input type="checkbox" name="botcheck" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
           <div className="field"><label htmlFor="c-name">Name *</label><input id="c-name" name="Name" type="text" required autoComplete="name" placeholder="Dein Name" /></div>
           <div className="field"><label htmlFor="c-email">E-Mail *</label><input id="c-email" name="E-Mail" type="email" required autoComplete="email" placeholder="dein@beispiel.de" /></div>

@@ -1,7 +1,7 @@
 import SectionHead from './SectionHead.jsx';
 import { useWeb3Form } from '../hooks/useWeb3Form.js';
 
-const SUBJECT = 'Neue Website-Anfrage über EB Web Studio';
+const SUBJECT = 'Neue Website-Anfrage über Jurelin';
 
 export default function RequestForm() {
   const { status, sending, handleSubmit } = useWeb3Form(SUBJECT);
@@ -19,7 +19,7 @@ export default function RequestForm() {
         <form className={`form card-form reveal${sending ? ' is-sending' : ''}`} onSubmit={handleSubmit}>
           <input type="hidden" name="access_key" defaultValue="YOUR_WEB3FORMS_ACCESS_KEY" />
           <input type="hidden" name="subject" defaultValue={SUBJECT} />
-          <input type="hidden" name="from_name" defaultValue="EB Web Studio Website" />
+          <input type="hidden" name="from_name" defaultValue="Jurelin Website" />
           <input type="checkbox" name="botcheck" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
           <div className="form-grid">
