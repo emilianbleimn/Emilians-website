@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="footer-brand">
           <a href="#start" className="brand">
             <span className="brand-mark" aria-hidden="true">EB</span>
-            <span className="brand-text">EB Web Studio</span>
+            <span className="brand-text">EB Motion</span>
           </a>
           <p>Individuelle Websites – persönlich umgesetzt. Von der Landingpage bis zum Online-Shop. Ehrlich &amp; professionell.</p>
         </div>
@@ -26,7 +26,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="container footer-bottom">
-        <p>© {year} EB Web Studio · ein Service von Jurelin. Alle Rechte vorbehalten.</p>
+        <p>© {year} EB Motion · ein Service von Jurelin. Alle Rechte vorbehalten.</p>
         <p className="footer-made">Gestaltet mit Sorgfalt.</p>
       </div>
     </footer>

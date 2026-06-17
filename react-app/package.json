@@ -26,8 +26,8 @@
     "wait-on": "^8.0.1"
   },
   "build": {
-    "appId": "de.ebwebstudio.app",
-    "productName": "EB Web Studio",
+    "appId": "de.ebmotion.app",
+    "productName": "EB Motion",
     "files": ["dist/**/*", "electron/**/*", "package.json"],
     "directories": { "output": "release" },
     "linux": { "target": ["AppImage", "deb"], "category": "Network" },
