@@ -1,5 +1,5 @@
 /* =========================================================
-   Jurelin — Interaktivität  ·  VIP Schwarz & Gold
+   EB Web Studio — Interaktivität  ·  VIP Schwarz & Gold
    ========================================================= */
 (function () {
   'use strict';
@@ -119,7 +119,7 @@
       if (!val) { return; }
       lines.push(el.name + ': ' + val);
     });
-    var subject = form.getAttribute('data-subject') || 'Anfrage über Jurelin';
+    var subject = form.getAttribute('data-subject') || 'Anfrage über EB Web Studio';
     return 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
   function handleSubmit(form) {

@@ -22,7 +22,7 @@ export default function Why() {
     <section className="section section-alt" id="warum">
       <div className="container two-col">
         <div className="two-col-text reveal">
-          <span className="eyebrow">Warum Jurelin</span>
+          <span className="eyebrow">Warum EB Web Studio</span>
           <h2>Persönlich, ehrlich, ohne Baukasten</h2>
           <p className="section-sub">
             Du bekommst keine Vorlage von der Stange, sondern eine Website, die wirklich zu dir passt –

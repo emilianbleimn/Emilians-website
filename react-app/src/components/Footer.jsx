@@ -5,8 +5,8 @@ export default function Footer() {
       <div className="container footer-inner">
         <div className="footer-brand">
           <a href="#start" className="brand">
-            <span className="brand-mark" aria-hidden="true">J</span>
-            <span className="brand-text">Jurelin</span>
+            <span className="brand-mark" aria-hidden="true">EB</span>
+            <span className="brand-text">EB Web Studio</span>
           </a>
           <p>Individuelle Websites – persönlich umgesetzt. Von der Landingpage bis zum Online-Shop. Ehrlich &amp; professionell.</p>
         </div>
@@ -26,7 +26,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="container footer-bottom">
-        <p>© {year} Jurelin. Alle Rechte vorbehalten.</p>
+        <p>© {year} EB Web Studio · ein Service von Jurelin. Alle Rechte vorbehalten.</p>
         <p className="footer-made">Gestaltet mit Sorgfalt.</p>
       </div>
     </footer>
