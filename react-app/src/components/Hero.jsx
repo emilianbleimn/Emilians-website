@@ -49,7 +49,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#anfrage" className="btn btn-primary btn-lg">Projekt anfragen</a>
-            <a href="#referenzen" className="btn btn-ghost btn-lg">Arbeiten ansehen</a>
+            <a href="#leistungen" className="btn btn-ghost btn-lg">Leistungen ansehen</a>
           </div>
           <div className="hero-trust">
             <span className="stars" aria-label="5 von 5 Sternen">★★★★★</span>

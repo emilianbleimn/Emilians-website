@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="#leistungen">Leistungen</a>
           <a href="#ablauf">Ablauf</a>
           <a href="#preise">Preis</a>
-          <a href="#referenzen">Referenzen</a>
+          {/* <a href="#referenzen">Referenzen</a> ausgeblendet, bis es Referenzen gibt */}
           <a href="#faq">FAQ</a>
         </nav>
         <nav className="footer-nav" aria-label="Kontakt">

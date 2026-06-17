@@ -9,7 +9,8 @@ import Services from './components/Services.jsx';
 import Why from './components/Why.jsx';
 import Process from './components/Process.jsx';
 import Pricing from './components/Pricing.jsx';
-import Referenzen from './components/Referenzen.jsx';
+// Referenzen ausgeblendet (noch keine Referenzen) – zum Einblenden Import + <Referenzen /> wieder aktivieren
+// import Referenzen from './components/Referenzen.jsx';
 import RequestForm from './components/RequestForm.jsx';
 import Faq from './components/Faq.jsx';
 import Contact from './components/Contact.jsx';
@@ -54,7 +55,7 @@ export default function App() {
         <Why />
         <Process />
         <Pricing />
-        <Referenzen />
+        {/* <Referenzen /> ausgeblendet, bis es Referenzen gibt */}
         <RequestForm />
         <Faq />
         <Contact />

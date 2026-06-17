@@ -4,7 +4,7 @@ const LINKS = [
   { href: '#leistungen', label: 'Leistungen' },
   { href: '#ablauf', label: 'Ablauf' },
   { href: '#preise', label: 'Preis' },
-  { href: '#referenzen', label: 'Referenzen' },
+  // { href: '#referenzen', label: 'Referenzen' }, // ausgeblendet, bis es Referenzen gibt
   { href: '#faq', label: 'FAQ' },
   { href: '#kontakt', label: 'Kontakt' },
 ];
