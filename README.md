@@ -1,4 +1,4 @@
-# EB Motion — Website
+# EB Solutions — Website
 
 Eine moderne, professionelle One-Page-Website für ein Webdesign-Business.
 Farbwelt: **Babyblau & Weiß**, clean und einheitlich. Voll responsiv (Handy,
@@ -64,7 +64,7 @@ Fertig — ab dann landen Anfragen direkt in deinem Postfach.
 
 ## Inhalte anpassen
 
-- **Name/Branding:** „EB Motion" in `index.html` (und das Favicon) ändern.
+- **Name/Branding:** „EB Solutions" in `index.html` (und das Favicon) ändern.
 - **Preise/Pakete:** Abschnitt `id="preise"` in `index.html`.
 - **Texte/Leistungen/FAQ:** direkt im jeweiligen Abschnitt in `index.html`.
 - **Farben:** zentral oben in `styles.css` unter `:root` (`--baby`, `--blue` …).

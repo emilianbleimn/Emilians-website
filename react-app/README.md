@@ -1,4 +1,4 @@
-# EB Motion — React-Version
+# EB Solutions — React-Version
 
 Die gleiche Website wie im Hauptordner, aber als **React-App (Vite)** – sauber in
 Komponenten und Hooks aufgeteilt. Gleiches Design (dieselbe `styles.css`),

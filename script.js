@@ -1,5 +1,5 @@
 /* =========================================================
-   EB Motion — Interaktivität  ·  VIP Schwarz & Gold
+   EB Solutions — Interaktivität  ·  VIP Schwarz & Gold
    ========================================================= */
 (function () {
   'use strict';
@@ -119,7 +119,7 @@
       if (!val) { return; }
       lines.push(el.name + ': ' + val);
     });
-    var subject = form.getAttribute('data-subject') || 'Anfrage über EB Motion';
+    var subject = form.getAttribute('data-subject') || 'Anfrage über EB Solutions';
     return 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
   function handleSubmit(form) {

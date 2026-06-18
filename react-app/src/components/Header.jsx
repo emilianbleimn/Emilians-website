@@ -31,9 +31,9 @@ export default function Header({ theme, onToggleTheme }) {
   return (
     <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
       <div className="container nav-inner">
-        <a href="#start" className="brand" aria-label="EB Motion Startseite" onClick={close}>
+        <a href="#start" className="brand" aria-label="EB Solutions Startseite" onClick={close}>
           <span className="brand-mark" aria-hidden="true">EB</span>
-          <span className="brand-text">EB&nbsp;Motion</span>
+          <span className="brand-text">EB&nbsp;Solutions</span>
         </a>
 
         <nav className={`nav${navOpen ? ' open' : ''}`} id="primaryNav" aria-label="Hauptnavigation">

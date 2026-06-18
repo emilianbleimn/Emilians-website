@@ -61,7 +61,7 @@ export default function Hero() {
           <div className="mock-window">
             <div className="mock-bar">
               <span></span><span></span><span></span>
-              <div className="mock-url">ebmotion.de</div>
+              <div className="mock-url">ebsolutions.de</div>
             </div>
             <div className="mock-body">
               <div className="mock-hero"></div>

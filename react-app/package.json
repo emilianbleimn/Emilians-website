@@ -1,5 +1,5 @@
 {
-  "name": "eb-web-studio-react",
+  "name": "eb-solutions-react",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -26,8 +26,8 @@
     "wait-on": "^8.0.1"
   },
   "build": {
-    "appId": "de.ebmotion.app",
-    "productName": "EB Motion",
+    "appId": "de.ebsolutions.app",
+    "productName": "EB Solutions",
     "files": ["dist/**/*", "electron/**/*", "package.json"],
     "directories": { "output": "release" },
     "linux": { "target": ["AppImage", "deb"], "category": "Network" },
