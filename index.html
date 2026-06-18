@@ -45,6 +45,12 @@
 <body>
   <a href="#start" class="skip-link">Zum Inhalt springen</a>
 
+  <!-- Zahlungs-Status nach Rückkehr von Stripe (wird per JS eingeblendet) -->
+  <div class="pay-banner" id="payBanner" role="status" hidden>
+    <span class="pay-banner-text"></span>
+    <button type="button" class="pay-banner-close" aria-label="Hinweis schließen">&times;</button>
+  </div>
+
   <!-- Intro / Logo-Splash (bei jedem Laden) -->
   <div id="preloader" class="preloader" role="status" aria-label="Lädt …">
     <div class="preloader-inner">
@@ -262,7 +268,9 @@
             <div class="price">129&nbsp;€<span class="price-per">/ Monat</span></div>
             <p class="price-cycle">im Jahresabo (12 Monate)</p>
             <ul class="price-list"><li>Individuelles Design</li><li>Für Handy, Tablet &amp; Desktop</li><li>Bis zu 12 Unterseiten</li><li>Kontaktformular</li><li>SEO-Grundlagen</li><li>Hosting, Wartung &amp; Updates – ich übernehme alles</li></ul>
-            <a href="#anfrage" class="btn btn-primary btn-block">Jetzt anfragen</a>
+            <button type="button" class="btn btn-primary btn-block js-subscribe">Jetzt abonnieren</button>
+            <a href="#anfrage" class="btn btn-ghost btn-block">Erst unverbindlich anfragen</a>
+            <p class="pay-status" data-pay-status></p>
           </article>
         </div>
         <p class="price-note reveal">Betreut von Jurelin – Hosting, Domain und Wartung sind im Abo enthalten. Größere Projekte (z.&nbsp;B. ein Online-Shop) auf Anfrage.</p>
@@ -395,6 +403,8 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
+  <!-- Stripe.js (lädt den Bezahl-Schutz; nutzt den öffentlichen Schlüssel in script.js) -->
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -16,6 +16,7 @@ import Faq from './components/Faq.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import BackToTop from './components/BackToTop.jsx';
+import PaymentBanner from './components/PaymentBanner.jsx';
 
 export default function App() {
   const { theme, toggle } = useTheme();
@@ -42,6 +43,7 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#start">Zum Inhalt springen</a>
+      <PaymentBanner />
       <div className="lux-frame" aria-hidden="true"></div>
       <div className="grain" aria-hidden="true"></div>
 

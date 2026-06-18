@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import SectionHead from './SectionHead.jsx';
+import { startSubscriptionCheckout } from '../lib/stripe.js';
 
 const FEATURES = [
   'Individuelles Design',
@@ -10,6 +12,21 @@ const FEATURES = [
 ];
 
 export default function Pricing() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  async function handleSubscribe() {
+    setError('');
+    setLoading(true);
+    try {
+      await startSubscriptionCheckout();
+      // Bei Erfolg übernimmt Stripe die Weiterleitung – kein Reset nötig.
+    } catch (e) {
+      setError(e.message || 'Etwas ist schiefgelaufen.');
+      setLoading(false);
+    }
+  }
+
   return (
     <section className="section section-alt" id="preise">
       <div className="container">
@@ -28,7 +45,16 @@ export default function Pricing() {
             <ul className="price-list">
               {FEATURES.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
-            <a href="#anfrage" className="btn btn-primary btn-block">Jetzt anfragen</a>
+            <button
+              type="button"
+              className={`btn btn-primary btn-block${loading ? ' is-loading' : ''}`}
+              onClick={handleSubscribe}
+              disabled={loading}
+            >
+              {loading ? 'Weiterleitung …' : 'Jetzt abonnieren'}
+            </button>
+            <a href="#anfrage" className="btn btn-ghost btn-block">Erst unverbindlich anfragen</a>
+            {error && <p className="pay-status err">{error}</p>}
           </article>
         </div>
         <p className="price-note reveal">
