@@ -463,3 +463,21 @@ img, svg { max-width: 100%; display: block; }
   .mock-window { transform: rotate(-1.2deg); }
   .gold { background-position: 0 center; }
 }
+
+/* ---------- Stripe Checkout: Button-Status & Rückkehr-Banner ---------- */
+.price-card .btn + .btn { margin-top: .6rem; }
+.pay-status { margin: .7rem 0 0; font-weight: 500; text-align: center; min-height: 1.2em; font-size: .9rem; }
+.pay-status.info { color: var(--gold-2); } .pay-status.ok { color: #6fcf97; } .pay-status.err { color: #eb6f6f; }
+.btn.is-loading { opacity: .72; cursor: progress; }
+
+.pay-banner { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); z-index: 1200;
+  max-width: min(680px, calc(100% - 2rem)); display: flex; align-items: center; gap: .9rem;
+  padding: .9rem 1.1rem; border-radius: 14px; font-weight: 600; line-height: 1.35;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45); border: 1px solid transparent;
+  animation: payBannerIn .45s var(--ease) both; }
+.pay-banner.is-success { background: rgba(16, 44, 28, .96); border-color: rgba(111, 207, 151, .5); color: #c9f5dc; }
+.pay-banner.is-cancel { background: rgba(48, 22, 22, .96); border-color: rgba(235, 111, 111, .5); color: #f6d4d4; }
+.pay-banner-text { flex: 1; }
+.pay-banner-close { background: transparent; border: 0; color: inherit; font-size: 1.5rem; line-height: 1; cursor: pointer; opacity: .8; padding: 0 .2rem; }
+.pay-banner-close:hover { opacity: 1; }
+@keyframes payBannerIn { from { opacity: 0; transform: translate(-50%, -12px); } to { opacity: 1; transform: translate(-50%, 0); } }

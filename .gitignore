@@ -1,0 +1,16 @@
+# Abhängigkeiten
+node_modules/
+
+# Build-Ausgaben
+dist/
+release/
+
+# Geheimnisse / lokale Konfiguration
+.env
+.env.local
+**/.env
+**/.env.local
+
+# Logs & System
+*.log
+.DS_Store

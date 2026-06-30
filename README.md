@@ -23,6 +23,7 @@ Tablet, Desktop), ohne externes Framework — nur HTML, CSS und etwas JavaScript
 | `styles.css`  | Komplettes Design (Babyblau/Weiß)       |
 | `script.js`   | Menü, Animationen, Formular-Logik       |
 | `favicon.svg` | Browser-Symbol                          |
+| `server/`     | Stripe-Checkout-Server für das Abo      |
 
 ## Lokal ansehen
 
@@ -68,6 +69,37 @@ Fertig — ab dann landen Anfragen direkt in deinem Postfach.
 - **Preise/Pakete:** Abschnitt `id="preise"` in `index.html`.
 - **Texte/Leistungen/FAQ:** direkt im jeweiligen Abschnitt in `index.html`.
 - **Farben:** zentral oben in `styles.css` unter `:root` (`--baby`, `--blue` …).
+
+## Bezahlung / Abo (Stripe)
+
+Der „Jetzt abonnieren"-Button (Preis-Bereich) startet eine sichere, von Stripe
+gehostete Bezahlseite für das Website-Abo (129 €/Monat). Das funktioniert in
+**beiden** Varianten – der statischen `index.html` und der React-App.
+
+Dafür gibt es einen kleinen Backend-Dienst im Ordner **`server/`**, weil der
+**geheime** Stripe-Schlüssel niemals ins Frontend gehört. Im Frontend steht nur
+der **veröffentlichbare** Schlüssel (`pk_…`), der gefahrlos öffentlich sein darf.
+
+**Schnellstart:**
+
+```bash
+cd server
+npm install
+cp .env.example .env      # STRIPE_SECRET_KEY (sk_test_…) eintragen
+npm start                 # läuft auf http://localhost:4242
+```
+
+Danach die Website starten (z. B. `python3 -m http.server 8000`) und im
+Preis-Bereich auf „Jetzt abonnieren" klicken. Mit den
+[Stripe-Testkarten](https://stripe.com/docs/testing) (z. B. `4242 4242 4242 4242`)
+lässt sich der ganze Ablauf gefahrlos durchspielen.
+
+Details (Endpunkte, Webhook, Deployment) stehen in **`server/README.md`**.
+
+- **Öffentlicher Schlüssel** ändern: `STRIPE_PUBLISHABLE_KEY` in `script.js`
+  bzw. `VITE_STRIPE_PUBLISHABLE_KEY` in `react-app/.env`.
+- **Server-Adresse** ändern: `PAYMENTS_API` in `script.js` bzw.
+  `VITE_PAYMENTS_API` in `react-app/.env`.
 
 ## Veröffentlichen
 

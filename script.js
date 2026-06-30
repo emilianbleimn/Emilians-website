@@ -207,4 +207,87 @@
     });
   }
 
+  /* ---- Stripe Checkout: Website-Abo ---- */
+  // Öffentlicher (publishable) Schlüssel – darf gefahrlos im Frontend stehen.
+  // Für den Live-Betrieb durch den pk_live_… Schlüssel ersetzen.
+  var STRIPE_PUBLISHABLE_KEY = 'pk_test_51Tjj5rJCNQMuzoGxAf2OeR2KLdkVQwe9QqF5gnhtqKUPOHrgFmq9BWSSO6Ofu86q5EISXEoYs4PmGTBBMnJdR0Uy00YQTbZHUt';
+  // Adresse des Checkout-Servers (Ordner server/). Für die Produktion anpassen.
+  var PAYMENTS_API = 'http://localhost:4242';
+
+  var stripeJs = (typeof Stripe !== 'undefined') ? Stripe(STRIPE_PUBLISHABLE_KEY) : null;
+
+  function setPayStatus(btn, message, type) {
+    var card = btn.closest('.price-card') || btn.parentNode;
+    var el = card ? card.querySelector('[data-pay-status]') : null;
+    if (!el) { return; }
+    el.textContent = message || '';
+    el.className = 'pay-status' + (type ? ' ' + type : '');
+  }
+
+  document.querySelectorAll('.js-subscribe').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (!stripeJs) {
+        setPayStatus(btn, 'Zahlungsdienst nicht geladen. Bitte die Seite neu laden.', 'err');
+        return;
+      }
+      btn.disabled = true;
+      btn.classList.add('is-loading');
+      setPayStatus(btn, 'Weiterleitung zu Stripe …', 'info');
+
+      var base = window.location.origin + window.location.pathname;
+      fetch(PAYMENTS_API + '/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          successUrl: base + '?payment=success',
+          cancelUrl: base + '?payment=cancel'
+        })
+      })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, json: j }; }); })
+        .then(function (res) {
+          if (!res.ok || !res.json.id) {
+            throw new Error(res.json && res.json.error ? res.json.error : 'Unbekannter Fehler');
+          }
+          return stripeJs.redirectToCheckout({ sessionId: res.json.id });
+        })
+        .then(function (result) {
+          if (result && result.error) { throw new Error(result.error.message); }
+        })
+        .catch(function (err) {
+          btn.disabled = false;
+          btn.classList.remove('is-loading');
+          setPayStatus(btn, 'Zahlung konnte nicht gestartet werden: ' + err.message, 'err');
+        });
+    });
+  });
+
+  /* ---- Zahlungs-Status-Banner (Rückkehr von Stripe via ?payment=…) ---- */
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var pay = params.get('payment');
+    if (pay !== 'success' && pay !== 'cancel') { return; }
+    var banner = document.getElementById('payBanner');
+    if (!banner) { return; }
+    var textEl = banner.querySelector('.pay-banner-text');
+    banner.classList.add(pay === 'success' ? 'is-success' : 'is-cancel');
+    if (textEl) {
+      textEl.textContent = pay === 'success'
+        ? '✓ Vielen Dank! Dein Abo ist aktiviert – du erhältst gleich eine Bestätigung per E-Mail.'
+        : 'Bezahlung abgebrochen – du kannst es jederzeit erneut versuchen.';
+    }
+    banner.hidden = false;
+
+    function dismiss() {
+      banner.hidden = true;
+      params.delete('payment');
+      params.delete('session_id');
+      var qs = params.toString();
+      var clean = window.location.pathname + (qs ? '?' + qs : '') + window.location.hash;
+      window.history.replaceState({}, document.title, clean);
+    }
+    var closeBtn = banner.querySelector('.pay-banner-close');
+    if (closeBtn) { closeBtn.addEventListener('click', dismiss); }
+    if (pay === 'success') { window.setTimeout(dismiss, 9000); }
+  })();
+
 })();
