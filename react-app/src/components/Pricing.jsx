@@ -1,7 +1,7 @@
 import SectionHead from './SectionHead.jsx';
 
 const FEATURES = [
-  'Individuelles Design',
+  'Modernes Design',
   'Für Handy, Tablet & Desktop',
   'Bis zu 12 Unterseiten',
   'Kontaktformular',

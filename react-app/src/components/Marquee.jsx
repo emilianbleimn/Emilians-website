@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-const ITEMS = ['Persönlich', 'Modern', 'Ehrlich', 'Durchdacht', 'Individuell', 'Zuverlässig', 'Fair'];
+const ITEMS = ['Persönlich', 'Modern', 'Ehrlich', 'Durchdacht', 'Responsiv', 'Zuverlässig', 'Fair'];
 
 function Track({ hidden }) {
   return (

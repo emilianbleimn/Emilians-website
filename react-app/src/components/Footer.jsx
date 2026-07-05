@@ -8,7 +8,7 @@ export default function Footer() {
             <span className="brand-mark" aria-hidden="true">EB</span>
             <span className="brand-text">EB Solutions</span>
           </a>
-          <p>Individuelle Websites – persönlich umgesetzt. Von der Landingpage bis zum Online-Shop. Ehrlich &amp; professionell.</p>
+          <p>Professionelle Websites – persönlich umgesetzt. Von der Landingpage bis zum Online-Shop. Ehrlich &amp; professionell.</p>
         </div>
         <nav className="footer-nav" aria-label="Footer-Navigation">
           <h4>Navigation</h4>

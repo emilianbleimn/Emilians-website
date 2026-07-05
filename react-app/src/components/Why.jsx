@@ -3,7 +3,7 @@ const CheckIcon = () => (
 );
 
 const POINTS = [
-  'Individuelles Design statt Standard-Template',
+  'Modernes, klares Design',
   'Blitzschnell & für Google optimiert',
   'Perfekt auf Handy, Tablet & Desktop',
   'Transparente, faire Festpreise',

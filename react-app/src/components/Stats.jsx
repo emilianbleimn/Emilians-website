@@ -51,7 +51,7 @@ export default function Stats() {
     <section className="stats" aria-label="Auf einen Blick">
       <div className="container stats-grid">
         <div className="stat reveal"><Counter target={24} suffix={' h'} /><span>Antwortzeit</span></div>
-        <div className="stat reveal"><Counter target={100} suffix={' %'} /><span>Individuell</span></div>
+        <div className="stat reveal"><Counter target={100} suffix={' %'} /><span>Responsiv</span></div>
         <div className="stat reveal"><strong>A+</strong><span>Performance &amp; SEO</span></div>
         <div className="stat reveal"><strong>1:1</strong><span>Persönliche Betreuung</span></div>
       </div>
