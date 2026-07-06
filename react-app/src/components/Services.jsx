@@ -12,11 +12,6 @@ const SERVICES = [
     icon: (<svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z" /></svg>),
   },
   {
-    title: 'Online-Shops',
-    text: 'Verkaufe deine Produkte online – sicher, schnell und einfach zu bedienen.',
-    icon: (<svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" /></svg>),
-  },
-  {
     title: 'Redesign & Relaunch',
     text: 'Deine bestehende Website bekommt einen frischen, modernen und schnellen Look.',
     icon: (<svg viewBox="0 0 24 24"><path d="M12 20h9" /><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" /></svg>),
