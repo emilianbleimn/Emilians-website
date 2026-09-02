@@ -1,12 +1,14 @@
 import SectionHead from './SectionHead.jsx';
 
 const FEATURES = [
-  'Modernes Design',
-  'Für Handy, Tablet & Desktop',
+  'Komplette Website nach Maß',
   'Bis zu 12 Unterseiten',
-  'Kontaktformular',
+  'Eigene Domain inklusive',
+  'Hosting inklusive',
+  'Sicher – SSL & HTTPS',
+  'Für Handy, Tablet & Desktop',
   'SEO-Grundlagen',
-  'Hosting, Wartung & Updates – ich übernehme alles',
+  'Monatliche Wartung, Updates & Pflege',
 ];
 
 export default function Pricing() {
@@ -15,16 +17,16 @@ export default function Pricing() {
       <div className="container">
         <SectionHead
           eyebrow="Preis"
-          title="Ein faires Monats-Abo"
-          sub="Ein fester Monatspreis – Website, Hosting und Pflege inklusive, ohne versteckte Kosten."
+          title="Faire Preise, alles inklusive"
+          sub="Einmalig für die komplette Website, monatlich für die laufende Pflege – klar und ohne versteckte Kosten."
         />
         <div className="pricing single">
           <article className="price-card featured reveal">
             <div className="ribbon">Rundum sorglos</div>
             <h3>Deine Website</h3>
-            <p className="price-desc">Website, Hosting &amp; Pflege – alles in einem</p>
-            <div className="price">129&nbsp;€<span className="price-per">/ Monat</span></div>
-            <p className="price-cycle">im Jahresabo (12 Monate)</p>
+            <p className="price-desc">Komplett gebaut &amp; dauerhaft betreut</p>
+            <div className="price">1.500&nbsp;€<span className="price-per">einmalig</span></div>
+            <p className="price-cycle">+ 129&nbsp;€ / Monat für Wartung &amp; Pflege</p>
             <ul className="price-list">
               {FEATURES.map((f, i) => <li key={i}>{f}</li>)}
             </ul>
@@ -32,7 +34,7 @@ export default function Pricing() {
           </article>
         </div>
         <p className="price-note reveal">
-          Betreut von Jurelin – Hosting, Domain und Wartung sind im Abo enthalten.
+          Domain, Hosting und laufende Pflege sind inklusive – betreut von EB Solutions.
           Größere Projekte auf Anfrage.
         </p>
       </div>

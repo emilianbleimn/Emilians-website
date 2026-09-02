@@ -27,16 +27,6 @@ export default function RequestForm() {
             <div className="field"><label htmlFor="r-email">E-Mail *</label><input id="r-email" name="E-Mail" type="email" required autoComplete="email" placeholder="max@beispiel.de" /></div>
             <div className="field"><label htmlFor="r-phone">Telefon</label><input id="r-phone" name="Telefon" type="tel" autoComplete="tel" placeholder="Optional" /></div>
             <div className="field"><label htmlFor="r-company">Unternehmen</label><input id="r-company" name="Unternehmen" type="text" placeholder="Optional" /></div>
-            <div className="field">
-              <label htmlFor="r-timeline">Zeitrahmen</label>
-              <select id="r-timeline" name="Zeitrahmen" defaultValue="">
-                <option value="" disabled>Bitte wählen …</option>
-                <option>So schnell wie möglich</option>
-                <option>Innerhalb 1 Monat</option>
-                <option>In 2 – 3 Monaten</option>
-                <option>Flexibel</option>
-              </select>
-            </div>
             <div className="field full">
               <label htmlFor="r-message">Projektbeschreibung *</label>
               <textarea id="r-message" name="Projektbeschreibung" rows="5" required placeholder="Worum geht es? Was soll deine Website können? Hast du schon Beispiele, die dir gefallen?"></textarea>
