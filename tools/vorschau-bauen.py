@@ -53,6 +53,11 @@ def main():
     head = re.search(r'<head>\n(.*?)\n</head>', html, re.S).group(1)
     body = re.search(r'<body>\n(.*)\n</body>', html, re.S).group(1)
 
+    # Favicon ebenfalls einbetten - sonst bleibt eine nachgeladene Datei uebrig.
+    with open(os.path.join(ROOT, 'favicon.svg'), 'rb') as fh:
+        icon = base64.b64encode(fh.read()).decode()
+    head = head.replace('href="favicon.svg"', 'href="data:image/svg+xml;base64,%s"' % icon)
+
     # Verweise auf ausgelagerte Dateien entfernen - der Inhalt kommt inline.
     head = re.sub(r'\s*<link rel="preload"[^>]*>', '', head)
     head = re.sub(r'\s*<link rel="stylesheet" href="styles\.css"[^>]*>', '', head)
