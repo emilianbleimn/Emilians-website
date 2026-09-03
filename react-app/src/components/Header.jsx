@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const LINKS = [
   { href: '#leistungen', label: 'Leistungen' },
   { href: '#ablauf', label: 'Ablauf' },
-  { href: '#preise', label: 'Preis' },
+  { href: '#preise', label: 'Preise' },
   // { href: '#referenzen', label: 'Referenzen' }, // ausgeblendet, bis es Referenzen gibt
   { href: '#faq', label: 'FAQ' },
   { href: '#kontakt', label: 'Kontakt' },

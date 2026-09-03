@@ -21,7 +21,7 @@ export const testimonials = [
 
 export const faqs = [
   { q: 'Wie lange dauert die Erstellung einer Website?', a: 'Eine einfache Website ist oft in 1 Woche fertig. Umfangreichere Seiten brauchen je nach Umfang ca. 2–4 Wochen. Den genauen Zeitrahmen klären wir vorab.' },
-  { q: 'Was kostet eine Website bei dir?', a: 'Die komplette Website baue ich dir für einmalig 1.500 € – inklusive Domain, Hosting und allem Drum und Dran, natürlich sicher. Wartung & Pflege gibt es optional für 129 € im Monat (monatlich kündbar).' },
+  { q: 'Was kostet eine Website bei dir?', a: 'Das hängt vom Umfang ab: Ein Refresh startet bei 490 €, eine Landingpage bei 690 € und eine komplette Business-Website bei 1.500 € – jeweils einmalig. Wartung & Pflege gibt es optional für 129 € im Monat (monatlich kündbar).' },
   { q: 'Übernimmst du auch Texte und Bilder?', a: 'Ja. Auf Wunsch unterstütze ich bei Texten und besorge passende, lizenzfreie Bilder, damit deine Website rundum stimmig wirkt.' },
   { q: 'Übernimmst du Hosting und Wartung?', a: 'Ja, auf Wunsch – Wartung, Updates, Sicherheit und Backups gibt es als optionales Paket für 129 € im Monat. Es ist jederzeit monatlich kündbar.' },
   { q: 'Bin ich an das Abo gebunden?', a: 'Nein – das Wartungs- & Pflege-Paket ist optional und monatlich kündbar. Du gehst keine lange Bindung ein.' },

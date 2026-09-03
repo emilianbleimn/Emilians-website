@@ -14,7 +14,7 @@ export default function Footer() {
           <h4>Navigation</h4>
           <a href="#leistungen">Leistungen</a>
           <a href="#ablauf">Ablauf</a>
-          <a href="#preise">Preis</a>
+          <a href="#preise">Preise</a>
           {/* <a href="#referenzen">Referenzen</a> ausgeblendet, bis es Referenzen gibt */}
           <a href="#faq">FAQ</a>
         </nav>
