@@ -31,13 +31,14 @@
     html { background: #0A0A0B; }
     html[data-theme="light"] { background: #FBF9F4; }
     body { margin: 0; }
-    .preloader { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: #0A0A0B; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+    .preloader { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: #0A0A0B; font-family: Georgia, 'Times New Roman', serif; }
     html[data-theme="light"] .preloader { background: #FBF9F4; }
-    .preloader-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; }
-    .preloader-mark { display: grid; place-items: center; width: 88px; height: 88px; border-radius: 22px; background: linear-gradient(135deg, #B8860B 0%, #D4AF37 22%, #F7EFC0 48%, #D4AF37 72%, #A8832A 100%); color: #14110a; font-weight: 800; font-size: 2.3rem; box-shadow: 0 12px 34px rgba(212, 175, 55, .4); }
-    .preloader-word { font-weight: 700; font-size: 1.45rem; letter-spacing: .04em; color: #E6C667; }
+    .preloader-inner { display: flex; flex-direction: column; align-items: center; gap: 1.1rem; padding: 1rem; }
+    .preloader-mark { display: grid; place-items: center; width: 88px; height: 88px; border-radius: 22px; background: linear-gradient(135deg, #A98C3F 0%, #C2A24E 100%); color: #14110a; font-weight: 800; font-size: 2.3rem; letter-spacing: .02em; box-shadow: 0 12px 34px rgba(212, 175, 55, .4); }
+    .preloader-word { font-weight: 700; font-size: 1.45rem; letter-spacing: .04em; color: #C2A24E; }
     .preloader-bar { width: 150px; height: 2px; border-radius: 2px; background: rgba(212, 175, 55, .2); overflow: hidden; }
-    .preloader-bar i { display: block; height: 100%; width: 42%; border-radius: 2px; background: linear-gradient(135deg, #D4AF37, #F7EFC0); }
+    .preloader-bar i { display: block; height: 100%; width: 42%; border-radius: 2px; background: linear-gradient(135deg, #A98C3F, #C2A24E); animation: plBar 1.1s ease-in-out infinite; }
+    @keyframes plBar { 0% { transform: translateX(-130%); } 100% { transform: translateX(360%); } }
     .preloader.hide { opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s ease; }
   </style>
   <link rel="stylesheet" href="styles.css" />
