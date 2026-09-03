@@ -8,23 +8,25 @@
    1. Kein sichtbarer Schriftwechsel mehr beim Laden - die Dateien
       kommen vom eigenen Server und sind vor dem ersten Bild da.
    2. DSGVO: Google Fonts uebertraegt sonst die IP jedes Besuchers
-      an Google. Dateien liegen im Ordner fonts/. */
+      an Google. Dateien liegen im Ordner fonts/.
+   Pfade bewusst relativ: so laedt die Seite auch in einer
+   Vorschau unter einem Unterordner korrekt. */
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400;
-  font-display: swap; src: url('/fonts/inter-400.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/inter-400.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500;
-  font-display: swap; src: url('/fonts/inter-500.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/inter-500.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('/fonts/inter-600.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/inter-600.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 700;
-  font-display: swap; src: url('/fonts/inter-700.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/inter-700.woff2') format('woff2'); }
 @font-face { font-family: 'Playfair Display'; font-style: italic; font-weight: 600;
-  font-display: swap; src: url('/fonts/playfairdisplay-600i.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/playfairdisplay-600i.woff2') format('woff2'); }
 @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('/fonts/playfairdisplay-600.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/playfairdisplay-600.woff2') format('woff2'); }
 @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700;
-  font-display: swap; src: url('/fonts/playfairdisplay-700.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/playfairdisplay-700.woff2') format('woff2'); }
 @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 800;
-  font-display: swap; src: url('/fonts/playfairdisplay-800.woff2') format('woff2'); }
+  font-display: swap; src: url('fonts/playfairdisplay-800.woff2') format('woff2'); }
 
 :root {
   /* Schwarztöne */

@@ -8,7 +8,9 @@
    1. Kein sichtbarer Schriftwechsel mehr beim Laden - die Dateien
       kommen vom eigenen Server und sind vor dem ersten Bild da.
    2. DSGVO: Google Fonts uebertraegt sonst die IP jedes Besuchers
-      an Google. Dateien liegen im Ordner fonts/. */
+      an Google. Dateien liegen in react-app/public/fonts/.
+   Pfade hier bewusst absolut: Vite buendelt dieses CSS nach
+   /assets/, ein relativer Pfad zeigte dort ins Leere. */
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400;
   font-display: swap; src: url('/fonts/inter-400.woff2') format('woff2'); }
 @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500;
