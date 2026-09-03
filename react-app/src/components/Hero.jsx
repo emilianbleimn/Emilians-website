@@ -33,9 +33,6 @@ export default function Hero() {
     <section className="hero" id="start" ref={heroRef}>
       <div className="hero-bg" aria-hidden="true">
         <span className="hero-glow"></span>
-        <span className="spotlight"></span>
-        <span className="orb orb-1"></span>
-        <span className="orb orb-2"></span>
       </div>
 
       <div className="container hero-inner">
@@ -50,10 +47,6 @@ export default function Hero() {
           <div className="hero-actions">
             <a href="#anfrage" className="btn btn-primary btn-lg">Projekt anfragen</a>
             <a href="#leistungen" className="btn btn-ghost btn-lg">Leistungen ansehen</a>
-          </div>
-          <div className="hero-trust">
-            <span className="stars" aria-label="5 von 5 Sternen">★★★★★</span>
-            <span>Von zufriedenen Kund:innen empfohlen</span>
           </div>
         </div>
 
@@ -72,9 +65,6 @@ export default function Hero() {
               <div className="mock-btn"></div>
             </div>
           </div>
-          <div className="floaty floaty-1"><span className="fdot">✦</span> Persönlich</div>
-          <div className="floaty floaty-2"><span className="fdot">✦</span> Durchdacht</div>
-          <div className="floaty floaty-3"><span className="fdot">✦</span> Fair</div>
         </div>
       </div>
     </section>
