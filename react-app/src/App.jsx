@@ -32,7 +32,10 @@ export default function App() {
       pl.classList.add('hide');
       window.setTimeout(() => { pl.style.display = 'none'; }, 650);
     };
-    const timer = window.setTimeout(hide, minVisible);
+    // Ab Navigationsstart messen, nicht ab dem Mount: sonst wird das Intro
+    // auf langsamen Verbindungen doppelt so lange gezeigt wie geplant.
+    const elapsed = window.performance && performance.now ? performance.now() : 0;
+    const timer = window.setTimeout(hide, Math.max(0, minVisible - elapsed));
     const safety = window.setTimeout(hide, 3500);
     return () => { window.clearTimeout(timer); window.clearTimeout(safety); };
   }, []);
