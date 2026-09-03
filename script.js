@@ -5,7 +5,7 @@
   'use strict';
 
   /* ---- Konfiguration ---- */
-  var CONTACT_EMAIL = 'emilianbleimn@gmail.com';
+  var CONTACT_EMAIL = 'emilian@ebsolutions.info';
   var PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
 
   /* ---- Jahr im Footer ---- */

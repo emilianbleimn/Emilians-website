@@ -20,7 +20,7 @@ export default function Footer() {
         </nav>
         <nav className="footer-nav" aria-label="Kontakt">
           <h4>Kontakt</h4>
-          <a href="mailto:emilianbleimn@gmail.com">E-Mail schreiben</a>
+          <a href="mailto:emilian@ebsolutions.info">E-Mail schreiben</a>
           <a href="#anfrage">Anfrage starten</a>
           <a href="#kontakt">Kontaktformular</a>
         </nav>

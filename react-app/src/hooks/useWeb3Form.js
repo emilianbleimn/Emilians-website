@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
 // Deine Kontakt-E-Mail (für den mailto-Fallback)
-const CONTACT_EMAIL = 'emilianbleimn@gmail.com';
+const CONTACT_EMAIL = 'emilian@ebsolutions.info';
 // Solange kein echter Web3Forms-Key eingetragen ist, greift der mailto-Fallback.
 const PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
 

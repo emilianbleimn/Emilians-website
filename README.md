@@ -47,7 +47,7 @@ Die Formulare nutzen **zwei Wege**, damit dich Nachrichten zuverlässig erreiche
 mailto-Fallback.** Für echte, nahtlose E-Mails so vorgehen:
 
 1. Auf [https://web3forms.com](https://web3forms.com) gehen, deine E-Mail
-   (`emilianbleimn@gmail.com`) eingeben und den kostenlosen **Access Key**
+   (`emilian@ebsolutions.info`) eingeben und den kostenlosen **Access Key**
    erhalten.
 2. In `index.html` an **beiden** Stellen den Platzhalter ersetzen:
 

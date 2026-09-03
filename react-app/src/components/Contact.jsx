@@ -18,7 +18,7 @@ export default function Contact() {
           <ul className="contact-list">
             <li>
               <span className="contact-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg></span>
-              <div><strong>E-Mail</strong><a href="mailto:emilianbleimn@gmail.com">emilianbleimn@gmail.com</a></div>
+              <div><strong>E-Mail</strong><a href="mailto:emilian@ebsolutions.info">emilian@ebsolutions.info</a></div>
             </li>
             <li>
               <span className="contact-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 3" /></svg></span>
