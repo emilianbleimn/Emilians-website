@@ -9,8 +9,9 @@
 
   /* Web3Forms-Zugangsschluessel.
      ======================================================================
-     HIER den Schluessel eintragen - und nur hier. Er gilt fuer beide
-     Formulare (Anfrage und Kontakt).
+     Steht nur an dieser einen Stelle und gilt fuer beide Formulare
+     (Anfrage und Kontakt). Web3Forms bezeichnet ihn ausdruecklich als
+     oeffentlichen Schluessel - er darf im Quelltext stehen.
 
      Kostenlos holen auf https://web3forms.com/ : dort die E-Mail-Adresse
      emilian@ebsolutions.info eintragen, der Schluessel kommt per Mail.
@@ -20,7 +21,7 @@
      bisher das E-Mail-Programm des Besuchers. Die Formulare funktionieren
      also in beiden Faellen.
      ====================================================================== */
-  var WEB3FORMS_KEY = 'HIER-DEINEN-WEB3FORMS-SCHLUESSEL-EINTRAGEN';
+  var WEB3FORMS_KEY = '14525eac-f521-42b4-8804-57315dee9576';
 
   function keyGesetzt() {
     var k = (WEB3FORMS_KEY || '').trim();

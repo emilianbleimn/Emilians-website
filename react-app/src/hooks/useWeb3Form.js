@@ -5,7 +5,7 @@ const CONTACT_EMAIL = 'emilian@ebsolutions.info';
 // Web3Forms-Zugangsschluessel - hier eintragen, gilt fuer beide Formulare.
 // Kostenlos auf https://web3forms.com/ mit der eigenen E-Mail-Adresse holen.
 // Solange der Platzhalter steht, greift der mailto-Fallback.
-const WEB3FORMS_KEY = 'HIER-DEINEN-WEB3FORMS-SCHLUESSEL-EINTRAGEN';
+const WEB3FORMS_KEY = '14525eac-f521-42b4-8804-57315dee9576';
 
 function keyGesetzt() {
   const k = (WEB3FORMS_KEY || '').trim();
