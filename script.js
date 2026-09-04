@@ -6,7 +6,31 @@
 
   /* ---- Konfiguration ---- */
   var CONTACT_EMAIL = 'emilian@ebsolutions.info';
-  var PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+
+  /* Web3Forms-Zugangsschluessel.
+     ======================================================================
+     HIER den Schluessel eintragen - und nur hier. Er gilt fuer beide
+     Formulare (Anfrage und Kontakt).
+
+     Kostenlos holen auf https://web3forms.com/ : dort die E-Mail-Adresse
+     emilian@ebsolutions.info eintragen, der Schluessel kommt per Mail.
+     Er sieht aus wie: 1a2b3c4d-5e6f-7890-abcd-ef1234567890
+
+     Solange hier der Platzhalter steht, oeffnet sich beim Absenden wie
+     bisher das E-Mail-Programm des Besuchers. Die Formulare funktionieren
+     also in beiden Faellen.
+     ====================================================================== */
+  var WEB3FORMS_KEY = 'HIER-DEINEN-WEB3FORMS-SCHLUESSEL-EINTRAGEN';
+
+  function keyGesetzt() {
+    var k = (WEB3FORMS_KEY || '').trim();
+    return k.length > 20 && k.indexOf('HIER') === -1;
+  }
+
+  /* Schluessel in beide Formulare schreiben */
+  document.querySelectorAll('input[name="access_key"]').forEach(function (el) {
+    el.value = keyGesetzt() ? WEB3FORMS_KEY.trim() : '';
+  });
 
   /* ---- Jahr im Footer ---- */
   var yearEl = document.getElementById('year');
@@ -108,9 +132,7 @@
       var hp = form.querySelector('input[name="botcheck"]');
       if (hp && hp.checked) { return; }
 
-      var keyField = form.querySelector('input[name="access_key"]');
-      var key = keyField ? keyField.value.trim() : '';
-      if (!key || key === PLACEHOLDER_KEY) {
+      if (!keyGesetzt()) {
         setStatus(form, 'Dein E-Mail-Programm öffnet sich – bitte die Nachricht dort absenden.', 'info');
         window.location.href = buildMailto(form);
         return;

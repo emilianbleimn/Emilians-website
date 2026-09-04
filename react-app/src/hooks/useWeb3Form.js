@@ -2,8 +2,17 @@ import { useCallback, useState } from 'react';
 
 // Deine Kontakt-E-Mail (für den mailto-Fallback)
 const CONTACT_EMAIL = 'emilian@ebsolutions.info';
-// Solange kein echter Web3Forms-Key eingetragen ist, greift der mailto-Fallback.
-const PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+// Web3Forms-Zugangsschluessel - hier eintragen, gilt fuer beide Formulare.
+// Kostenlos auf https://web3forms.com/ mit der eigenen E-Mail-Adresse holen.
+// Solange der Platzhalter steht, greift der mailto-Fallback.
+const WEB3FORMS_KEY = 'HIER-DEINEN-WEB3FORMS-SCHLUESSEL-EINTRAGEN';
+
+function keyGesetzt() {
+  const k = (WEB3FORMS_KEY || '').trim();
+  return k.length > 20 && !k.includes('HIER');
+}
+
+export { WEB3FORMS_KEY };
 
 const SKIP_FIELDS = ['access_key', 'subject', 'from_name', 'botcheck', 'redirect'];
 
@@ -39,11 +48,7 @@ export function useWeb3Form(subject) {
       // Honeypot: von Bots ausgefüllt -> still abbrechen
       if (form.botcheck && form.botcheck.checked) return;
 
-      const keyField = form.elements.namedItem('access_key');
-      const key = keyField ? keyField.value.trim() : '';
-
-      // Fallback: kein echter Key -> direkt mailto
-      if (!key || key === PLACEHOLDER_KEY) {
+      if (!keyGesetzt()) {
         setStatus({ message: 'Dein E-Mail-Programm öffnet sich – bitte die Nachricht dort absenden.', type: 'info' });
         window.location.href = buildMailto(form, subject);
         return;

@@ -1,4 +1,4 @@
-import { useWeb3Form } from '../hooks/useWeb3Form.js';
+import { useWeb3Form, WEB3FORMS_KEY } from '../hooks/useWeb3Form.js';
 
 const SUBJECT = 'Neue Nachricht über EB Solutions';
 
@@ -32,7 +32,7 @@ export default function Contact() {
         </div>
 
         <form className={`form card-form reveal${sending ? ' is-sending' : ''}`} onSubmit={handleSubmit}>
-          <input type="hidden" name="access_key" defaultValue="YOUR_WEB3FORMS_ACCESS_KEY" />
+          <input type="hidden" name="access_key" defaultValue={WEB3FORMS_KEY} />
           <input type="hidden" name="subject" defaultValue={SUBJECT} />
           <input type="hidden" name="from_name" defaultValue="EB Solutions Website" />
           <input type="checkbox" name="botcheck" className="hp" tabIndex={-1} autoComplete="off" aria-hidden="true" />

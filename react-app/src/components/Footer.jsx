@@ -26,8 +26,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="container footer-bottom">
-        <p>© {year} EB Solutions · ein Service von Jurelin. Alle Rechte vorbehalten.</p>
-        <p className="footer-made">Gestaltet mit Sorgfalt.</p>
+        <p>© {year} EB Solutions. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
   );
