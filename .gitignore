@@ -1,0 +1,11 @@
+# IntelliJ / JetBrains - persoenliche IDE-Einstellungen, gehoeren niemandem sonst
+.idea/
+*.iml
+
+# Von npm installierte Pakete - werden aus package.json wiederhergestellt
+node_modules/
+
+# Betriebssystem-Kram
+.DS_Store
+Thumbs.db
+*~
