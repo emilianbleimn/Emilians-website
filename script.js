@@ -4,27 +4,6 @@
 (function () {
   'use strict';
 
-  /* ---- Logo-Intro einmalig ausblenden ---- */
-  (function () {
-    var sp = document.getElementById('splash');
-    if (!sp) { return; }
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var minVisible = reduced ? 0 : 1000;
-    var done = false;
-    /* Ab Navigationsstart messen, nicht ab Skriptstart. */
-    function elapsed() { return (window.performance && performance.now) ? performance.now() : 0; }
-    function hide() {
-      if (done) { return; }
-      done = true;
-      sp.classList.add('hide');
-      setTimeout(function () { sp.style.display = 'none'; }, 550);
-    }
-    function schedule() { setTimeout(hide, Math.max(0, minVisible - elapsed())); }
-    if (document.readyState === 'complete') { schedule(); }
-    else { window.addEventListener('load', schedule); }
-    setTimeout(hide, 3000); /* Sicherheitsnetz, falls 'load' ausbleibt */
-  })();
-
   /* ---- Konfiguration ---- */
   var CONTACT_EMAIL = 'emilian@ebsolutions.info';
   var PLACEHOLDER_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
