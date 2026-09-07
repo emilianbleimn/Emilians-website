@@ -4,34 +4,39 @@
 (function () {
   'use strict';
 
+  /* ---- Lade-Vorschau mit Logo ausblenden ----
+     Mindestanzeigedauer, damit das Logo nicht nur aufblitzt, und ein
+     Sicherheitsnetz, falls das load-Ereignis ausbleibt. */
+  (function () {
+    var sp = document.getElementById('splash');
+    if (!sp) { return; }
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var minVisible = reduced ? 0 : 1800;
+    var done = false;
+    function hide() {
+      if (done) { return; }
+      done = true;
+      sp.classList.add('is-hidden');
+      setTimeout(function () { sp.style.display = 'none'; }, 550);
+    }
+    /* Ab Navigationsstart messen, nicht ab Skriptstart. */
+    function schedule() {
+      var seit = (window.performance && performance.now) ? performance.now() : 0;
+      setTimeout(hide, Math.max(0, minVisible - seit));
+    }
+    if (document.readyState === 'complete') { schedule(); }
+    else { window.addEventListener('load', schedule); }
+    setTimeout(hide, 3500);
+  })();
+
   /* ---- Konfiguration ---- */
   var CONTACT_EMAIL = 'emilian@ebsolutions.info';
 
-  /* Web3Forms-Zugangsschluessel.
-     ======================================================================
-     Steht nur an dieser einen Stelle und gilt fuer beide Formulare
-     (Anfrage und Kontakt). Web3Forms bezeichnet ihn ausdruecklich als
-     oeffentlichen Schluessel - er darf im Quelltext stehen.
-
-     Kostenlos holen auf https://web3forms.com/ : dort die E-Mail-Adresse
-     emilian@ebsolutions.info eintragen, der Schluessel kommt per Mail.
-     Er sieht aus wie: 1a2b3c4d-5e6f-7890-abcd-ef1234567890
-
-     Solange hier der Platzhalter steht, oeffnet sich beim Absenden wie
-     bisher das E-Mail-Programm des Besuchers. Die Formulare funktionieren
-     also in beiden Faellen.
-     ====================================================================== */
-  var WEB3FORMS_KEY = '14525eac-f521-42b4-8804-57315dee9576';
-
-  function keyGesetzt() {
-    var k = (WEB3FORMS_KEY || '').trim();
-    return k.length > 20 && k.indexOf('HIER') === -1;
-  }
-
-  /* Schluessel in beide Formulare schreiben */
-  document.querySelectorAll('input[name="access_key"]').forEach(function (el) {
-    el.value = keyGesetzt() ? WEB3FORMS_KEY.trim() : '';
-  });
+  /* Eigener Endpunkt auf dem Server. kontakt.php speichert die Anfrage
+     ausserhalb des Webordners und schickt zusaetzlich eine E-Mail.
+     Sichtbar werden die Anfragen unter /admin.php.
+     Faellt der Server aus, oeffnet sich ersatzweise das E-Mail-Programm. */
+  var ENDPUNKT = 'kontakt.php';
 
   /* ---- Jahr im Footer ---- */
   var yearEl = document.getElementById('year');
@@ -133,31 +138,29 @@
       var hp = form.querySelector('input[name="botcheck"]');
       if (hp && hp.checked) { return; }
 
-      if (!keyGesetzt()) {
-        setStatus(form, 'Dein E-Mail-Programm öffnet sich – bitte die Nachricht dort absenden.', 'info');
-        window.location.href = buildMailto(form);
-        return;
-      }
-
       form.classList.add('is-sending');
-      setStatus(form, 'Wird gesendet …', 'info');
-      fetch('https://api.web3forms.com/submit', {
+      setStatus(form, 'Wird gesendet \u2026', 'info');
+
+      fetch(ENDPUNKT, {
         method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form)
       })
         .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, json: j }; }); })
         .then(function (result) {
           form.classList.remove('is-sending');
           if (result.ok && result.json.success) {
-            setStatus(form, '✓ Vielen Dank! Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.', 'ok');
+            setStatus(form, '\u2713 Vielen Dank! Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.', 'ok');
             form.reset();
+          } else if (result.json && result.json.message) {
+            /* Eingabefehler: der Server sagt, was fehlt - kein Umweg noetig. */
+            setStatus(form, result.json.message, 'info');
           } else {
-            setStatus(form, 'Sende-Dienst nicht erreichbar – dein E-Mail-Programm öffnet sich als Alternative.', 'info');
+            setStatus(form, 'Senden nicht m\u00f6glich \u2013 dein E-Mail-Programm \u00f6ffnet sich als Alternative.', 'info');
             window.location.href = buildMailto(form);
           }
         })
         .catch(function () {
           form.classList.remove('is-sending');
-          setStatus(form, 'Verbindung fehlgeschlagen – dein E-Mail-Programm öffnet sich als Alternative.', 'info');
+          setStatus(form, 'Verbindung fehlgeschlagen \u2013 dein E-Mail-Programm \u00f6ffnet sich als Alternative.', 'info');
           window.location.href = buildMailto(form);
         });
     };

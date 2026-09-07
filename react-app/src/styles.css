@@ -166,6 +166,11 @@ img, svg { max-width: 100%; display: block; }
   border-radius: 5px; padding: .1em .4em; color: var(--gold-2); }
 .legal-back { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--gold-line); }
 
+/* ---------- Logo ---------- */
+.brand-logo { height: 34px; width: auto; display: block; color: var(--cream); }
+.site-footer .brand-logo { height: 38px; }
+@media (max-width: 560px) { .brand-logo { height: 25px; } }
+
 /* ---------- Buttons ---------- */
 .btn { position: relative; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
   font-family: inherit; font-weight: 600; font-size: .9rem; letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
@@ -192,8 +197,6 @@ img, svg { max-width: 100%; display: block; }
 
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; color: var(--cream); }
 .brand:hover { color: var(--cream); }
-.brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: var(--grad-gold); color: #14110a; font-weight: 800; font-size: .95rem; box-shadow: 0 6px 16px rgba(212, 175, 55, .35); }
-.brand-text { font-family: var(--display); font-size: 1.18rem; letter-spacing: .01em; }
 
 .nav { display: flex; align-items: center; gap: 1.7rem; }
 .nav > a:not(.btn) { color: var(--cream); font-weight: 500; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; position: relative; }
