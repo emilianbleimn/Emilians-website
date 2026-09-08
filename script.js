@@ -11,13 +11,13 @@
     var sp = document.getElementById('splash');
     if (!sp) { return; }
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var minVisible = reduced ? 0 : 1500;
+    var minVisible = reduced ? 0 : 2000;
     var done = false;
     function hide() {
       if (done) { return; }
       done = true;
       sp.classList.add('is-hidden');
-      setTimeout(function () { sp.style.display = 'none'; }, 550);
+      setTimeout(function () { sp.style.display = 'none'; }, 650);
     }
     /* Ab Navigationsstart messen, nicht ab Skriptstart. */
     function schedule() {
