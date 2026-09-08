@@ -13,11 +13,11 @@ declare(strict_types=1);
 const SPERRE_AB      = 5;     // Fehlversuche
 const SPERRE_SEKUNDEN = 900;  // danach 15 Minuten Pause
 
-$basis    = dirname(__DIR__) . '/eb-daten';
+require __DIR__ . '/eb-config.php';
+
+[$basis, $imWeb, $ortMeldung] = eb_datenort();
 $anfragen = $basis . '/anfragen';
 $zugang   = $basis . '/zugang.json';
-
-if (!is_dir($anfragen)) { @mkdir($anfragen, 0700, true); }
 
 session_set_cookie_params([
     'lifetime' => 0, 'path' => '/', 'httponly' => true,
@@ -46,9 +46,11 @@ function tokenPruefen(): bool {
 function zugangLesen(string $datei): array {
     return is_file($datei) ? (json_decode((string)file_get_contents($datei), true) ?: []) : [];
 }
-function zugangSchreiben(string $datei, array $daten): void {
-    file_put_contents($datei, json_encode($daten, JSON_PRETTY_PRINT), LOCK_EX);
+function zugangSchreiben(string $datei, array $daten): bool {
+    $ok = @file_put_contents($datei, json_encode($daten, JSON_PRETTY_PRINT), LOCK_EX);
+    if ($ok === false) { return false; }
     @chmod($datei, 0600);
+    return true;
 }
 
 $konto      = zugangLesen($zugang);
@@ -65,8 +67,13 @@ if ($tat === 'einrichten' && !$eingerichtet) {
     $pw2 = (string)($_POST['passwort2'] ?? '');
     if (mb_strlen($pw1) < 10)      { $fehler = 'Das Passwort braucht mindestens 10 Zeichen.'; }
     elseif ($pw1 !== $pw2)         { $fehler = 'Die beiden Passwörter stimmen nicht überein.'; }
+    elseif ($basis === '') {
+        $fehler = 'Der Server lässt PHP nirgends schreiben. ' . $ortMeldung;
+    }
+    elseif (!zugangSchreiben($zugang, ['hash' => password_hash($pw1, PASSWORD_DEFAULT), 'angelegt' => date('c')])) {
+        $fehler = 'Das Passwort konnte nicht gespeichert werden. ' . $ortMeldung;
+    }
     else {
-        zugangSchreiben($zugang, ['hash' => password_hash($pw1, PASSWORD_DEFAULT), 'angelegt' => date('c')]);
         $konto = zugangLesen($zugang); $eingerichtet = true;
         $hinweis = 'Passwort gesetzt. Bitte jetzt anmelden.';
     }
@@ -195,6 +202,7 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
   input[type=password]:focus { outline:none; border-color:var(--rand2) }
   .leer { text-align:center; color:var(--grau); padding:60px 20px }
   .hinweis { color:var(--grau); font-size:.82rem; margin-top:8px }
+  code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.85em; overflow-wrap:anywhere }
 </style>
 </head>
 <body>
@@ -207,6 +215,15 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
       nur ein nicht rückrechenbarer Hash — das Passwort selbst steht nirgends.
       <strong>Schreib es dir auf</strong>, es lässt sich nicht wiederherstellen.</p>
     <?php if ($fehler): ?><div class="melden weg"><?= h($fehler) ?></div><?php endif; ?>
+    <div class="melden <?= $basis === '' ? 'weg' : 'ok' ?>">
+      <?php if ($basis === ''): ?>
+        <strong>Achtung:</strong> <?= h($ortMeldung) ?>
+      <?php else: ?>
+        Ablage bereit: <code><?= h($basis) ?></code>
+        <?= $imWeb ? ' — liegt im Webordner und ist per .htaccess gesperrt.'
+                   : ' — liegt außerhalb des Webordners.' ?>
+      <?php endif; ?>
+    </div>
     <form method="post">
       <input type="hidden" name="tat" value="einrichten">
       <label for="p1">Passwort (mindestens 10 Zeichen)</label>
@@ -235,7 +252,8 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
   <header class="top">
     <div>
       <h1>Anfragen</h1>
-      <div class="zahl"><?= count($liste) ?> gesamt<?= $offen ? ' · ' . $offen . ' neu' : '' ?></div>
+      <div class="zahl"><?= count($liste) ?> gesamt<?= $offen ? ' · ' . $offen . ' neu' : '' ?>
+        · Ablage: <?= $imWeb ? 'im Webordner (gesperrt)' : 'außerhalb des Webordners' ?></div>
     </div>
     <div>
       <a class="knopf" href="index.html">Website</a>

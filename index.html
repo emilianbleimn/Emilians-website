@@ -53,7 +53,12 @@
        und kann die Seite darum auch nie blockieren. Erst das Skript im
        <head> setzt die Klasse js auf <html> und blendet sie ein. */
     .splash { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center;
-      background: #0A0A0B; transition: opacity .5s ease, visibility .5s ease; }
+      background: #0A0A0B; transition: opacity .5s ease, visibility .5s ease;
+      /* Notaus in reinem CSS: Falls script.js fehlt, veraltet im Cache liegt
+         oder blockiert wird, verschwindet das Intro trotzdem nach 6 Sekunden.
+         Ohne diese Zeile bliebe die Seite dahinter haengen. */
+      animation: splashNotaus 0s linear 6s forwards; }
+    @keyframes splashNotaus { to { opacity: 0; visibility: hidden; pointer-events: none; } }
     html[data-theme="light"] .splash { background: #FBF9F4; }
     html.js .splash { display: grid; }
     .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }

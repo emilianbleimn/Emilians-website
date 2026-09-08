@@ -10,7 +10,8 @@ declare(strict_types=1);
  * Dateinamen erraet. Lesen kann sie nur admin.php.
  */
 
-const EMPFAENGER      = 'emilian@ebsolutions.info';
+require __DIR__ . '/eb-config.php';
+
 const MAX_PRO_STUNDE  = 8;      // pro IP-Adresse, gegen Massen-Einsendungen
 const MAX_FELDLAENGE  = 5000;
 
@@ -37,12 +38,12 @@ if (trim((string)($_POST['botcheck'] ?? '')) !== '') {
     antwort(true, 'Danke!');
 }
 
-// ---- Datenverzeichnis ausserhalb des Webordners ------------------------
-$basis    = dirname(__DIR__) . '/eb-daten';
-$anfragen = $basis . '/anfragen';
-if (!is_dir($anfragen) && !mkdir($anfragen, 0700, true) && !is_dir($anfragen)) {
+// ---- Speicherort bestimmen --------------------------------------------
+[$basis, $imWeb, $meldung] = eb_datenort();
+if ($basis === '') {
     antwort(false, 'Der Server konnte die Anfrage nicht speichern.', 500);
 }
+$anfragen = $basis . '/anfragen';
 
 // ---- Einfache Begrenzung pro IP ---------------------------------------
 $ip     = (string)($_SERVER['REMOTE_ADDR'] ?? '0.0.0.0');
@@ -113,11 +114,11 @@ $zeilen[] = 'Empfangen: ' . date('d.m.Y H:i');
 $zeilen[] = 'Im Adminbereich ansehen: https://ebsolutions.info/admin.php';
 
 $kopf = [
-    'From: EB Solutions Website <' . EMPFAENGER . '>',
+    'From: EB Solutions Website <' . EB_EMPFAENGER . '>',
     'Reply-To: ' . $mail,
     'Content-Type: text/plain; charset=UTF-8',
     'X-Mailer: EB Solutions',
 ];
-@mail(EMPFAENGER, $datensatz['betreff'], implode("\n", $zeilen), implode("\r\n", $kopf));
+@mail(EB_EMPFAENGER, $datensatz['betreff'], implode("\n", $zeilen), implode("\r\n", $kopf));
 
 antwort(true, 'Vielen Dank! Deine Nachricht ist angekommen.');
