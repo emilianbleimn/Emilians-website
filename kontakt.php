@@ -119,6 +119,51 @@ $kopf = [
     'Content-Type: text/plain; charset=UTF-8',
     'X-Mailer: EB Solutions',
 ];
-@mail(EB_EMPFAENGER, $datensatz['betreff'], implode("\n", $zeilen), implode("\r\n", $kopf));
+$anMich = @mail(EB_EMPFAENGER, $datensatz['betreff'], implode("\n", $zeilen), implode("\r\n", $kopf));
 
-antwort(true, 'Vielen Dank! Deine Nachricht ist angekommen.');
+// ---- Automatische Eingangsbestaetigung an den Absender ----------------
+// Geht nicht an die eigene Adresse - das gaebe eine Mailschleife.
+$bestaetigt = false;
+if (strcasecmp($mail, EB_EMPFAENGER) !== 0) {
+    $vorname = trim(explode(' ', $name)[0]);
+
+    $uebersicht = [];
+    foreach ($felder as $k => $v) {
+        $uebersicht[] = $k . ': ' . $v;
+    }
+
+    $text = "Hallo " . $vorname . ",\n\n"
+          . "vielen Dank für deine Nachricht. Sie ist bei mir angekommen, und ich\n"
+          . "melde mich innerhalb von 24 Stunden bei dir.\n\n"
+          . "Das hast du mir geschickt:\n"
+          . str_repeat('-', 52) . "\n"
+          . implode("\n", $uebersicht) . "\n"
+          . str_repeat('-', 52) . "\n\n"
+          . "Fällt dir noch etwas ein? Antworte einfach auf diese E-Mail.\n\n"
+          . "Viele Grüße\n"
+          . "Emilian Bleim\n\n"
+          . "--\n"
+          . "EB Solutions · Emilian Bleim\n"
+          . "Bürgermeister-Mohr-Straße 11, 64711 Erbach\n"
+          . "Telefon: +49 151 41603740\n"
+          . "E-Mail: " . EB_EMPFAENGER . "\n"
+          . "https://ebsolutions.info\n\n"
+          . "Diese Bestätigung wurde automatisch erzeugt, weil das Formular auf\n"
+          . "ebsolutions.info mit dieser E-Mail-Adresse ausgefüllt wurde.\n";
+
+    $kopfBest = [
+        'From: EB Solutions <' . EB_EMPFAENGER . '>',
+        'Reply-To: ' . EB_EMPFAENGER,
+        'Content-Type: text/plain; charset=UTF-8',
+        'Auto-Submitted: auto-replied',
+        'X-Auto-Response-Suppress: All',
+    ];
+    $bestaetigt = @mail($mail, 'Deine Anfrage bei EB Solutions', $text, implode("\r\n", $kopfBest));
+}
+
+// Im Datensatz festhalten, damit im Adminbereich sichtbar ist, ob es geklappt hat.
+$datensatz['benachrichtigung'] = $anMich;
+$datensatz['bestaetigung']     = $bestaetigt;
+@file_put_contents($ziel, json_encode($datensatz, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
+
+antwort(true, 'Vielen Dank! Deine Nachricht ist angekommen. Du bekommst gleich eine Bestätigung per E-Mail.');

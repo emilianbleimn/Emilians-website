@@ -203,6 +203,7 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
   .leer { text-align:center; color:var(--grau); padding:60px 20px }
   .hinweis { color:var(--grau); font-size:.82rem; margin-top:8px }
   code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.85em; overflow-wrap:anywhere }
+  .gut { color:#7FC49B } .schlecht { color:#E08585 }
 </style>
 </head>
 <body>
@@ -287,7 +288,14 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
         <span class="pill s-<?= h($st) ?>"><?= h($BEZEICHNUNG[$st] ?? $st) ?></span>
       </div>
       <div class="zeit"><?= h(date('d.m.Y · H:i', strtotime((string)($d['empfangen'] ?? 'now')))) ?>
-        — <?= h((string)($d['betreff'] ?? '')) ?></div>
+        — <?= h((string)($d['betreff'] ?? '')) ?>
+        <?php if (array_key_exists('bestaetigung', $d)): ?>
+          · <span class="<?= $d['bestaetigung'] ? 'gut' : 'schlecht' ?>">
+            <?= $d['bestaetigung'] ? 'Bestätigung verschickt' : 'Bestätigung fehlgeschlagen' ?></span>
+        <?php endif; ?>
+        <?php if (array_key_exists('benachrichtigung', $d) && !$d['benachrichtigung']): ?>
+          · <span class="schlecht">Benachrichtigung an mich fehlgeschlagen</span>
+        <?php endif; ?></div>
 
       <dl>
         <?php if ($mail): ?><dt>E-Mail</dt><dd><a href="mailto:<?= h($mail) ?>"><?= h($mail) ?></a></dd><?php endif; ?>
