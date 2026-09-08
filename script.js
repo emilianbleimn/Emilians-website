@@ -4,34 +4,21 @@
 (function () {
   'use strict';
 
-  /* ---- Lade-Vorschau mit Logo ausblenden ----
-     Mindestanzeigedauer, damit das Logo nicht nur aufblitzt, und ein
-     Sicherheitsnetz, falls das load-Ereignis ausbleibt. */
+  /* ---- Lade-Vorschau ----
+     Aufbau 1:1 von der Benzel-Seite uebernommen: eine Klasse setzen,
+     fertig. Kein Nachraeumen, keine zweite Animation, keine Sonderfaelle.
+     Genau das laeuft dort seit Monaten ohne Beanstandung. */
   (function () {
-    var sp = document.getElementById('splash');
-    if (!sp) { return; }
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var minVisible = reduced ? 0 : 2000;
-    var done = false;
+    var pre = document.getElementById('splash');
+    if (!pre) { return; }
+    var start = Date.now(), MIN = 2000;
     function hide() {
-      if (done) { return; }
-      done = true;
-      /* Bewusst KEIN display:none hinterher. Das Verwerfen einer
-         bildschirmfuellenden, festen Ebene zwingt den Browser, das Bild neu
-         zusammenzusetzen - dabei entsteht ein einzelnes dunkles Bild, das
-         wie ein Aufblitzen der ganzen Seite aussieht. Die Ebene bleibt
-         stehen und ist ueber visibility:hidden unsichtbar und unklickbar.
-         Die Benzel-Seite macht es genauso. */
-      sp.classList.add('is-hidden');
+      var warten = Math.max(0, MIN - (Date.now() - start));
+      setTimeout(function () { pre.classList.add('is-hidden'); }, warten);
     }
-    /* Ab Navigationsstart messen, nicht ab Skriptstart. */
-    function schedule() {
-      var seit = (window.performance && performance.now) ? performance.now() : 0;
-      setTimeout(hide, Math.max(0, minVisible - seit));
-    }
-    if (document.readyState === 'complete') { schedule(); }
-    else { window.addEventListener('load', schedule); }
-    setTimeout(hide, 3500);
+    if (document.readyState === 'complete') { hide(); }
+    else { window.addEventListener('load', hide); }
+    setTimeout(hide, 3200);   /* Sicherheitsnetz, falls load ausbleibt */
   })();
 
   /* ---- Konfiguration ---- */
