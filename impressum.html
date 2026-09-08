@@ -64,24 +64,41 @@
     html.js .splash { display: grid; }
     .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
+    /* Logo und Ladelinie liegen zusammen in .splash-inner und blenden
+       gemeinsam aus - Stufe 1, waehrend die Flaeche noch voll deckt. */
+    .splash-inner { display: grid; justify-items: center; gap: 1.4rem;
+      will-change: opacity; transition: opacity .3s ease; }
+    .splash.is-hidden .splash-inner { opacity: 0; }
+
     /* aspect-ratio ist Pflicht, nicht Schmuck: Firefox rechnet die Hoehe
        eines eingebetteten SVG nicht aus der viewBox. Ohne diese Zeile ist
        das Logo 0 hoch und man sieht nur eine schwarze Flaeche. */
     .splash-logo { width: min(300px, 62vw); height: auto;
-      aspect-ratio: 221.73 / 46.84; color: #F3EEE2;
-      will-change: opacity;
-      transition: opacity .3s ease; }
-    .splash.is-hidden .splash-logo { opacity: 0; }
+      aspect-ratio: 221.73 / 46.84; color: #F3EEE2; }
     html[data-theme="light"] .splash-logo { color: #211F1A; }
 
+    /* Ladeanzeige: eine ein Pixel duenne Linie, die genau einmal von links
+       nach rechts durchlaeuft. Kein Pulsieren, kein Hin und Her - eine
+       Bewegung, eine Richtung. Ueber transform, laeuft also auf der
+       Grafikkarte und kann nicht ruckeln. */
+    .splash-line { width: min(300px, 62vw); height: 1px; overflow: hidden;
+      background: rgba(212, 175, 55, .16); }
+    .splash-line i { display: block; height: 100%; width: 100%;
+      background: linear-gradient(90deg, #A8832A, #C2A24E);
+      transform: scaleX(0); transform-origin: left center;
+      will-change: transform;
+      animation: splashLinie 2s cubic-bezier(.33, 0, .2, 1) forwards; }
+    @keyframes splashLinie { to { transform: scaleX(1); } }
+
     @media (prefers-reduced-motion: reduce) {
-      .splash, .splash-logo { transition: none; } }
+      .splash, .splash-inner { transition: none; }
+      .splash-line i { animation: none; transform: scaleX(1); } }
   </style>
   <!-- Die Versionsnummer ?v= hinter styles.css und script.js ist wichtig:
        Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
        aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
        Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <a href="#inhalt" class="skip-link">Zum Inhalt springen</a>
@@ -93,7 +110,10 @@
 
   <!-- Lade-Vorschau. Ohne JavaScript nie sichtbar. -->
   <div id="splash" class="splash" aria-hidden="true">
-    <svg class="splash-logo" width="222" height="47" viewBox="0 0 221.73 46.84"><use href="#ebLogo"/></svg>
+    <div class="splash-inner">
+      <svg class="splash-logo" width="222" height="47" viewBox="0 0 221.73 46.84"><use href="#ebLogo"/></svg>
+      <span class="splash-line"><i></i></span>
+    </div>
   </div>
 
   <header class="site-header" id="siteHeader">
@@ -243,6 +263,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
