@@ -17,7 +17,7 @@
       if (done) { return; }
       done = true;
       sp.classList.add('is-hidden');
-      setTimeout(function () { sp.style.display = 'none'; }, 650);
+      setTimeout(function () { sp.style.display = 'none'; }, 800);
     }
     /* Ab Navigationsstart messen, nicht ab Skriptstart. */
     function schedule() {

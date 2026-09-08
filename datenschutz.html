@@ -37,7 +37,11 @@
        <head> setzt die Klasse js auf <html> und blendet sie ein. */
     .splash { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center;
       background: #0A0A0B;
-      transition: opacity .6s cubic-bezier(.4, 0, .2, 1), visibility .6s;
+      /* Der Hintergrund blendet erst mit 0,25 s Verzoegerung aus - dann ist
+         das Logo schon weg. Ohne diese Verzoegerung sieht man beides
+         gleichzeitig: das Logo halbdurchsichtig ueber der Seite. Genau das
+         wirkte wie ein Flackern nach der Vorschau. */
+      transition: opacity .45s ease .25s, visibility .45s .25s;
       /* Notaus in reinem CSS: Falls script.js fehlt, veraltet im Cache liegt
          oder blockiert wird, verschwindet das Intro trotzdem nach 6 Sekunden.
          Ohne diese Zeile bliebe die Seite dahinter haengen. */
@@ -47,11 +51,11 @@
     html.js .splash { display: grid; }
     .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
-    /* Beim Ausblenden hebt sich das Logo minimal an - das gibt dem
-       Uebergang eine Richtung, statt einfach wegzublenden. */
+    /* Das Logo verschwindet zuerst und schnell. Erst danach gibt der
+       Hintergrund die Seite frei - so ueberlagern sich die beiden nie. */
     .splash-inner { display: grid; justify-items: center; gap: 1.5rem;
-      transition: transform .6s cubic-bezier(.4, 0, .2, 1); }
-    .splash.is-hidden .splash-inner { transform: translateY(-10px); }
+      transition: opacity .25s ease; }
+    .splash.is-hidden .splash-inner { opacity: 0; }
 
     /* Das Logo steht still. Bewegung gibt es nur in der Linie darunter,
        und die laeuft genau einmal durch - kein Pulsieren, kein Blinken. */
@@ -74,7 +78,7 @@
        Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
        aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
        Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <a href="#inhalt" class="skip-link">Zum Inhalt springen</a>
@@ -348,6 +352,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
