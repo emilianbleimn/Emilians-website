@@ -63,12 +63,9 @@
     html.js .splash { display: grid; }
     .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
     .splash-logo { width: min(340px, 66vw); height: auto; color: #F3EEE2;
-      animation: splashPulse 1.5s ease-in-out infinite; }
+      /* Bewusst ohne Animation: das Pulsieren wirkte wie Flackern. */ }
     html[data-theme="light"] .splash-logo { color: #211F1A; }
-    @keyframes splashPulse { 0%, 100% { opacity: .6; transform: scale(.97); }
-                             50%      { opacity: 1;  transform: scale(1); } }
-    @media (prefers-reduced-motion: reduce) {
-      .splash-logo { animation: none; } .splash { transition: none; } }
+    @media (prefers-reduced-motion: reduce) { .splash { transition: none; } }
   </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -83,14 +80,14 @@
   <!-- Lade-Vorschau mit Logo. Ohne JavaScript nie sichtbar (display:none),
        kann die Seite also niemals blockieren. -->
   <div id="splash" class="splash" aria-hidden="true">
-    <svg class="splash-logo" viewBox="0 0 221.73 46.84"><use href="#ebLogo"/></svg>
+    <svg class="splash-logo" width="222" height="47" viewBox="0 0 221.73 46.84"><use href="#ebLogo"/></svg>
   </div>
 
   <!-- ============ HEADER / NAV ============ -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-inner">
       <a href="#start" class="brand" aria-label="EB Solutions Startseite">
-        <svg class="brand-logo" viewBox="0 0 221.73 46.84" aria-hidden="true"><use href="#ebLogo"/></svg>
+        <svg class="brand-logo" width="222" height="47" viewBox="0 0 221.73 46.84" aria-hidden="true"><use href="#ebLogo"/></svg>
       </a>
 
       <nav class="nav" id="primaryNav" aria-label="Hauptnavigation">
@@ -265,7 +262,6 @@
           </article>
 
           <article class="price-card featured reveal">
-            <div class="ribbon">Empfohlen</div>
             <h3>Business-Website</h3>
             <p class="price-desc">Der komplette Auftritt für dein Unternehmen</p>
             <div class="price"><span class="from">ab</span>1.500&nbsp;€</div>
@@ -384,7 +380,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="#start" class="brand"><svg class="brand-logo" viewBox="0 0 221.73 46.84" aria-hidden="true"><use href="#ebLogo"/></svg></a>
+        <a href="#start" class="brand"><svg class="brand-logo" width="222" height="47" viewBox="0 0 221.73 46.84" aria-hidden="true"><use href="#ebLogo"/></svg></a>
         <p>Professionelle Websites – persönlich umgesetzt. Von der Landingpage bis zur Firmen-Website. Ehrlich &amp; professionell.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer-Navigation"><h4>Navigation</h4><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a><a href="#preise">Preise</a><a href="#faq">FAQ</a></nav>

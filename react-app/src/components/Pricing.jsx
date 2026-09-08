@@ -30,7 +30,6 @@ const PLANS = [
     desc: 'Der komplette Auftritt für dein Unternehmen',
     price: '1.500 €',
     featured: true,
-    ribbon: 'Empfohlen',
     features: [
       'Bis zu 12 Unterseiten',
       'Eigene Domain inklusive',
@@ -54,7 +53,6 @@ export default function Pricing() {
         <div className="pricing">
           {PLANS.map((p) => (
             <article className={`price-card reveal${p.featured ? ' featured' : ''}`} key={p.name}>
-              {p.ribbon ? <div className="ribbon">{p.ribbon}</div> : null}
               <h3>{p.name}</h3>
               <p className="price-desc">{p.desc}</p>
               <div className="price"><span className="from">ab</span>{p.price}</div>

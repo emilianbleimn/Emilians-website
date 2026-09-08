@@ -167,7 +167,10 @@ img, svg { max-width: 100%; display: block; }
 .legal-back { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--gold-line); }
 
 /* ---------- Logo ---------- */
-.brand-logo { height: 34px; width: auto; display: block; color: var(--cream); }
+/* aspect-ratio ist hier kein Schmuck: Firefox rechnet die Breite eines
+   eingebetteten SVG nicht aus der viewBox, das Logo waere sonst 0 breit. */
+.brand-logo { height: 34px; width: auto; aspect-ratio: 221.73 / 46.84;
+  display: block; color: var(--cream); }
 .site-footer .brand-logo { height: 38px; }
 @media (max-width: 560px) { .brand-logo { height: 25px; } }
 
@@ -334,7 +337,6 @@ img, svg { max-width: 100%; display: block; }
 .price-card:hover { transform: translateY(-6px); border-color: var(--gold-line-strong); box-shadow: var(--glow-gold); }
 .price-card.featured { transform: scale(1.04); border: 1px solid transparent; background-image: linear-gradient(var(--ink), var(--ink)), var(--grad-gold); background-origin: border-box; background-clip: padding-box, border-box; box-shadow: var(--glow-gold); }
 .price-card.featured:hover { transform: scale(1.04) translateY(-6px); }
-.ribbon { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--grad-gold); color: #14110a; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .32rem .8rem; border-radius: 999px; }
 .price-card h3 { color: var(--cream); margin-bottom: .25rem; font-size: 1.5rem; }
 .price-desc { color: var(--muted); font-size: .92rem; margin-bottom: 1.1rem; }
 .price { font-family: var(--display); font-size: 2.6rem; font-weight: 700; color: var(--gold); margin-bottom: 1.4rem; letter-spacing: -.01em; }

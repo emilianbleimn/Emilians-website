@@ -11,7 +11,7 @@
     var sp = document.getElementById('splash');
     if (!sp) { return; }
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var minVisible = reduced ? 0 : 1800;
+    var minVisible = reduced ? 0 : 1500;
     var done = false;
     function hide() {
       if (done) { return; }
