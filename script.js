@@ -11,8 +11,12 @@
   (function () {
     var pre = document.getElementById('splash');
     if (!pre) { return; }
-    var start = Date.now(), MIN = 2000;
+    var start = Date.now(), MIN = 2000, geplant = false;
     function hide() {
+      /* hide() wird von zwei Seiten aufgerufen: vom load-Ereignis und vom
+         Sicherheitsnetz. Ohne diese Sperre wuerden zwei Zeitgeber laufen. */
+      if (geplant) { return; }
+      geplant = true;
       var warten = Math.max(0, MIN - (Date.now() - start));
       setTimeout(function () { pre.classList.add('is-hidden'); }, warten);
     }

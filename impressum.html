@@ -32,14 +32,26 @@
     html[data-theme="light"] { background: #FBF9F4; }
     body { margin: 0; }
 
-    /* Lade-Vorschau - Aufbau 1:1 von der Benzel-Seite uebernommen.
-       Grundzustand display:none, erst die Klasse js blendet sie ein.
-       Ohne JavaScript also nie sichtbar, kann die Seite nie blockieren.
-       Ausgeblendet wird ueber genau eine Klasse und einen Uebergang -
-       kein Nachraeumen mit display:none, das erzeugt ein Aufblitzen. */
+    /* Lade-Vorschau.
+       Aufbau wie auf der Benzel-Seite: Grundzustand display:none, erst die
+       Klasse js blendet ein, ausgeblendet wird ueber eine Klasse, und es wird
+       hinterher NICHT mit display:none nachgeraeumt.
+
+       Eine Abweichung ist hier zwingend, und sie ist der Kern des Problems:
+       Der Hintergrund dieser Flaeche hat exakt dieselbe Farbe wie der
+       Hintergrund der Seite dahinter (#0A0A0B). Blendet die ganze Flaeche
+       gemeinsam aus, aendert sich am Hintergrund optisch nichts - sichtbar
+       verblasst nur das helle Logo, und zwar ueber der schon auftauchenden
+       Seite. Das sieht aus, als erschiene die Vorschau ein zweites Mal ohne
+       Hintergrund. Auf der Benzel-Seite faellt das nicht auf, weil dort
+       dunkles Logo auf weisser Flaeche liegt.
+
+       Darum: erst das Logo ausblenden, waehrend die Flaeche noch voll deckt.
+       Danach die Flaeche. So verschwindet das Logo gegen Schwarz und die
+       Seite kommt anschliessend hervor - die beiden ueberlagern sich nie. */
     .splash { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center;
       background: #0A0A0B;
-      transition: opacity .5s ease, visibility .5s ease;
+      transition: opacity .45s ease .3s, visibility .45s .3s;
       /* Notaus in reinem CSS, falls script.js fehlt oder veraltet im
          Zwischenspeicher liegt. Vor Ablauf der 6 Sekunden ohne Wirkung. */
       animation: splashNotaus 0s linear 6s forwards; }
@@ -52,16 +64,19 @@
        eines eingebetteten SVG nicht aus der viewBox. Ohne diese Zeile ist
        das Logo 0 hoch und man sieht nur eine schwarze Flaeche. */
     .splash-logo { width: min(300px, 62vw); height: auto;
-      aspect-ratio: 221.73 / 46.84; color: #F3EEE2; }
+      aspect-ratio: 221.73 / 46.84; color: #F3EEE2;
+      transition: opacity .3s ease; }
+    .splash.is-hidden .splash-logo { opacity: 0; }
     html[data-theme="light"] .splash-logo { color: #211F1A; }
 
-    @media (prefers-reduced-motion: reduce) { .splash { transition: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .splash, .splash-logo { transition: none; } }
   </style>
   <!-- Die Versionsnummer ?v= hinter styles.css und script.js ist wichtig:
        Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
        aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
        Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
   <a href="#inhalt" class="skip-link">Zum Inhalt springen</a>
@@ -223,6 +238,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
