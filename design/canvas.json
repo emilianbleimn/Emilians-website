@@ -1,0 +1,52 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1180,
+      "h": 740,
+      "title": "Hero"
+    },
+    {
+      "file": "Leistungen.dc.html",
+      "x": 1280,
+      "y": 0,
+      "w": 1180,
+      "h": 960
+    },
+    {
+      "file": "Preise.dc.html",
+      "x": 0,
+      "y": 1080,
+      "w": 1180,
+      "h": 1060
+    },
+    {
+      "file": "Kontakt.dc.html",
+      "x": 1280,
+      "y": 1080,
+      "w": 1180,
+      "h": 1060
+    },
+    {
+      "file": "Fusszeile.dc.html",
+      "x": 0,
+      "y": 2260,
+      "w": 1180,
+      "h": 380
+    }
+  ],
+  "annotations": [
+    {
+      "id": "hinweis",
+      "x": 1280,
+      "y": 2260,
+      "w": 320,
+      "text": "Das ist die Arbeitsfläche.\n\nAlles hier lässt sich anklicken, verschieben und ändern.\n\nDie Abschnitte sind unabhängig voneinander – eine Änderung hier wirkt sich nicht automatisch auf ebsolutions.info aus. Sag mir, was dir gefällt, dann übertrage ich es in den echten Code."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
