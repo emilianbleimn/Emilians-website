@@ -16,8 +16,13 @@
     function hide() {
       if (done) { return; }
       done = true;
+      /* Bewusst KEIN display:none hinterher. Das Verwerfen einer
+         bildschirmfuellenden, festen Ebene zwingt den Browser, das Bild neu
+         zusammenzusetzen - dabei entsteht ein einzelnes dunkles Bild, das
+         wie ein Aufblitzen der ganzen Seite aussieht. Die Ebene bleibt
+         stehen und ist ueber visibility:hidden unsichtbar und unklickbar.
+         Die Benzel-Seite macht es genauso. */
       sp.classList.add('is-hidden');
-      setTimeout(function () { sp.style.display = 'none'; }, 800);
     }
     /* Ab Navigationsstart messen, nicht ab Skriptstart. */
     function schedule() {
