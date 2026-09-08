@@ -1,0 +1,59 @@
+# =========================================================
+# EB Solutions - Server-Konfiguration (Apache / Hetzner Webhosting)
+# Diese Datei gehoert in das Hauptverzeichnis der Domain,
+# also dorthin, wo auch die index.html liegt.
+# =========================================================
+
+RewriteEngine On
+
+# ---------- www entfernen und HTTPS erzwingen ----------
+# WICHTIG: Diese beiden Bloecke erst aktiv lassen, wenn das
+# Let's-Encrypt-Zertifikat in konsoleH eingerichtet ist.
+# Vorher ist die Seite sonst nicht erreichbar.
+# Bei einer Weiterleitungsschleife: beide Bloecke mit # auskommentieren.
+
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# ---------- Startseite ----------
+DirectoryIndex index.html
+
+# ---------- Zeichensatz ----------
+AddDefaultCharset UTF-8
+
+# ---------- Schriften ----------
+# Damit der Server die Schriftdateien mit dem richtigen Typ ausliefert.
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+</IfModule>
+
+# ---------- Komprimierung (schnellere Ladezeit) ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------- Browser-Cache ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ---------- Sicherheits-Header ----------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# ---------- Verzeichnisinhalte nicht auflisten ----------
+Options -Indexes

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.php
+Disallow: /kontakt.php
+
+Sitemap: https://ebsolutions.info/sitemap.xml
