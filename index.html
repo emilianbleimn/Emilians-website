@@ -115,7 +115,7 @@
        Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
        aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
        Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 <body>
   <a href="#start" class="skip-link">Zum Inhalt springen</a>
@@ -144,7 +144,7 @@
         <a href="#leistungen">Leistungen</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#preise">Preise</a>
-        <!-- <a href="#referenzen">Referenzen</a> -->
+        <a href="#referenzen">Referenzen</a>
         <a href="#faq">FAQ</a>
         <a href="#kontakt">Kontakt</a>
         <a href="#anfrage" class="btn btn-primary nav-cta">Anfrage starten</a>
@@ -323,32 +323,59 @@
       </div>
     </section>
 
-    <!-- ============ REFERENZEN (ausgeblendet – noch keine Referenzen; zum Einblenden den umschließenden Kommentar entfernen) ============ -->
-    <!--
+    <!-- ============ REFERENZEN ============ -->
     <section class="section" id="referenzen">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Referenzen</span>
-          <h2>Beispiele &amp; Stimmen</h2>
-          <p class="section-sub">Ein kleiner Einblick in die Art von Projekten, die ich umsetze.</p>
+          <h2>Was ich gebaut habe</h2>
+          <p class="section-sub">Ausgew&auml;hlte Projekte &ndash; live im Netz, nicht im Schaufenster.</p>
         </div>
 
-        <div class="portfolio">
-          <article class="folio reveal"><div class="folio-img grad-1" aria-hidden="true"><span>Restaurant</span></div><div class="folio-body"><h3>Restaurant-Website</h3><p>Appetitliche Seite mit Speisekarte, Galerie und Reservierungs-Anfrage.</p></div></article>
-          <article class="folio reveal"><div class="folio-img grad-2" aria-hidden="true"><span>Handwerk</span></div><div class="folio-body"><h3>Handwerksbetrieb</h3><p>Übersichtliche Seite mit Leistungen, Referenzen und Termin-Anfrage.</p></div></article>
-          <article class="folio reveal"><div class="folio-img grad-3" aria-hidden="true"><span>Mode</span></div><div class="folio-body"><h3>Mode-Shop</h3><p>Aufgeräumter Shop mit Produktkatalog, Warenkorb und sicherer Bezahlung.</p></div></article>
-        </div>
+        <div class="referenzen">
+          <article class="referenz reveal">
+            <a class="referenz-bild" href="https://tonfluestern.de/" target="_blank" rel="noopener">
+              <img src="referenz-tonfluestern.jpg" alt="Startseite von Tonfl&uuml;stern" width="1280" height="620" loading="lazy" />
+            </a>
+            <div class="referenz-text">
+              <span class="referenz-tag">Keramikcaf&eacute; &middot; Erbach</span>
+              <h3>Tonfl&uuml;stern</h3>
+              <p>Ein Keramikcaf&eacute; zum Bemalen und T&ouml;pfern. Die Seite f&uuml;hrt Besucher von den
+                 Angeboten direkt zur Terminanfrage &ndash; mit Wunschtermin, Uhrzeit und Personenzahl.</p>
+              <ul class="referenz-liste">
+                <li>One-Pager</li>
+                <li>Terminanfrage</li>
+                <li>Impressum &amp; Datenschutz</li>
+              </ul>
+              <a class="btn btn-ghost" href="https://tonfluestern.de/" target="_blank" rel="noopener">Seite ansehen</a>
+            </div>
+          </article>
 
-        <div class="testimonials">
-          <figure class="quote reveal"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div><blockquote>„Endlich eine Website, die wirklich zu uns passt. Schnell, modern und genau wie besprochen.“</blockquote><figcaption>— Sarah K., Inhaberin</figcaption></figure>
-          <figure class="quote reveal"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div><blockquote>„Super unkomplizierte Zusammenarbeit und ein top Ergebnis. Klare Empfehlung!“</blockquote><figcaption>— Michael T., Selbstständig</figcaption></figure>
-          <figure class="quote reveal"><div class="stars" aria-label="5 von 5 Sternen">★★★★★</div><blockquote>„Professionell von der ersten Minute an. Unsere Anfragen haben sich spürbar erhöht.“</blockquote><figcaption>— Lena B., Geschäftsführerin</figcaption></figure>
+          <!-- ZWEITE REFERENZ: sobald die Kfz-Seite fertig ist, den folgenden
+               Kommentar entfernen, das Vorschaubild ablegen und Adresse,
+               Beschreibung und Stichworte anpassen.
+          <article class="referenz reveal">
+            <a class="referenz-bild" href="https://ADRESSE-EINTRAGEN/" target="_blank" rel="noopener">
+              <img src="referenz-benzel.jpg" alt="Startseite von Waldemar Benzel Kfz-Gutachten" width="1280" height="760" loading="lazy" />
+            </a>
+            <div class="referenz-text">
+              <span class="referenz-tag">Kfz-Sachverst&auml;ndiger &middot; Walldorf</span>
+              <h3>Waldemar Benzel</h3>
+              <p>Unabh&auml;ngiges Sachverst&auml;ndigenb&uuml;ro f&uuml;r Unfallschaden- und
+                 Fahrzeuggutachten.</p>
+              <ul class="referenz-liste">
+                <li>One-Pager</li>
+                <li>Schaden melden</li>
+                <li>Lokale Suchmaschinen-Daten</li>
+              </ul>
+              <a class="btn btn-ghost" href="https://ADRESSE-EINTRAGEN/" target="_blank" rel="noopener">Seite ansehen</a>
+            </div>
+          </article>
+          -->
         </div>
       </div>
     </section>
-    -->
 
-    <!-- ============ ANFRAGE ============ -->
     <section class="section section-cta" id="anfrage">
       <div class="cta-bg" aria-hidden="true"><span class="hero-glow"></span></div>
       <div class="container">
@@ -446,6 +473,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
