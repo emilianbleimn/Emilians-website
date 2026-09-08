@@ -51,11 +51,15 @@
        Seite kommt anschliessend hervor - die beiden ueberlagern sich nie. */
     .splash { position: fixed; inset: 0; z-index: 1000; display: none; place-items: center;
       background: #0A0A0B;
+      /* Eigene Grafikebene erzwingen. Ohne das entscheidet der Browser selbst,
+         ob er eine anlegt. Auf Rechnern ohne Grafikbeschleunigung zeichnet er
+         sonst jeden Zwischenschritt neu - das ruckelt und flackert. */
+      will-change: opacity;
       transition: opacity .45s ease .3s, visibility .45s .3s;
       /* Notaus in reinem CSS, falls script.js fehlt oder veraltet im
          Zwischenspeicher liegt. Vor Ablauf der 6 Sekunden ohne Wirkung. */
-      animation: splashNotaus 0s linear 6s forwards; }
-    @keyframes splashNotaus { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+      animation: splashNotaus .5s ease 6s forwards; }
+    @keyframes splashNotaus { from { opacity: 1; } to { opacity: 0; visibility: hidden; pointer-events: none; } }
     html[data-theme="light"] .splash { background: #FBF9F4; }
     html.js .splash { display: grid; }
     .splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -65,6 +69,7 @@
        das Logo 0 hoch und man sieht nur eine schwarze Flaeche. */
     .splash-logo { width: min(300px, 62vw); height: auto;
       aspect-ratio: 221.73 / 46.84; color: #F3EEE2;
+      will-change: opacity;
       transition: opacity .3s ease; }
     .splash.is-hidden .splash-logo { opacity: 0; }
     html[data-theme="light"] .splash-logo { color: #211F1A; }
@@ -76,7 +81,7 @@
        Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
        aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
        Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <a href="#inhalt" class="skip-link">Zum Inhalt springen</a>
@@ -346,6 +351,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
