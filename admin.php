@@ -293,6 +293,9 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
           · <span class="<?= $d['bestaetigung'] ? 'gut' : 'schlecht' ?>">
             <?= $d['bestaetigung'] ? 'Bestätigung verschickt' : 'Bestätigung fehlgeschlagen' ?></span>
         <?php endif; ?>
+        <?php if (array_key_exists('einwilligung', $d) && !$d['einwilligung']): ?>
+          · <span class="schlecht">ohne Einwilligung</span>
+        <?php endif; ?>
         <?php if (array_key_exists('benachrichtigung', $d) && !$d['benachrichtigung']): ?>
           · <span class="schlecht">Benachrichtigung an mich fehlgeschlagen</span>
         <?php endif; ?></div>

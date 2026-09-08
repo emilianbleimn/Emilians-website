@@ -89,6 +89,8 @@ $datensatz = [
     'id'        => $id,
     'empfangen' => date('c'),
     'status'    => 'neu',
+    // Nachweis, dass das Einwilligungs-Kaestchen angehakt war
+    'einwilligung' => trim((string)($_POST['einwilligung'] ?? '')) !== '',
     'betreff'   => mb_substr($betreff, 0, 200),
     'felder'    => $felder,
     'ip'        => $ip,

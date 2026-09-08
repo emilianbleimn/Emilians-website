@@ -67,7 +67,11 @@
     html[data-theme="light"] .splash-logo { color: #211F1A; }
     @media (prefers-reduced-motion: reduce) { .splash { transition: none; } }
   </style>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Die Versionsnummer ?v= hinter styles.css und script.js ist wichtig:
+       Ohne sie liefert der Browser beim naechsten Besuch die alten Dateien
+       aus dem Zwischenspeicher, auch wenn auf dem Server neue liegen.
+       Bei jeder Aenderung an diesen zwei Dateien die Zahl erhoehen. -->
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
   <a href="#start" class="skip-link">Zum Inhalt springen</a>
@@ -321,7 +325,7 @@
             <div class="field full"><label for="r-message">Projektbeschreibung *</label><textarea id="r-message" name="Projektbeschreibung" rows="5" required placeholder="Worum geht es? Was soll deine Website können? Hast du schon Beispiele, die dir gefallen?"></textarea></div>
           </div>
 
-          <label class="consent"><input type="checkbox" required /><span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. *</span></label>
+          <label class="consent"><input type="checkbox" name="einwilligung" value="ja" required /><span>Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. *</span></label>
           <button type="submit" class="btn btn-primary btn-lg btn-block">Anfrage absenden</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -368,7 +372,7 @@
           <div class="field"><label for="c-name">Name *</label><input id="c-name" name="Name" type="text" required autocomplete="name" placeholder="Dein Name" /></div>
           <div class="field"><label for="c-email">E-Mail *</label><input id="c-email" name="E-Mail" type="email" required autocomplete="email" placeholder="dein@beispiel.de" /></div>
           <div class="field"><label for="c-message">Nachricht *</label><textarea id="c-message" name="Nachricht" rows="5" required placeholder="Wie kann ich dir helfen?"></textarea></div>
-          <label class="consent"><input type="checkbox" required /><span>Ich bin mit der Speicherung meiner Angaben zur Bearbeitung einverstanden. *</span></label>
+          <label class="consent"><input type="checkbox" name="einwilligung" value="ja" required /><span>Ich bin mit der Speicherung meiner Angaben zur Bearbeitung einverstanden. *</span></label>
           <button type="submit" class="btn btn-primary btn-block">Nachricht senden</button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
@@ -396,6 +400,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
