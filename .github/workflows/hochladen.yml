@@ -1,0 +1,73 @@
+name: Website zu Hetzner hochladen
+
+# Laedt die Website automatisch auf den Hetzner-Webspace, sobald sich
+# etwas aendert. Damit das laeuft, muessen in GitHub vier Werte
+# hinterlegt sein (Settings -> Secrets and variables -> Actions):
+#
+#   FTP_SERVER    z. B. www764.your-server.de
+#   FTP_USER      der FTP-Benutzername aus konsoleH
+#   FTP_PASSWORD  das zugehoerige Passwort
+#   FTP_TARGET    Zielordner auf dem Server, meist /public_html
+#
+# Solange FTP_PASSWORD fehlt, ueberspringt der Ablauf die Uebertragung
+# und meldet trotzdem Erfolg - es gibt also keine roten Fehlermeldungen.
+
+on:
+  push:
+    branches: [claude/kind-bohr-6abaw0]
+  workflow_dispatch:
+
+jobs:
+  hochladen:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dateien aus dem Repository holen
+        uses: actions/checkout@v4
+
+      - name: Pruefen, ob Zugangsdaten hinterlegt sind
+        id: check
+        env:
+          PASSWORT: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$PASSWORT" ]; then
+            echo "Keine FTP-Zugangsdaten hinterlegt - es wird nichts hochgeladen."
+            echo "bereit=nein" >> "$GITHUB_OUTPUT"
+          else
+            echo "bereit=ja" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dateien fuer den Server zusammenstellen
+        if: steps.check.outputs.bereit == 'ja'
+        run: |
+          mkdir -p hochladen
+          cp index.html styles.css script.js favicon.svg .htaccess robots.txt sitemap.xml hochladen/
+          cp -r fonts hochladen/
+          echo "Diese Dateien gehen zum Server:"
+          find hochladen -type f | sort
+
+      - name: lftp installieren
+        if: steps.check.outputs.bereit == 'ja'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+      - name: Verschluesselt per FTPS uebertragen
+        if: steps.check.outputs.bereit == 'ja'
+        env:
+          SERVER: ${{ secrets.FTP_SERVER }}
+          BENUTZER: ${{ secrets.FTP_USER }}
+          PASSWORT: ${{ secrets.FTP_PASSWORD }}
+          ZIEL: ${{ secrets.FTP_TARGET }}
+        run: |
+          # Bewusst ohne --delete: es werden nur Dateien geschrieben,
+          # nie welche auf dem Server geloescht. Das kann bei einem
+          # falschen Zielordner keinen Schaden anrichten.
+          lftp -c "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set net:max-retries 3;
+            set net:timeout 20;
+            open -u '$BENUTZER','$PASSWORT' '$SERVER';
+            mirror --reverse --verbose --parallel=4 hochladen '${ZIEL:-/}';
+          "
+          echo "Fertig - die Website liegt auf dem Server."

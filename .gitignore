@@ -1,0 +1,15 @@
+# IntelliJ / JetBrains - persoenliche IDE-Einstellungen, gehoeren niemandem sonst
+.idea/
+*.iml
+
+# Von npm installierte Pakete - werden aus package.json wiederhergestellt
+node_modules/
+
+# Betriebssystem-Kram
+.DS_Store
+Thumbs.db
+*~
+
+# Zusammengesetzte Design-Flaeche - 2,5 MB Ausgabedatei, wird aus den
+# .dc.html-Dateien und canvas.json neu erzeugt und gehoert nicht ins Repository.
+design/eb-solutions-design.html
