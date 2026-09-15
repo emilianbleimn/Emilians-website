@@ -189,7 +189,8 @@
             auszuliefern:
           </p>
           <ul>
-            <li>IP-Adresse des anfragenden Geräts</li>
+            <li>IP-Adresse des anfragenden Geräts, je nach Einstellung des
+              Hosting-Anbieters gekürzt</li>
             <li>Datum und Uhrzeit des Zugriffs</li>
             <li>Name und URL der abgerufenen Datei</li>
             <li>übertragene Datenmenge und Meldung über den Erfolg des Abrufs</li>
@@ -237,10 +238,23 @@
             Die gespeicherten Anfragen liegen in einem Bereich, der über das Internet
             nicht abrufbar ist. Zugriff haben nur Personen, die ihn zur Bearbeitung
             der Anfragen benötigen und dazu berechtigt sind; der Bereich ist mit einem
-            Passwort geschützt. Zusammen mit Ihren Angaben werden der Zeitpunkt der
-            Einsendung, Ihre IP-Adresse sowie Informationen zu Ihrem Browser und
-            Betriebssystem (User-Agent) gespeichert – das dient dazu, missbräuchliche
-            Masseneinsendungen zu erkennen.
+            Passwort geschützt. Zusammen mit Ihren Angaben werden gespeichert:
+          </p>
+          <ul>
+            <li>der Zeitpunkt der Einsendung</li>
+            <li>Ihre vollständige IP-Adresse</li>
+            <li>Angaben zu Ihrem Browser und Betriebssystem (User-Agent), gekürzt
+              auf 300 Zeichen</li>
+            <li>die Angabe, ob Sie das Pflichtkästchen unter dem Formular angehakt
+              haben, mit dem Sie der Speicherung Ihrer Angaben zur Bearbeitung der
+              Anfrage zustimmen</li>
+          </ul>
+          <p>
+            IP-Adresse und User-Agent dienen allein dazu, missbräuchliche
+            Masseneinsendungen zu erkennen. Aus demselben Grund ist die Zahl der
+            Anfragen auf acht je Stunde und Absender begrenzt; dafür wird zusätzlich
+            ein Prüfwert Ihrer IP-Adresse (SHA-256) mit Zeitstempeln abgelegt. Für
+            Werbung oder Analyse werden diese Angaben nicht verwendet.
           </p>
           <p>
             An die von Ihnen angegebene E-Mail-Adresse wird automatisch eine
@@ -320,8 +334,12 @@
             diese Einstellung unter dem Namen <code>eb-theme</code> lokal in Ihrem
             Browser gespeichert (localStorage). Diese Information verlässt Ihr Gerät
             nicht, wird nicht an mich übertragen und enthält keine personenbezogenen
-            Daten. Sie können sie jederzeit über die Einstellungen Ihres Browsers
-            löschen.
+            Daten. Gespeichert wird erst, wenn Sie den Schalter betätigen – wer die
+            Ansicht nie umschaltet, bei dem wird nichts abgelegt. Auch das Speichern
+            von Informationen im Browser fällt unter § 25 TDDDG; da es hier allein
+            dazu dient, die von Ihnen ausdrücklich gewählte Darstellung beizubehalten,
+            ist es nach § 25 Abs. 2 Nr. 2 TDDDG ohne Einwilligung zulässig. Sie können
+            den Eintrag jederzeit über die Einstellungen Ihres Browsers löschen.
           </p>
 
           <h2>8. Kein Tracking, keine Analyse, keine Werbung</h2>
