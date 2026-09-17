@@ -109,7 +109,7 @@
 /* Lesbarkeit: Gold-Texte im Light Mode etwas tiefer */
 [data-theme="light"] .eyebrow,
 [data-theme="light"] .field label,
-[data-theme="light"] .footer-nav h4,
+[data-theme="light"] .footer-nav h3,
 [data-theme="light"] .price,
 [data-theme="light"] .badge-ic,
 [data-theme="light"] .btn-ghost { color: var(--gold-deep); }
@@ -161,6 +161,13 @@ img, svg { max-width: 100%; display: block; }
 .legal code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: .9em; background: var(--char); border: 1px solid var(--gold-line);
   border-radius: 5px; padding: .1em .4em; color: var(--gold-2); }
+.legal-widerspruch { color: var(--gold-2); }
+/* Art. 21 Abs. 4 DSGVO verlangt, dass der Hinweis auf das
+   Widerspruchsrecht "in einer verstaendlichen und von anderen
+   Informationen getrennten Form" erfolgt. Der Rahmen ist hier also
+   keine Zierde, sondern die Umsetzung dieser Vorschrift. */
+.legal-hervor { border: 1px solid var(--gold-line-strong); border-radius: var(--radius-sm);
+  background: var(--ink); padding: 1.1rem 1.3rem; }
 .legal-back { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--gold-line); }
 
 /* ---------- Logo ---------- */
@@ -422,7 +429,7 @@ img, svg { max-width: 100%; display: block; }
 .site-footer .brand { margin-bottom: 1rem; }
 .footer-brand p { color: var(--muted); font-size: .95rem; max-width: 40ch; }
 .footer-nav { display: flex; flex-direction: column; gap: .6rem; }
-.footer-nav h4 { color: var(--gold); margin-bottom: .5rem; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-family: var(--font); font-weight: 600; }
+.footer-nav h3 { color: var(--gold); margin-bottom: .5rem; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; font-family: var(--font); font-weight: 600; }
 .footer-nav a { color: var(--muted); font-size: .94rem; }
 .footer-nav a:hover { color: var(--gold-2); }
 .footer-bottom { border-top: 1px solid var(--gold-line); padding: 1.5rem 24px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }

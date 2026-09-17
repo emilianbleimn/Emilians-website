@@ -40,7 +40,13 @@ jobs:
         if: steps.check.outputs.bereit == 'ja'
         run: |
           mkdir -p hochladen
-          cp index.html styles.css script.js favicon.svg .htaccess robots.txt sitemap.xml hochladen/
+          # Alle Dateien, die der Besucher zu sehen bekommt. Die Rechtstexte
+          # fehlten hier - ein Teil-Upload haette die Startseite erneuert und
+          # Impressum und Datenschutz auf altem Stand gelassen.
+          cp index.html impressum.html datenschutz.html styles.css script.js \
+             favicon.svg logo.svg logo-og.png referenztonfluestern.jpg referenzbenzel.jpg \
+             .htaccess robots.txt sitemap.xml hochladen/
+          cp -r fonts hochladen/
           cp -r fonts hochladen/
           echo "Diese Dateien gehen zum Server:"
           find hochladen -type f | sort

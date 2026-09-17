@@ -93,9 +93,12 @@ $datensatz = [
     'einwilligung' => trim((string)($_POST['einwilligung'] ?? '')) !== '',
     'betreff'   => mb_substr($betreff, 0, 200),
     'felder'    => $felder,
-    'ip'        => $ip,
-    'browser'   => mb_substr((string)($_SERVER['HTTP_USER_AGENT'] ?? ''), 0, 300),
 ];
+// Absichtlich NICHT gespeichert: die IP-Adresse und die Browserkennung.
+// Beide wurden frueher abgelegt, aber nirgends wieder gelesen - die
+// Ratenbegrenzung unten arbeitet allein mit dem Pruefwert, und der
+// Adminbereich zeigt sie nicht an. Daten ohne Leser sind nach
+// Art. 5 Abs. 1 lit. c DSGVO zu viel und gehoeren weg.
 
 $ziel = $anfragen . '/' . $id . '.json';
 if (file_put_contents($ziel, json_encode($datensatz, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX) === false) {
@@ -105,6 +108,15 @@ if (file_put_contents($ziel, json_encode($datensatz, JSON_PRETTY_PRINT | JSON_UN
 
 $treffer[] = $jetzt;
 @file_put_contents($zaehler, json_encode($treffer), LOCK_EX);
+
+// Zaehlerdateien aufraeumen, die aelter als eine Stunde sind. Ohne das
+// bliebe fuer jede Adresse, die je abgesendet hat, dauerhaft eine Datei
+// liegen. Ihr Name ist der SHA-256 der IP-Adresse - bei IPv4 sind das nur
+// gut vier Milliarden Moeglichkeiten, die sich durchprobieren lassen. Die
+// Sammlung waere damit eine unbefristete Liste aller Absender gewesen.
+foreach (glob($basis . '/limit-*.json') ?: [] as $alt) {
+    if (@filemtime($alt) < $jetzt - 3600) { @unlink($alt); }
+}
 
 // ---- Benachrichtigung per E-Mail --------------------------------------
 $zeilen = [];
