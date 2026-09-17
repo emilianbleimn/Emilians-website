@@ -148,7 +148,7 @@ if (strcasecmp($mail, EB_EMPFAENGER) !== 0) {
 
     $text = "Hallo " . $vorname . ",\n\n"
           . "vielen Dank für deine Nachricht. Sie ist bei mir angekommen, und ich\n"
-          . "melde mich innerhalb von 24 Stunden bei dir.\n\n"
+          . "melde mich in der Regel innerhalb von 24 Stunden bei dir.\n\n"
           . "Das hast du mir geschickt:\n"
           . str_repeat('-', 52) . "\n"
           . implode("\n", $uebersicht) . "\n"

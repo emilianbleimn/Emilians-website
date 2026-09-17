@@ -144,7 +144,7 @@
         .then(function (result) {
           form.classList.remove('is-sending');
           if (result.ok && result.json.success) {
-            setStatus(form, '\u2713 Vielen Dank! Deine Nachricht ist angekommen. Ich melde mich innerhalb von 24 Stunden.', 'ok');
+            setStatus(form, '\u2713 Vielen Dank! Deine Nachricht ist angekommen. Ich melde mich in der Regel innerhalb von 24 Stunden.', 'ok');
             form.reset();
           } else if (result.json && result.json.message) {
             /* Eingabefehler: der Server sagt, was fehlt - kein Umweg noetig. */
