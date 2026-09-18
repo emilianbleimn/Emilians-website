@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56" role="img" aria-label="Nordtherm Baustoffe">
+  <g fill="none" stroke="#1d2b24" stroke-width="3.2" stroke-linecap="round">
+    <circle cx="25" cy="27" r="15"/><path d="M25 12v30M11 27h28"/>
+  </g>
+  <g font-family="Jost,'Century Gothic','URW Gothic',Futura,'Trebuchet MS','Segoe UI',Arial,sans-serif">
+    <text x="52" y="30" font-size="21" font-weight="700" letter-spacing="1.8" fill="#1d2b24">NORDTHERM</text>
+    <text x="53" y="45" font-size="10" font-weight="400" letter-spacing="3.6" fill="#5c6b63">BAUSTOFFE</text>
+  </g>
+</svg>

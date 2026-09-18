@@ -397,6 +397,17 @@ img, svg { max-width: 100%; display: block; }
 .faq-a { padding: 0 0 1.3rem; color: var(--muted); }
 .faq-a p { margin: 0; }
 
+/* ---------- Stilvorschauen ----------
+   Optisch bewusst zurueckgenommen gegenueber den echten Referenzen:
+   gestrichelter Rahmen statt durchgezogener, blasseres Etikett. Der
+   Besucher soll auf den ersten Blick sehen, dass hier etwas anderes
+   steht als oben. */
+.vorschau-head { margin: 1.4rem 0 -.4rem; padding-top: 2.2rem; border-top: 1px solid var(--gold-line); }
+.vorschau-head h3 { font-size: 1.15rem; margin: 0 0 .4rem; }
+.vorschau-head p { color: var(--muted); max-width: 62ch; margin: 0; }
+.referenz-vorschau { border-style: dashed; }
+.referenz-tag-vorschau { color: var(--muted); }
+
 /* ---------- Referenzen ---------- */
 .referenzen { display: grid; gap: 2rem; }
 .referenz { display: grid; grid-template-columns: 1.15fr 1fr; gap: 2.2rem; align-items: center;

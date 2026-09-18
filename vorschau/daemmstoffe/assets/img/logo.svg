@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100" role="img" aria-label="Weidenhof Dämmstoffe">
+  <g fill="none" stroke="#141414" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 44 L48 18 L84 44"/>
+    <path d="M20 41 v40 h56 v-40"/>
+    <path d="M20 55 h56 M20 68 h56"/>
+  </g>
+  <g fill="#141414" font-family="Jost,'Century Gothic','URW Gothic',Futura,'Trebuchet MS','Segoe UI',Arial,sans-serif">
+    <text x="103" y="55" font-size="42" font-weight="600" letter-spacing="3.4">WEIDENHOF</text>
+    <text x="105" y="81" font-size="14" font-weight="400" letter-spacing="5.6" opacity=".78">DÄMMSTOFFE &#183; ZUBEHÖR</text>
+  </g>
+</svg>
