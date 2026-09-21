@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- Hier stand ein Skript, das per sessionStorage merkte, ob die
+       Ladeanimation schon einmal lief. Das ist ein Speicherzugriff auf
+       dem Endgeraet im Sinne von § 25 Abs. 1 TDDDG, und fuer eine blosse
+       Anzeigespielerei ist er nicht "unbedingt erforderlich" - er haette
+       also eine Einwilligung gebraucht. Fuer eine Stilvorschau ist er
+       das nicht wert, deshalb ist er raus. -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impressum &amp; Datenschutz · Dämmstoffe Weidenhof</title>
@@ -19,7 +25,6 @@
     .note-box + .note-box { margin-top: 1rem; }
   </style>
   <style>.preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#0c0c0c}.preloader.is-hidden{opacity:0;visibility:hidden}html.no-preloader .preloader{display:none}</style>
-  <script>(function(){try{var n=performance.getEntriesByType("navigation")[0];var t=n?n.type:((performance.navigation&&performance.navigation.type===1)?"reload":"navigate");var s=false;try{s=sessionStorage.getItem("wh-pre")==="1";}catch(e){}var show=(t==="reload")||!s;try{sessionStorage.setItem("wh-pre","1");}catch(e){}if(!show){document.documentElement.classList.add("no-preloader");}}catch(e){}})();</script>
 </head>
 <body>
 <div class="eb-band">

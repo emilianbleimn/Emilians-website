@@ -53,6 +53,16 @@ function zugangSchreiben(string $datei, array $daten): bool {
     return true;
 }
 
+// Auch beim Oeffnen des Adminbereichs alte Zaehlerdateien wegraeumen.
+// kontakt.php tut das nur, wenn jemand ein Formular absendet - kommt
+// laengere Zeit keine Anfrage, blieben sie sonst liegen.
+if ($basis !== '') {
+    $jetzt = time();
+    foreach (glob($basis . '/limit-*.json') ?: [] as $alt) {
+        if (@filemtime($alt) < $jetzt - 3600) { @unlink($alt); }
+    }
+}
+
 $konto      = zugangLesen($zugang);
 $eingerichtet = !empty($konto['hash']);
 $angemeldet = !empty($_SESSION['auth']);
@@ -62,7 +72,20 @@ $fehler     = '';
 // ---------------------------------------------------------------- Aktionen
 $tat = (string)($_POST['tat'] ?? '');
 
-if ($tat === 'einrichten' && !$eingerichtet) {
+// Ersteinrichtung nur, solange noch keine Anfragen gespeichert sind.
+// Ohne diese Sperre koennte jemand, der admin.php aufruft, nachdem
+// zugang.json verlorenging, den Bereich samt aller Kundendaten
+// uebernehmen. Sind schon Anfragen da, war der Bereich offensichtlich
+// bereits eingerichtet - dann ist der Weg zu.
+$schonDaten = $basis !== '' && count(glob($anfragen . '/*.json') ?: []) > 0;
+
+if ($tat === 'einrichten' && !$eingerichtet && $schonDaten) {
+    $fehler = 'Es liegen bereits Anfragen vor. Eine Ersteinrichtung ist '
+            . 'deshalb gesperrt. Wenn Sie der Betreiber sind und Ihr Passwort '
+            . 'verloren haben, loeschen Sie zugang.json ueber den Dateizugang '
+            . 'des Hosters und richten Sie den Bereich neu ein.';
+}
+elseif ($tat === 'einrichten' && !$eingerichtet) {
     $pw1 = (string)($_POST['passwort'] ?? '');
     $pw2 = (string)($_POST['passwort2'] ?? '');
     if (mb_strlen($pw1) < 10)      { $fehler = 'Das Passwort braucht mindestens 10 Zeichen.'; }
@@ -209,7 +232,7 @@ $BEZEICHNUNG = ['neu' => 'Neu', 'bearbeitung' => 'In Bearbeitung', 'erledigt' =>
 <body>
 <div class="wrap">
 
-<?php if (!$eingerichtet): ?>
+<?php if (!$eingerichtet && !$schonDaten): ?>
   <div class="anmelden">
     <h1>Adminbereich einrichten</h1>
     <p class="hinweis">Beim ersten Aufruf vergibst du ein Passwort. Gespeichert wird davon
