@@ -1,27 +1,30 @@
-FLYER EB SOLUTIONS - A6, zweiseitig
-====================================
+FLYER EB SOLUTIONS - drei Fassungen zur Auswahl
+================================================
 
-flyer-a6-anschnitt.pdf   Fuer die Druckerei.
-                         111 x 154 mm, das sind A6 (105 x 148 mm) plus
-                         3 mm Anschnitt ringsum. Der Hintergrund laeuft
-                         ueber die Schnittkante hinaus, damit nach dem
-                         Schneiden kein weisser Rand stehenbleibt.
-                         Bei der Bestellung angeben: A6, beidseitig,
-                         mit Anschnitt.
+uebersicht.jpg   Alle drei nebeneinander zum Vergleichen.
 
-flyer-a6.pdf             Zum Selbstausdrucken.
-                         Genau 105 x 148 mm, ohne Anschnitt. Im Druckdialog
-                         "tatsaechliche Groesse" bzw. 100 % waehlen, NICHT
-                         "an Seite anpassen" - sonst stimmen die Masse nicht.
-                         Vier davon passen auf ein A4-Blatt.
+1 - KLAR      zweiseitig. Aussage vorne, Preise hinten.
+2 - FRAGE     zweiseitig. Spricht Leute an, die noch gar keine
+              Website haben - der haeufigste Fall im Ort.
+3 - KARTE     einseitig. Alles auf einer Seite. Am billigsten zu
+              drucken und gut fuers Schwarze Brett.
 
-flyer.html               Die Quelldatei. Schriften und Logo sind darin
-                         eingebettet, sie laedt nichts nach. Aendern und
-                         im Browser ueber "Drucken - als PDF sichern"
-                         neu erzeugen.
+Je Fassung zwei PDF:
 
-qr.svg                   Der QR-Code, der auf https://ebsolutions.info
-                         zeigt. Verlustfrei skalierbar.
+flyer-N-name-anschnitt.pdf   Fuer die Druckerei. 111 x 154 mm, also
+                             A6 plus 3 mm Anschnitt ringsum.
+                             Bestellen als: A6, mit Anschnitt,
+                             beidseitig (bei 3: einseitig).
 
-Papier: 300 bis 350 g matt oder Naturpapier. Glaenzendes Papier laesst
-die cremefarbene Flaeche billig wirken.
+flyer-N-name.pdf             Zum Selbstausdrucken. Genau 105 x 148 mm.
+                             Im Druckdialog "tatsaechliche Groesse"
+                             bzw. 100 % waehlen, NICHT "an Seite
+                             anpassen". Vier passen auf ein A4-Blatt.
+
+vN-name-plain.html           Quelldatei zum Aendern. Schriften, Logo
+                             und QR-Code sind eingebettet, sie laedt
+                             nichts nach. Im Browser oeffnen, aendern,
+                             ueber Drucken als PDF sichern.
+
+Papier: 300 bis 350 g matt oder Naturpapier. Auf Glanzpapier wirkt die
+cremefarbene Flaeche billig.
