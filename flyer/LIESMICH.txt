@@ -1,30 +1,30 @@
-FLYER EB SOLUTIONS - drei Fassungen zur Auswahl
-================================================
+FLYER EB SOLUTIONS - "Noch keine Website?"
+===========================================
 
-uebersicht.jpg   Alle drei nebeneinander zum Vergleichen.
+A6, zweiseitig.
 
-1 - KLAR      zweiseitig. Aussage vorne, gebaute Seiten hinten.
-2 - FRAGE     zweiseitig. Spricht Leute an, die noch gar keine
-              Website haben - der haeufigste Fall im Ort.
-3 - KARTE     einseitig. Alles auf einer Seite. Am billigsten zu
-              drucken und gut fuers Schwarze Brett.
+flyer-noch-keine-website-anschnitt.pdf
+    Fuer die Druckerei. 111 x 154 mm, also A6 plus 3 mm Anschnitt
+    ringsum. Bei der Bestellung angeben: A6, beidseitig, mit Anschnitt.
 
-Je Fassung zwei PDF:
+flyer-noch-keine-website.pdf
+    Zum Selbstausdrucken. Genau 105 x 148 mm. Im Druckdialog
+    "tatsaechliche Groesse" bzw. 100 % waehlen, NICHT "an Seite
+    anpassen" - sonst stimmen die Masse nicht. Vier passen auf A4.
 
-flyer-N-name-anschnitt.pdf   Fuer die Druckerei. 111 x 154 mm, also
-                             A6 plus 3 mm Anschnitt ringsum.
-                             Bestellen als: A6, mit Anschnitt,
-                             beidseitig (bei 3: einseitig).
+flyer-quelle.html
+    Quelldatei zum Aendern. Schriften, Logo und QR-Code sind
+    eingebettet, sie laedt nichts nach. Im Browser oeffnen, aendern,
+    ueber Drucken als PDF sichern.
 
-flyer-N-name.pdf             Zum Selbstausdrucken. Genau 105 x 148 mm.
-                             Im Druckdialog "tatsaechliche Groesse"
-                             bzw. 100 % waehlen, NICHT "an Seite
-                             anpassen". Vier passen auf ein A4-Blatt.
-
-vN-name-plain.html           Quelldatei zum Aendern. Schriften, Logo
-                             und QR-Code sind eingebettet, sie laedt
-                             nichts nach. Im Browser oeffnen, aendern,
-                             ueber Drucken als PDF sichern.
+vorschau-vorne.png / vorschau-hinten.png
+    Wie es aussieht.
 
 Papier: 300 bis 350 g matt oder Naturpapier. Auf Glanzpapier wirkt die
 cremefarbene Flaeche billig.
+
+WICHTIG zur Rueckseite: Die zwei Entwuerfe stehen unter der eigenen
+Ueberschrift "Entwuerfe" und mit dem Zusatz "mit erfundenen Inhalten".
+Das muss so bleiben. Sie unter "Zuletzt gebaut" zu fuehren waere
+irrefuehrende Werbung - und auf Papier laesst sich das nicht mehr
+richtigstellen.
