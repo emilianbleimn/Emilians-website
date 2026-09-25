@@ -1,0 +1,35 @@
+FLYER EB SOLUTIONS - "Noch keine Website?"
+===========================================
+
+A6, zweiseitig.
+
+flyer-noch-keine-website-anschnitt.pdf
+    Fuer die Druckerei. 111 x 154 mm = A6 plus 3 mm Anschnitt ringsum.
+    Bestellen als: A6, beidseitig, mit Anschnitt.
+    Schriften sind als Teilmengen eingebettet (Inter, Playfair Display),
+    Text ist auslesbar, kein Element steht naeher als 5 mm an der
+    Schnittkante.
+
+flyer-noch-keine-website.pdf
+    Zum Selbstausdrucken. Genau 105 x 148 mm. Im Druckdialog
+    "tatsaechliche Groesse" bzw. 100 % waehlen, NICHT "an Seite
+    anpassen". Vier passen auf ein A4-Blatt.
+
+flyer-quelle.html
+    Quelldatei zum Aendern. Schriften, Logo und QR-Code sind
+    eingebettet, sie laedt nichts nach.
+
+vorschau-vorne.png / vorschau-hinten.png
+    Wie es aussieht.
+
+Papier: 300 bis 350 g matt oder Naturpapier. Auf Glanzpapier wirkt die
+cremefarbene Flaeche billig.
+
+ZWEI DINGE, DIE SO BLEIBEN MUESSEN
+-----------------------------------
+1. Die Entwuerfe stehen unter eigener Ueberschrift "Entwuerfe" und mit
+   dem Zusatz "mit erfundenen Inhalten". Sie unter "Zuletzt gebaut" zu
+   fuehren waere irrefuehrende Werbung.
+2. Unter "Dazu gehoert" stehen MASSNAHMEN, kein Erfolg. "Ich sorge fuer
+   Sicherheit" waere eine Zusicherung, die niemand halten kann - wird
+   eine Kundenseite doch angegriffen, steht sie im Raum.

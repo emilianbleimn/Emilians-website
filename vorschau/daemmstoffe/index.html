@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Hier stand ein Skript, das per sessionStorage merkte, ob die
+       Ladeanimation schon einmal lief. Das ist ein Speicherzugriff auf
+       dem Endgeraet im Sinne von § 25 Abs. 1 TDDDG, und fuer eine blosse
+       Anzeigespielerei ist er nicht "unbedingt erforderlich" - er haette
+       also eine Einwilligung gebraucht. Fuer eine Stilvorschau ist er
+       das nicht wert, deshalb ist er raus. -->
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dämmstoffe Weidenhof · Fachhandel für Dämmstoffe in Musterhausen</title>
+  <meta name="description" content="Dämmstoffe Weidenhof in Musterhausen: Wärmedämmung, Schallschutz und Brandschutz vom Keller bis zum Dach. Persönliche Beratung, komplettes Zubehör und ein praktischer Konfigurator." />
+  <meta name="theme-color" content="#0c0c0c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23121212'/%3E%3Cg fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11l7-5 7 5'/%3E%3Cpath d='M6.5 10v8h11v-8'/%3E%3Cpath d='M6.5 13h11M6.5 15.5h11'/%3E%3C/g%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>.preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#0c0c0c}.preloader.is-hidden{opacity:0;visibility:hidden}html.no-preloader .preloader{display:none}</style>
+</head>
+<body>
+<div class="eb-band">
+  <strong>Stilvorschau</strong><span class="eb-band-lang"> &middot; Gestaltungsentwurf von
+  <a href="https://ebsolutions.info/">EB&nbsp;Solutions</a></span> &middot;
+  Unternehmen, Personen, Adressen und Zitate sind <strong>frei erfunden</strong>.
+</div>
+
+  <!-- Ladebildschirm (zeigt sich bei jedem Seitenaufruf, blendet nach dem Laden aus) -->
+  <div class="preloader" id="preloader" role="status" aria-label="Seite wird geladen">
+    <div class="preloader__inner">
+      <img class="preloader__logo" src="assets/img/logo.svg" alt="Dämmstoffe Weidenhof" width="200" height="50" />
+      <div class="preloader__bar"><span></span></div>
+    </div>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Dämmstoffe Weidenhof – Startseite">
+        <img class="brand-logo" src="assets/img/logo.svg" alt="Dämmstoffe Weidenhof – Fachhandel für Dämmstoffe" width="184" height="46" />
+      </a>
+
+      <nav class="nav" id="mainnav" aria-label="Hauptnavigation">
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="index.html">Startseite</a></li>
+          <li><a class="nav__link" href="konfigurator.html">Konfigurator</a></li>
+          <li><a class="nav__link" href="sortiment.html">Sortiment</a></li>
+          <li><a class="nav__link" href="index.html#referenzen">Bewertungen</a></li>
+          <li><a class="nav__link" href="index.html#kontakt">Kontakt</a></li>
+          <li><a class="btn btn--accent" href="konfigurator.html">Jetzt konfigurieren</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn desktop-only" href="index.html#kontakt" aria-label="Merkliste / Anfrage ansehen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1h1.5A1.5 1.5 0 0 1 19 6.5V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6.5A1.5 1.5 0 0 1 6.5 5H8V4a1 1 0 0 1 1-1z"/><path d="M9 5h6"/><path d="M8.5 12l2 2 4-4"/></svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+        </a>
+        <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainnav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO (cinematic full-bleed) ============ -->
+    <section class="hero-lux" data-slider>
+      <div class="hero-lux__media" aria-hidden="true">
+        <div class="slide is-active" style="background-image:url('assets/img/store-02.svg')"></div>
+        <div class="slide" style="background-image:url('assets/img/store-04.svg')"></div>
+        <div class="slide" style="background-image:url('assets/img/store-03.svg')"></div>
+      </div>
+      <div class="hero-lux__scrim" aria-hidden="true"></div>
+      <div class="container hero-lux__inner">
+        <span class="eyebrow">Fachhandel für Dämmstoffe in Musterhausen</span>
+        <h1>Planen Sie Ihre<br /><span class="gradient-text">Dämmung Raum für Raum</span></h1>
+        <div class="hero__cta">
+          <a class="btn btn--accent btn--lg" href="konfigurator.html">Konfigurator starten</a>
+          <a class="btn btn--light btn--lg" href="sortiment.html">Sortiment ansehen</a>
+        </div>
+        <div class="zone-chips" aria-label="Dämmbereich wählen">
+          <a class="zone-chip" href="konfigurator.html?bereich=wand"><img src="assets/img/zones/walls.svg" alt="" aria-hidden="true" /><span>Wand</span></a>
+          <a class="zone-chip" href="konfigurator.html?bereich=dach"><img src="assets/img/zones/roof.svg" alt="" aria-hidden="true" /><span>Dach</span></a>
+          <a class="zone-chip" href="konfigurator.html?bereich=boden"><img src="assets/img/zones/floor.svg" alt="" aria-hidden="true" /><span>Boden</span></a>
+          <a class="zone-chip" href="konfigurator.html?bereich=keller"><img src="assets/img/zones/basement.svg" alt="" aria-hidden="true" /><span>Keller</span></a>
+        </div>
+      </div>
+      <div class="slider-dots" aria-label="Bildauswahl">
+        <button class="is-active" type="button" aria-label="Bild 1"></button>
+        <button type="button" aria-label="Bild 2"></button>
+        <button type="button" aria-label="Bild 3"></button>
+      </div>
+    </section>
+
+    <!-- ============ STRIP ============ -->
+    <div class="strip" aria-hidden="true">
+      <div class="strip__track">
+        <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg> Wärmedämmung</span>
+        <span class="strip__item">Schallschutz</span>
+        <span class="strip__item">Brandschutz</span>
+        <span class="strip__item">Putz &amp; Kleber</span>
+        <span class="strip__item">Befestigung</span>
+        <span class="strip__item">Werkzeug</span>
+        <span class="strip__item">Fassade</span>
+        <span class="strip__item">Dach &amp; Keller</span>
+        <span class="strip__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/></svg> Wärmedämmung</span>
+        <span class="strip__item">Schallschutz</span>
+        <span class="strip__item">Brandschutz</span>
+        <span class="strip__item">Putz &amp; Kleber</span>
+        <span class="strip__item">Befestigung</span>
+        <span class="strip__item">Werkzeug</span>
+        <span class="strip__item">Fassade</span>
+        <span class="strip__item">Dach &amp; Keller</span>
+      </div>
+    </div>
+
+    <!-- ============ LEISTUNGEN (real zone icons) ============ -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Unser Sortiment</span>
+          <h2>Dämmung für jeden Bereich Ihres Hauses</h2>
+          <p>Ob Neubau oder Sanierung: Wählen Sie den Bereich, der ansteht – wir stellen Dämmstoff, Stärke und das passende Zubehör zusammen. Alles ab Lager in Musterhausen.</p>
+        </div>
+        <div class="grid grid--4">
+          <a class="card reveal" href="konfigurator.html?bereich=wand" style="--delay:0s">
+            <img class="zone-ico" src="assets/img/zones/walls.svg" alt="" aria-hidden="true" />
+            <h3>Wanddämmung</h3>
+            <p>Fassade von außen, Innendämmung im Bestand – für gleichmäßige Wärme und spürbar weniger Zugluft.</p>
+            <span class="link-arrow" style="margin-top:1rem">Konfigurieren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card reveal" href="konfigurator.html?bereich=dach" style="--delay:.08s">
+            <img class="zone-ico" src="assets/img/zones/roof.svg" alt="" aria-hidden="true" />
+            <h3>Dachdämmung</h3>
+            <p>Zwischen den Sparren, darüber oder darunter – und im Sommer bleibt das Dachgeschoss endlich nutzbar.</p>
+            <span class="link-arrow" style="margin-top:1rem">Konfigurieren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card reveal" href="konfigurator.html?bereich=boden" style="--delay:.16s">
+            <img class="zone-ico" src="assets/img/zones/floor.svg" alt="" aria-hidden="true" />
+            <h3>Bodendämmung</h3>
+            <p>Estrich, Geschossdecke, Trockenbau: Trittschall bleibt unten, die Wärme bleibt im Raum.</p>
+            <span class="link-arrow" style="margin-top:1rem">Konfigurieren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="card reveal" href="konfigurator.html?bereich=keller" style="--delay:.24s">
+            <img class="zone-ico" src="assets/img/zones/basement.svg" alt="" aria-hidden="true" />
+            <h3>Kellerdämmung</h3>
+            <p>Perimeter und Kellerdecke – druckfest, feuchteunempfindlich und schnell selbst montiert.</p>
+            <span class="link-arrow" style="margin-top:1rem">Konfigurieren <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WAS UNS BESONDERS MACHT (Bild-Text-Strecke) ============ -->
+    <section class="section" style="background:var(--surface-2)" id="vorteile">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Was Dämmstoffe Weidenhof besonders macht</span>
+          <h2>Drei Gründe, warum Bauherren zu uns kommen</h2>
+        </div>
+        <div class="editorial">
+          <article class="edi reveal">
+            <div class="edi__media"><img src="assets/img/about-02.svg" alt="Stapler im Lager von Dämmstoffe Weidenhof" loading="lazy" /></div>
+            <div class="edi__text">
+              <span class="edi__no">01</span>
+              <h3>Beratung, die beim Aufmaß anfängt</h3>
+              <p>Wer bei uns durch die Tür kommt, bekommt zuerst eine Frage gestellt – nämlich, was genau gedämmt werden soll. Aus Bestand, Aufbau und Budget ergibt sich der Dämmstoff, nicht umgekehrt. Wir rechnen Stärken und Mengen mit Ihnen durch, sagen offen, wenn eine günstigere Variante genügt, und ebenso deutlich, wenn sich der Aufpreis für bessere Werte über die Jahre rechnet. Am Ende gehen Sie mit einer Liste nach Hause, die zu Ihrer Baustelle passt und nicht zu unserem Lagerbestand.</p>
+            </div>
+          </article>
+          <article class="edi reveal">
+            <div class="edi__media"><img src="assets/img/about-01.svg" alt="Dämmstoffe und Zubehör im Lager" loading="lazy" /></div>
+            <div class="edi__text">
+              <span class="edi__no">02</span>
+              <h3>Vom Dämmstoff bis zur letzten Schraube</h3>
+              <p>Eine Dämmung scheitert selten an der Platte, sondern an dem, was fehlt: der passende Kleber, genug Dübel, das richtige Gewebe, ein Messer, das nach zehn Metern noch schneidet. Deshalb führen wir nicht nur Mineralwolle, EPS, XPS, PIR und Holzfaser, sondern auch Putze, Armierung, Befestigung, Dichtbänder und Werkzeug. Sie holen alles in einer Fahrt ab – und wenn doch etwas fehlt, legen wir es bis zum nächsten Morgen zurück.</p>
+            </div>
+          </article>
+          <article class="edi reveal">
+            <div class="edi__media"><img src="assets/img/about-03.svg" alt="Regale mit Dämmmaterial im Fachhandel" loading="lazy" /></div>
+            <div class="edi__text">
+              <span class="edi__no">03</span>
+              <h3>Zuhause in Musterhausen und im Auental</h3>
+              <p>Unser Lager liegt im Gewerbegebiet Nord an der Industriestraße, fünf Minuten von der Ausfahrt Musterhausen-Ost und mit dem Anhänger bequem erreichbar. Die Rampe ist überdacht, der Stapler lädt Ihnen auf, und für größere Mengen liefern wir im Umkreis von 40 Kilometern auf die Baustelle. Wer es entspannter mag, parkt danach am Auenpark – der Uferweg entlang der Ems und die Gassen der Altstadt sind ein guter Ausgleich zum Baustellentag.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATEMENT-BAND ============ -->
+    <section class="feature-band" style="--photo:url('assets/img/store-04.svg')">
+      <div class="feature-band__scrim" aria-hidden="true"></div>
+      <div class="container feature-band__inner reveal">
+        <span class="eyebrow">Fachhandel · Musterhausen</span>
+        <h2>Dämmen, kleben, befestigen –<br />alles unter einem Dach.</h2>
+      </div>
+    </section>
+
+    <!-- ============ KONFIGURATOR TEASER ============ -->
+    <section class="section" id="konfigurator">
+      <div class="container split">
+        <div class="reveal">
+          <span class="eyebrow">Konfigurator</span>
+          <h2>Unser Konfigurator</h2>
+          <p class="lead" style="margin-top:1rem">In drei Schritten zu einer ersten Einschätzung: Bereich, Fläche, Anspruch – fertig. Sie sehen sofort einen passenden Dämmstoff, eine sinnvolle Stärke und einen Richtwert für das Material. Der Konfigurator ersetzt keine Planung, aber er gibt Ihnen eine belastbare Größenordnung, bevor Sie zu uns kommen.</p>
+          <ul class="bullets">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Bereich wählen</strong>Wand, Dach, Boden oder Keller.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Fläche angeben</strong>Quadratmeter eintragen – den Verschnitt rechnen wir dazu.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Empfehlung erhalten</strong>Dämmstoff, Stärke und Richtpreis – direkt als Merkliste für Ihre Anfrage.</span></li>
+          </ul>
+          <a class="btn btn--lg" href="konfigurator.html" style="margin-top:1.8rem">Zum Konfigurator</a>
+        </div>
+
+        <div class="reveal" style="--delay:.12s">
+          <div class="config-shell" style="box-shadow:var(--shadow-lg)">
+            <ul class="config-progress">
+              <li class="active"><span class="dot">1</span><span class="label-text">Bereich</span></li>
+              <li><span class="dot">2</span><span class="label-text">Fläche</span></li>
+              <li><span class="dot">3</span><span class="label-text">Anspruch</span></li>
+            </ul>
+            <div class="config-body">
+              <h3 style="margin-bottom:1.2rem">Welchen Bereich möchten Sie dämmen?</h3>
+              <div class="choice-grid">
+                <a class="choice selected" href="konfigurator.html?bereich=wand">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/walls.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Wand</strong><span>Fassade &amp; innen</span>
+                </a>
+                <a class="choice" href="konfigurator.html?bereich=dach">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/roof.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Dach</strong><span>Sparren &amp; Decke</span>
+                </a>
+                <a class="choice" href="konfigurator.html?bereich=boden">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/floor.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Boden</strong><span>Trittschall</span>
+                </a>
+                <a class="choice" href="konfigurator.html?bereich=keller">
+                  <span class="choice__icon"><img class="zone-ico" style="width:56px;height:34px;margin:0" src="assets/img/zones/basement.svg" alt="" aria-hidden="true" /></span>
+                  <strong>Keller</strong><span>Perimeter</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WIESO DÄMMUNG (real energy graphic) ============ -->
+    <section class="section" style="background:var(--surface-2)" id="warum-daemmen">
+      <div class="container split">
+        <div class="media-shot reveal">
+          <img src="assets/img/energy.svg" alt="Querschnitt eines gedämmten Hauses mit Energieeffizienzskala von A bis G" loading="lazy" />
+        </div>
+        <div class="reveal" style="--delay:.1s">
+          <span class="eyebrow">Wieso ist richtige Dämmung sinnvoll?</span>
+          <h2>Weniger Heizkosten, mehr Ruhe, trockene Wände</h2>
+          <ul class="bullets">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Wärme bleibt, wo sie hingehört</strong>Über ungedämmte Dachflächen, Außenwände und Kellerdecken verliert ein Haus einen erheblichen Teil seiner Heizwärme. Eine durchgehende Dämmhülle stoppt genau diese Verluste – und beseitigt nebenbei die kalten Wandflächen, an denen sich sonst Feuchtigkeit und Schimmel absetzen.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Eine Investition, die mitläuft</strong>Die Dämmung arbeitet ab dem ersten Winter und hört nicht wieder auf. Jede Heizperiode zahlt einen Teil zurück, der Immobilienwert steigt, und bei einer ohnehin anstehenden Sanierung fallen nur die Mehrkosten für das Material an.</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Schallschutz und Brandschutz gleich mit</strong>Dieselbe Platte, die Wärme hält, dämpft auch Straßenlärm und Trittschall. Mineralische Dämmstoffe sind zudem nicht brennbar und verzögern im Ernstfall die Ausbreitung eines Feuers – ein Sicherheitsgewinn, den man nicht sieht, aber mitkauft.</span></li>
+          </ul>
+          <a class="btn btn--lg" href="#kontakt" style="margin-top:1.6rem">Jetzt beraten lassen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BEWERTUNGEN (Referenzen) ============
+         Beispielhafte Kundenstimmen. Diese Seite ist eine Stilvorschau –
+         Unternehmen, Personen und Zitate sind frei erfunden. -->
+    <section class="section" id="referenzen">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Referenzen</span>
+          <h2>Das sagen unsere Kunden</h2>
+          <p>Stimmen von Bauherrinnen, Bauherren und Handwerksbetrieben aus Musterhausen und dem Auental.</p>
+        </div>
+        <div class="reviews grid grid--3">
+          <figure class="review reveal">
+            <div class="review__stars" role="img" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+            </div>
+            <blockquote>Wir hatten nur eine grobe Vorstellung und sind mit einer fertigen Materialliste rausgegangen. Dass uns jemand von der teureren Platte abgeraten hat, weil sie für unseren Aufbau gar nichts bringt, rechnen wir hoch an.</blockquote>
+            <figcaption><strong>Katrin Sollinger</strong><span>Sanierung Einfamilienhaus, Musterhausen</span></figcaption>
+          </figure>
+          <figure class="review reveal" style="--delay:.08s">
+            <div class="review__stars" role="img" aria-label="5 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+            </div>
+            <blockquote>Als Verarbeiter zählt für mich, dass die Ware da ist, wenn ich sie brauche. Bisher hat das jedes Mal geklappt, auch kurzfristig am Samstagmorgen. Die Rampe ist überdacht, das Aufladen dauert keine zehn Minuten.</blockquote>
+            <figcaption><strong>Milan Petrov</strong><span>Trockenbau Petrov, Auental</span></figcaption>
+          </figure>
+          <figure class="review reveal" style="--delay:.16s">
+            <div class="review__stars" role="img" aria-label="4 von 5 Sternen">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" opacity=".28"><path d="m12 2 2.9 6.3 6.8.8-5 4.7 1.3 6.7L12 17.9 5.9 20.5l1.3-6.7-5-4.7 6.8-.8z"/></svg>
+            </div>
+            <blockquote>Der Konfigurator hat uns die erste Orientierung gegeben, den Rest haben wir vor Ort geklärt. Die Dachdämmung liegt seit zwei Wintern – das Schlafzimmer unterm Dach ist im Sommer endlich auszuhalten.</blockquote>
+            <figcaption><strong>Familie Ostermann</strong><span>Dachgeschossausbau, Rosenstein</span></figcaption>
+          </figure>
+        </div>
+        <div class="reviews-cta reveal">
+          <a class="btn btn--ghost" href="index.html#kontakt">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 6 6.1.9-4.5 4.3 1 6.8L12 18l-5.5 3 1-6.8L3 9.9 9.1 9z"/></svg>
+            Eigene Beratung anfragen
+          </a>
+          <p class="reviews-note">Beispielinhalte einer Stilvorschau – Unternehmen, Personen und Zitate auf dieser Seite sind frei erfunden.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EINBLICKE / GALERIE ============ -->
+    <section class="section" id="einblicke" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Einblicke</span>
+          <h2>Unser Fachhandel in Musterhausen</h2>
+        </div>
+        <div class="gallery">
+          <a class="gallery__item reveal" href="sortiment.html"><img src="assets/img/store-01.svg" alt="Dämmstoffe im Lager" loading="lazy" /><span class="gallery__cap">2.400 m² Lager</span></a>
+          <a class="gallery__item reveal" style="--delay:.08s" href="sortiment.html"><img src="assets/img/store-04.svg" alt="Regale mit Dämmmaterial" loading="lazy" /><span class="gallery__cap">Große Auswahl</span></a>
+          <a class="gallery__item reveal" style="--delay:.16s" href="index.html#kontakt"><img src="assets/img/store-02.svg" alt="Hochregallager mit Material" loading="lazy" /><span class="gallery__cap">Direkt ab Lager</span></a>
+          <a class="gallery__item reveal" style="--delay:.24s" href="sortiment.html"><img src="assets/img/store-03.svg" alt="Fachhandel vor Ort in Musterhausen" loading="lazy" /><span class="gallery__cap">Beratung vor Ort</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND (real photo) ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="cta-band has-photo reveal" style="--photo:url('assets/img/store-02.svg')">
+          <h2>Alles für Ihre Dämmung an einem Ort</h2>
+          <p>Kommen Sie zum Aufmaß-Gespräch vorbei oder schicken Sie uns Ihre Maße – Sie bekommen eine Materialliste, mit der Sie rechnen können.</p>
+          <div class="hero__cta">
+            <a class="btn btn--accent btn--lg" href="#kontakt">Kontakt aufnehmen</a>
+            <a class="btn btn--light btn--lg" href="konfigurator.html">Konfigurator starten</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KONTAKT ============ -->
+    <section class="section" id="kontakt" style="background:var(--surface-2)">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Kontakt aufnehmen</span>
+          <h2>Sprechen wir über Ihr Projekt</h2>
+          <p>Schreiben Sie uns, was ansteht – Bereich, ungefähre Fläche, Zeitrahmen. Wir melden uns in der Regel am selben Werktag zurück.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="info-item">
+              <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div><div class="k">Adresse</div><a class="v" href="https://www.google.com/maps/search/?api=1&query=Industriestra%C3%9Fe+24+12345+Musterhausen" target="_blank" rel="noopener">Industriestraße 24<br />12345 Musterhausen</a></div>
+            </div>
+            <div class="info-item">
+              <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"/></svg></span>
+              <div><div class="k">Telefon</div><a class="v" href="tel:+491234567890">+49 1234 567890</a></div>
+            </div>
+            <div class="info-item">
+              <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              <div><div class="k">E-Mail</div><a class="v" href="mailto:info@weidenhof-daemmstoffe.de">info@weidenhof-daemmstoffe.de</a></div>
+            </div>
+            <div class="info-item">
+              <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg></span>
+              <div><div class="k">Öffnungszeiten</div><span class="v">Mo–Fr 7:00–17:00 Uhr<br />Sa 8:00–12:00 Uhr</span></div>
+            </div>
+            <div class="map-embed">
+              <img class="map-fallback" src="assets/img/map.svg" alt="Karte mit dem Standort Industriestraße 24, 12345 Musterhausen" />
+            </div>
+          </div>
+
+          <div class="form-card reveal" style="--delay:.1s">
+            <div id="inquirySummary" class="inquiry-summary" style="display:none"></div>
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="field"><label for="vorname">Vorname *</label><input class="input" type="text" id="vorname" name="vorname" autocomplete="given-name" required /></div>
+                <div class="field"><label for="nachname">Nachname *</label><input class="input" type="text" id="nachname" name="nachname" autocomplete="family-name" required /></div>
+              </div>
+              <div class="field"><label for="email">E-mail Adresse *</label><input class="input" type="email" id="email" name="email" autocomplete="email" required /></div>
+              <div class="field"><label for="betreff">Betreff</label><input class="input" type="text" id="betreff" name="betreff" placeholder="z. B. Beratung Fassadendämmung" /></div>
+              <div class="field"><label for="nachricht">Nachricht *</label><textarea class="input" id="nachricht" name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Vorhaben …"></textarea></div>
+              <button class="btn btn--lg btn--block" type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                Senden
+              </button>
+              <div id="formMsg" class="form-msg" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Dämmstoffe Weidenhof">
+            <img class="brand-logo" src="assets/img/logo.svg" alt="Dämmstoffe Weidenhof" width="184" height="46" />
+          </a>
+          <p class="footer-about">Fachhandel für Dämmstoffe und Zubehör – vom Aufmaß bis zur Abholung an der Rampe.</p>
+          <div class="footer-social">
+            <a href="mailto:info@weidenhof-daemmstoffe.de" aria-label="E-Mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+            <a href="tel:+491234567890" aria-label="Telefon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.1 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7 12.8 12.8 0 0 0 .7 2.8 2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4 12.8 12.8 0 0 0 2.8.7 2 2 0 0 1 1.7 2z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="konfigurator.html">Konfigurator</a></li>
+            <li><a href="sortiment.html">Sortiment</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Industriestra%C3%9Fe+24+12345+Musterhausen" target="_blank" rel="noopener">Industriestraße 24<br />12345 Musterhausen</a></li>
+            <li><a href="tel:+491234567890">+49 1234 567890</a></li>
+            <li><a href="mailto:info@weidenhof-daemmstoffe.de">info@weidenhof-daemmstoffe.de</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partner</h4>
+          <div class="footer-partners">
+            <img src="assets/img/partner-aurea.svg" alt="Aurea Systems" />
+            <img src="assets/img/partner-nordtherm.svg" alt="Nordtherm Baustoffe" />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2025</span> Dämmstoffe Weidenhof · Demo-Website ohne realen Geschäftsbetrieb</span>
+        <span><a href="impressum.html">Impressum</a> · <a href="impressum.html#datenschutz">Datenschutzerklärung</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Nach oben scrollen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

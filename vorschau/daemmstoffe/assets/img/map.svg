@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Kartenausschnitt mit dem Standort Industriestraße 24 in Musterhausen">
+  <defs>
+    <style>
+      text { font-family: Jost,'Century Gothic','URW Gothic',Futura,'Trebuchet MS','Segoe UI',Arial,sans-serif; }
+      .street { fill:#5e5e5e; font-size:15px; letter-spacing:1.5px; }
+      .place  { fill:#8a8a8a; font-size:17px; letter-spacing:3px; }
+      .here   { fill:#0c0c0c; font-size:16px; font-weight:600; letter-spacing:1.4px; }
+    </style>
+    <filter id="pinshadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity=".6"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="600" fill="#101010"/>
+
+  <!-- Gruenflaeche / Auenpark -->
+  <path d="M0 404 C120 372 236 396 340 438 C438 478 520 470 596 512 L640 600 L0 600 Z" fill="#17201a"/>
+  <!-- Fluss -->
+  <path d="M-20 470 C160 428 300 462 430 508 C548 550 660 546 760 600" fill="none" stroke="#16242e" stroke-width="34" stroke-linecap="round"/>
+  <path d="M-20 470 C160 428 300 462 430 508 C548 550 660 546 760 600" fill="none" stroke="#1d3240" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Baubloecke -->
+  <g fill="#181818">
+    <rect x="70" y="60" width="180" height="120" rx="2"/><rect x="278" y="60" width="132" height="120" rx="2"/>
+    <rect x="70" y="212" width="180" height="140" rx="2"/><rect x="278" y="212" width="132" height="86" rx="2"/>
+    <rect x="278" y="322" width="132" height="30" rx="2"/>
+    <rect x="510" y="60" width="210" height="96" rx="2"/><rect x="510" y="186" width="210" height="166" rx="2"/>
+    <rect x="782" y="60" width="150" height="120" rx="2"/><rect x="960" y="60" width="180" height="120" rx="2"/>
+    <rect x="782" y="212" width="150" height="140" rx="2"/>
+    <rect x="700" y="394" width="190" height="120" rx="2"/><rect x="936" y="394" width="204" height="120" rx="2"/>
+    <rect x="936" y="212" width="204" height="140" rx="2"/>
+  </g>
+
+  <!-- Hauptstrassen -->
+  <g stroke="#2b2b2b" stroke-linecap="square">
+    <path d="M0 196h1200" stroke-width="20"/>
+    <path d="M0 372h1200" stroke-width="20"/>
+    <path d="M460 0v600" stroke-width="20"/>
+    <path d="M756 0v600" stroke-width="16"/>
+  </g>
+  <g stroke="#3a3a3a" stroke-width="2" stroke-dasharray="14 12">
+    <path d="M0 196h1200"/><path d="M0 372h1200"/><path d="M460 0v600"/>
+  </g>
+  <!-- Nebenstrassen -->
+  <g stroke="#1f1f1f" stroke-width="10">
+    <path d="M264 0v372"/><path d="M0 40h460"/><path d="M948 0v514"/><path d="M756 394h384"/>
+  </g>
+
+  <!-- Strassennamen -->
+  <g class="street">
+    <text x="36" y="188">RINGSTRASSE</text>
+    <text x="36" y="364">AUENWEG</text>
+    <text x="474" y="96" transform="rotate(90 474 96)">BAHNHOFSTRASSE</text>
+    <text x="806" y="364">INDUSTRIESTRASSE</text>
+  </g>
+  <g class="place">
+    <text x="60" y="466">AUENPARK</text>
+    <text x="870" y="560">GEWERBEGEBIET NORD</text>
+  </g>
+
+  <!-- Betriebsgelaende -->
+  <rect x="782" y="212" width="150" height="140" fill="#c3a15f" fill-opacity=".14" stroke="#c3a15f" stroke-opacity=".55" stroke-width="2"/>
+
+  <!-- Standortnadel -->
+  <g transform="translate(857 236)" filter="url(#pinshadow)">
+    <path d="M0 52 C0 52 -27 20 -27 0 A27 27 0 1 1 27 0 C27 20 0 52 0 52 Z" fill="#c3a15f"/>
+    <circle cx="0" cy="0" r="10" fill="#0c0c0c"/>
+  </g>
+  <g transform="translate(857 236)">
+    <circle r="46" fill="none" stroke="#c3a15f" stroke-opacity=".3" stroke-width="2"/>
+    <circle r="72" fill="none" stroke="#c3a15f" stroke-opacity=".14" stroke-width="2"/>
+  </g>
+  <g transform="translate(740 92)">
+    <rect width="250" height="46" rx="3" fill="#c3a15f"/>
+    <text class="here" x="18" y="30">INDUSTRIESTRASSE 24</text>
+  </g>
+  <path d="M857 138 L857 190" stroke="#c3a15f" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <rect width="1200" height="600" fill="#000" opacity=".12"/>
+</svg>

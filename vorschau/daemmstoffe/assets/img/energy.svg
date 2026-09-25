@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Querschnitt eines gedämmten Hauses mit Energieeffizienzskala von A bis G">
+  <defs>
+    <linearGradient id="ebg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e1e1e"/><stop offset="1" stop-color="#0b0b0b"/>
+    </linearGradient>
+    <pattern id="daemm" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#c3a15f" fill-opacity=".15"/>
+      <path d="M0 0v14" stroke="#c3a15f" stroke-opacity=".55" stroke-width="3"/>
+    </pattern>
+    <linearGradient id="warm" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#c3a15f" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#c3a15f" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      text { font-family: Jost,'Century Gothic','URW Gothic',Futura,'Trebuchet MS','Segoe UI',Arial,sans-serif; }
+      .eye  { fill:#c3a15f; font-size:17px; letter-spacing:3.6px; }
+      .lbl  { fill:#a6a6a6; font-size:18px; letter-spacing:1.2px; }
+      .cap  { fill:#8a8a8a; font-size:15px; letter-spacing:2.2px; }
+      .fine { fill:#6e6e6e; font-size:15px; letter-spacing:.4px; }
+      .grade{ fill:#0c0c0c; font-size:27px; font-weight:700; }
+      .gval { fill:#e6e6e6; font-size:16px; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#ebg)"/>
+  <g stroke="#ffffff" stroke-opacity=".032" stroke-width="1">
+    <path d="M0 150h1200M0 300h1200M0 450h1200M0 600h1200M0 750h1200"/>
+    <path d="M150 0v900M300 0v900M450 0v900M600 0v900M750 0v900M900 0v900M1050 0v900"/>
+  </g>
+
+  <!-- ===================== Hausquerschnitt (linke Spalte, x 40–620) ===================== -->
+  <text class="eye" x="40" y="58">QUERSCHNITT</text>
+
+  <!-- Erdreich -->
+  <path d="M0 612 H600 V900 H0 Z" fill="#000000" fill-opacity=".42"/>
+  <path d="M0 612 H600" stroke="#2c2c2c" stroke-width="2"/>
+
+  <!-- Warmluft im Innenraum -->
+  <path d="M154 590 H506 V300 L330 186 L154 300 Z" fill="url(#warm)"/>
+
+  <!-- Aussenhuelle -->
+  <g fill="none" stroke="#3c3c3c" stroke-width="3" stroke-linejoin="round">
+    <path d="M100 300 L330 130 L560 300"/>
+    <path d="M120 288 V700 H540 V288"/>
+  </g>
+
+  <!-- Daemmschichten -->
+  <path d="M118 296 L330 140 L542 296 L506 296 L330 186 L154 296 Z" fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M120 296 H154 V590 H120 Z"  fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M506 296 H540 V590 H506 Z"  fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M120 590 H540 V622 H120 Z"  fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M120 668 H540 V700 H120 Z"  fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".40" stroke-width="2"/>
+
+  <!-- Fenster -->
+  <g fill="#c3a15f" fill-opacity=".2" stroke="#c3a15f" stroke-opacity=".5" stroke-width="2">
+    <rect x="200" y="420" width="80" height="98"/>
+    <rect x="380" y="420" width="80" height="98"/>
+  </g>
+
+  <!-- Legende der Daemmzonen -->
+  <g>
+    <g transform="translate(40 762)">
+      <rect width="22" height="22" fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".5"/>
+      <text class="lbl" x="34" y="17">Dach</text>
+    </g>
+    <g transform="translate(300 762)">
+      <rect width="22" height="22" fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".5"/>
+      <text class="lbl" x="34" y="17">Wand</text>
+    </g>
+    <g transform="translate(40 816)">
+      <rect width="22" height="22" fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".5"/>
+      <text class="lbl" x="34" y="17">Geschossdecke</text>
+    </g>
+    <g transform="translate(300 816)">
+      <rect width="22" height="22" fill="url(#daemm)" stroke="#c3a15f" stroke-opacity=".5"/>
+      <text class="lbl" x="34" y="17">Keller</text>
+    </g>
+  </g>
+
+  <!-- ===================== Effizienzskala (rechte Spalte, x 660–1100) ===================== -->
+  <text class="eye" x="660" y="58">EFFIZIENZKLASSE</text>
+
+  <g class="grade">
+    <g transform="translate(660 100)">
+      <path d="M0 0 H120 L150 28 L120 56 H0 Z" fill="#7fae5a"/><text x="16" y="38">A</text>
+      <text class="gval" x="330" y="36">≤ 30 kWh</text>
+    </g>
+    <g transform="translate(660 172)">
+      <path d="M0 0 H146 L176 28 L146 56 H0 Z" fill="#9bbb55"/><text x="16" y="38">B</text>
+      <text class="gval" x="330" y="36">≤ 50 kWh</text>
+    </g>
+    <g transform="translate(660 244)">
+      <path d="M0 0 H172 L202 28 L172 56 H0 Z" fill="#c0c255"/><text x="16" y="38">C</text>
+      <text class="gval" x="330" y="36">≤ 75 kWh</text>
+    </g>
+    <g transform="translate(660 316)">
+      <path d="M0 0 H198 L228 28 L198 56 H0 Z" fill="#d8bd5c"/><text x="16" y="38">D</text>
+      <text class="gval" x="330" y="36">≤ 100 kWh</text>
+    </g>
+    <g transform="translate(660 388)">
+      <path d="M0 0 H224 L254 28 L224 56 H0 Z" fill="#d69a4e"/><text x="16" y="38">E</text>
+      <text class="gval" x="330" y="36">≤ 130 kWh</text>
+    </g>
+    <g transform="translate(660 460)">
+      <path d="M0 0 H250 L280 28 L250 56 H0 Z" fill="#cc7346"/><text x="16" y="38">F</text>
+      <text class="gval" x="330" y="36">≤ 160 kWh</text>
+    </g>
+    <g transform="translate(660 532)">
+      <path d="M0 0 H276 L306 28 L276 56 H0 Z" fill="#c0503f"/><text x="16" y="38">G</text>
+      <text class="gval" x="330" y="36">&gt; 160 kWh</text>
+    </g>
+  </g>
+
+  <!-- Markierung der Zielklasse -->
+  <g transform="translate(618 100)">
+    <path d="M0 28 L26 14 V42 Z" fill="#c3a15f"/>
+    <rect x="-8" y="0" width="7" height="56" fill="#c3a15f"/>
+  </g>
+
+  <!-- Fusszeile der Skala -->
+  <g transform="translate(660 650)">
+    <path d="M0 0 H420" stroke="#2c2c2c" stroke-width="2"/>
+    <text class="cap"  x="0" y="34">ENDENERGIEBEDARF JE m² UND JAHR</text>
+    <text class="fine" x="0" y="72">Beispielwerte zur Orientierung –</text>
+    <text class="fine" x="0" y="98">kein Nachweis nach GEG.</text>
+  </g>
+</svg>

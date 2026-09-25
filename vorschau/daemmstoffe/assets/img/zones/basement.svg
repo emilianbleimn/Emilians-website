@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 72" width="120" height="72" role="img" aria-label="Keller">
+  <g fill="none" stroke="#dcdcdc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 14h96v24a48 26 0 0 1-96 0z"/>
+    <path d="M12 28h96"/>
+    <path d="M36 52v12M84 52v12" opacity=".5"/>
+  </g>
+</svg>

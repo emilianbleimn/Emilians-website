@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EB Hochdruckreinigung &amp; Schneedienst · 3 € pro m²</title>
+  <meta name="description" content="Professionelle Hochdruckreinigung für Terrasse, Einfahrt, Hof, Wege und Treppen: 3 € pro m², ab 5 m², im Umkreis von bis zu 150 km um Erbach (Odenwald). Jetzt Anfrage mit Fotos senden." />
+  <meta name="theme-color" content="#89cff0" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C12 2 5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2 12 2z' fill='%2389cff0'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --baby: #89cff0;
+      --baby-soft: #d9f0fc;
+      --baby-mist: #f1f9fe;
+      --blue: #1f7bbf;
+      --blue-dark: #0f3a5c;
+      --white: #ffffff;
+      --text: #0f3a5c;
+      --muted: #4d6f89;
+      --line: #c4e4f6;
+      --error: #c0392b;
+      --radius: 22px;
+      --shadow: 0 18px 50px -20px rgba(15, 58, 92, .35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Nunito", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: var(--blue); }
+    .container { width: min(1080px, 100% - 32px); margin-inline: auto; }
+
+    /* ---------- HERO mit Splash ---------- */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      overflow: clip;
+      background: radial-gradient(120% 90% at 80% 10%, #bfe6fa 0%, var(--baby) 45%, #5fb6e6 100%);
+      color: var(--white);
+      padding: 28px 0 150px;
+    }
+    .hero__splash { position: absolute; z-index: -1; pointer-events: none; }
+    .hero__splash--a { width: 560px; right: -120px; top: -80px; opacity: .55; }
+    .hero__splash--b { width: 380px; left: -140px; bottom: 40px; opacity: .35; transform: rotate(160deg); }
+    .bubble {
+      position: absolute; z-index: -1; bottom: -40px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,.25) 60%, rgba(255,255,255,.08));
+      border: 1px solid rgba(255,255,255,.6);
+      animation: rise linear infinite;
+    }
+    @keyframes rise {
+      0%   { transform: translate(0, 0) scale(.8); opacity: 0; }
+      15%  { opacity: .9; }
+      100% { transform: translate(30px, -110vh) scale(1.1); opacity: 0; }
+    }
+    .hero__wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 120px; }
+
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 1.25rem; color: var(--white); text-decoration: none; letter-spacing: .2px; }
+    .brand svg { width: 34px; height: 34px; filter: drop-shadow(0 4px 10px rgba(15,58,92,.25)); }
+    .topbar__cta { color: var(--blue-dark); background: var(--white); padding: 10px 18px; border-radius: 999px; font-weight: 800; text-decoration: none; font-size: .95rem; box-shadow: var(--shadow); }
+
+    .hero__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; margin-top: 56px; }
+    .hero h1 { font-size: clamp(2rem, 4.6vw, 3.6rem); line-height: 1.05; font-weight: 900; text-shadow: 0 6px 30px rgba(15,58,92,.25); }
+    .hero__grid > * { min-width: 0; }
+    .hero h1 { hyphens: manual; overflow-wrap: normal; word-break: normal; }
+    .hero h1 span { display: block; color: var(--blue-dark); text-shadow: none; }
+    .hero__lead { margin-top: 18px; font-size: 1.15rem; max-width: 34ch; color: #f4fbff; font-weight: 600; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .chip { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.22); border: 1px solid rgba(255,255,255,.55); backdrop-filter: blur(6px); padding: 8px 14px; border-radius: 999px; font-weight: 800; font-size: .95rem; }
+    .chip svg { width: 18px; height: 18px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--blue); color: var(--white); border: 0; cursor: pointer;
+      padding: 16px 28px; border-radius: 999px; font: inherit; font-weight: 800; font-size: 1.05rem;
+      text-decoration: none; box-shadow: 0 14px 30px -12px rgba(31,123,191,.8);
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); background: #1a6eab; }
+    .btn:focus-visible, .topbar__cta:focus-visible { outline: 3px solid var(--white); outline-offset: 3px; }
+    .hero .btn { margin-top: 30px; background: var(--white); color: var(--blue); }
+
+    .price-drop { position: relative; width: min(340px, 100%); justify-self: center; }
+    .price-drop svg { width: 100%; height: auto; filter: drop-shadow(0 30px 40px rgba(15,58,92,.3)); }
+    .price-drop__txt { position: absolute; inset: 30% 0 0; text-align: center; color: var(--blue-dark); }
+    .price-drop__big { font-size: clamp(4rem, 9vw, 5.6rem); font-weight: 900; line-height: 1; }
+    .price-drop__big small { font-size: .45em; vertical-align: top; margin-left: 2px; }
+    .price-drop__unit { font-weight: 800; font-size: 1.15rem; }
+    .price-drop__min { margin-top: 6px; font-size: .9rem; font-weight: 700; color: var(--muted); }
+
+    /* ---------- Kurzinfos ---------- */
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: -70px; position: relative; z-index: 2; }
+    .fact { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); display: flex; gap: 14px; align-items: flex-start; }
+    .fact__ico { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--baby-soft); display: grid; place-items: center; color: var(--blue); }
+    .fact__ico svg { width: 24px; height: 24px; }
+    .fact strong { display: block; font-size: 1.1rem; font-weight: 900; }
+    .fact p { color: var(--muted); font-size: .95rem; }
+
+    /* ---------- Formular ---------- */
+    .contact { position: relative; padding: 80px 0 90px; overflow: hidden; overflow: clip; }
+    .contact__splash { position: absolute; width: 520px; left: -200px; top: 60px; opacity: .5; z-index: -1; }
+    .contact__splash--r { left: auto; right: -220px; top: auto; bottom: -60px; transform: scaleX(-1); }
+    .contact h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; text-align: center; }
+    .contact__sub { text-align: center; color: var(--muted); margin-top: 8px; font-weight: 600; }
+
+    .form { margin: 36px auto 0; max-width: 760px; background: var(--white); border: 1px solid var(--line); border-radius: 28px; padding: clamp(20px, 4vw, 40px); box-shadow: var(--shadow); }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .field > label, .legend { font-weight: 800; font-size: .95rem; }
+    .field > label .opt, .legend .opt { font-weight: 600; color: var(--muted); }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+      width: 100%; font: inherit; color: var(--text); background: var(--baby-mist);
+      border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; transition: border-color .2s, background .2s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--blue); background: var(--white); }
+    textarea { min-height: 110px; resize: vertical; }
+    .field.is-invalid input, .field.is-invalid textarea { border-color: var(--error); }
+    .err { color: var(--error); font-size: .85rem; font-weight: 700; min-height: 0; }
+
+    .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
+    .area input { position: absolute; opacity: 0; pointer-events: none; }
+    .area span {
+      display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;
+      padding: 14px 8px; border: 2px solid var(--line); border-radius: 16px; background: var(--baby-mist);
+      font-weight: 800; font-size: .92rem; cursor: pointer; transition: all .2s;
+    }
+    .area span svg { width: 28px; height: 28px; color: var(--blue); }
+    .area input:checked + span { border-color: var(--blue); background: var(--baby-soft); box-shadow: 0 0 0 3px rgba(31,123,191,.15); }
+    .area input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+    .sqm { display: grid; grid-template-columns: 1fr 130px; gap: 16px; align-items: center; }
+    input[type="range"] { width: 100%; accent-color: var(--blue); height: 28px; }
+    .sqm__num { position: relative; }
+    .sqm__num input { padding-right: 42px; font-weight: 800; }
+    .sqm__num em { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-style: normal; color: var(--muted); font-weight: 700; }
+
+    .estimate { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; background: linear-gradient(120deg, var(--baby-soft), var(--baby-mist)); border: 2px dashed var(--baby); border-radius: 18px; padding: 16px 20px; margin-bottom: 22px; }
+    .estimate__label { font-weight: 700; color: var(--muted); }
+    .estimate__value { font-size: 1.8rem; font-weight: 900; color: var(--blue); }
+
+    .drop {
+      position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px;
+      border: 2px dashed var(--baby); border-radius: 18px; background: var(--baby-mist);
+      padding: 22px; text-align: center; cursor: pointer; transition: background .2s, border-color .2s;
+    }
+    .drop:hover, .drop.is-over { background: var(--baby-soft); border-color: var(--blue); }
+    .drop svg { width: 36px; height: 36px; color: var(--blue); }
+    .drop strong { font-weight: 800; }
+    .drop small { color: var(--muted); font-weight: 600; }
+    .drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+    .thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .thumb { position: relative; width: 78px; height: 78px; border-radius: 12px; overflow: hidden; border: 2px solid var(--line); }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .thumb button { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border-radius: 50%; border: 0; background: rgba(15,58,92,.8); color: #fff; font-weight: 900; cursor: pointer; line-height: 22px; font-size: 14px; }
+
+    .check { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; color: var(--muted); font-weight: 600; margin-bottom: 18px; }
+    .check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--blue); flex: none; }
+    .form .btn { width: 100%; }
+    .form__note { text-align: center; margin-top: 12px; font-size: .85rem; color: var(--muted); }
+    .success { display: none; text-align: center; padding: 30px 10px; }
+    .success svg { width: 70px; height: 70px; color: var(--blue); }
+    .success h3 { font-size: 1.6rem; font-weight: 900; margin-top: 10px; }
+    .form.is-sent .success { display: block; }
+    .form.is-sent .form__body { display: none; }
+
+    .row--plz { grid-template-columns: 140px 1fr; }
+    .distance { display: flex; align-items: center; gap: 10px; margin: -4px 0 20px; padding: 12px 16px; border-radius: 14px; background: var(--baby-mist); border: 2px solid var(--line); color: var(--muted); font-weight: 700; font-size: .92rem; }
+    .distance svg { width: 20px; height: 20px; flex: none; color: var(--blue); }
+    .distance--ok { background: #e8f7ee; border-color: #9fd8b4; color: #1e6b3d; }
+    .distance--ok svg { color: #1e8a4c; }
+    .distance--out { background: #fdecea; border-color: #f2b8b1; color: var(--error); }
+    .distance--out svg { color: var(--error); }
+
+    /* ---------- Winterdienst ---------- */
+    .winter { padding: 70px 0 0; }
+    .winter__box { position: relative; overflow: hidden; overflow: clip; display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center; background: linear-gradient(135deg, var(--blue-dark), #1f5f8f); color: var(--white); border-radius: 28px; padding: clamp(24px, 5vw, 48px); box-shadow: var(--shadow); }
+    .winter__box h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 900; line-height: 1.1; }
+    .winter__box p { margin-top: 10px; color: #d6ebf8; font-weight: 600; }
+    .winter__list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-top: 18px; font-weight: 800; }
+    .winter__list li { display: flex; align-items: center; gap: 8px; }
+    .winter__list svg { width: 18px; height: 18px; color: var(--baby); flex: none; }
+    .winter__side { text-align: center; }
+    .winter__price { font-size: 1.5rem; font-weight: 900; }
+    .winter__side small { display: block; color: #d6ebf8; font-weight: 600; margin: 4px 0 18px; }
+    .winter .btn { background: var(--white); color: var(--blue-dark); }
+    .flake { position: absolute; color: rgba(255,255,255,.12); pointer-events: none; }
+    .flake svg { width: 100%; height: 100%; }
+    .service { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+    .service .area span { flex-direction: row; justify-content: center; padding: 14px 10px; }
+
+    /* ---------- Referenzen & Bewertungen ---------- */
+    .refs { padding: 80px 0 0; }
+    .sec-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; text-align: center; }
+    .sec-sub { text-align: center; color: var(--muted); margin-top: 8px; font-weight: 600; }
+    .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .ba-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; box-shadow: var(--shadow); }
+    .ba { --pos: 50%; position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; user-select: none; }
+    .ba__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ba__img--after { clip-path: inset(0 0 0 var(--pos)); }
+    .ba__line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: var(--white); box-shadow: 0 0 10px rgba(15,58,92,.4); pointer-events: none; }
+    .ba__line::after { content: "‹ ›"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 38px; height: 38px; border-radius: 50%; background: var(--white); color: var(--blue); font-weight: 900; display: grid; place-items: center; box-shadow: var(--shadow); letter-spacing: 2px; }
+    .ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+    .ba input:focus-visible ~ .ba__line::after { outline: 3px solid var(--blue); outline-offset: 2px; }
+    .ba__tag { position: absolute; top: 10px; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 800; background: rgba(15,58,92,.75); color: var(--white); pointer-events: none; }
+    .ba__tag--l { left: 10px; }
+    .ba__tag--r { right: 10px; background: rgba(255,255,255,.9); color: var(--blue-dark); }
+    .ba-card figcaption { display: flex; justify-content: space-between; gap: 8px; padding: 12px 6px 4px; font-weight: 800; }
+    .ba-card figcaption small { color: var(--muted); font-weight: 600; }
+    /* Beispielmotive aus CSS – durch echte Fotos (img.ba__img) ersetzen */
+    .m-terrasse--before { background: radial-gradient(circle at 22% 30%, rgba(52,82,34,.7), transparent 22%), radial-gradient(circle at 72% 62%, rgba(46,66,30,.65), transparent 26%), radial-gradient(circle at 42% 88%, rgba(38,48,28,.6), transparent 18%), linear-gradient(#2f3d22 3px, transparent 3px) 0 0 / 56px 56px, linear-gradient(90deg, #2f3d22 3px, transparent 3px) 0 0 / 56px 56px, #7b776a; }
+    .m-terrasse--after { background: linear-gradient(#b9b1a0 3px, transparent 3px) 0 0 / 56px 56px, linear-gradient(90deg, #b9b1a0 3px, transparent 3px) 0 0 / 56px 56px, #e3ddd0; }
+    .m-einfahrt--before { background: radial-gradient(ellipse at 30% 55%, rgba(20,20,20,.55), transparent 20%), radial-gradient(ellipse at 68% 40%, rgba(30,40,20,.5), transparent 24%), linear-gradient(#3a3a2c 2px, transparent 2px) 0 0 / 100% 26px, repeating-linear-gradient(90deg, #3a3a2c 0 2px, transparent 2px 52px), #6c665a; }
+    .m-einfahrt--after { background: linear-gradient(#a98f78 2px, transparent 2px) 0 0 / 100% 26px, repeating-linear-gradient(90deg, #a98f78 0 2px, transparent 2px 52px), #c9ad94; }
+    .m-treppe--before { background: radial-gradient(ellipse at 25% 40%, rgba(52,82,34,.6), transparent 22%), radial-gradient(ellipse at 75% 75%, rgba(46,66,30,.55), transparent 24%), repeating-linear-gradient(180deg, #8d897b 0 34px, #4b4a3c 34px 40px, #6f6b5d 40px 46px), #8d897b; }
+    .m-treppe--after { background: repeating-linear-gradient(180deg, #e6e1d6 0 34px, #a79f8e 34px 40px, #cbc4b5 40px 46px), #e6e1d6; }
+
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+    .review { position: relative; background: var(--baby-mist); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+    .review__stars { color: #f5a623; font-size: 1.1rem; letter-spacing: 2px; }
+    .review p { margin: 10px 0 14px; font-weight: 600; }
+    .review footer { color: var(--muted); font-size: .9rem; font-weight: 700; }
+    .review__demo { position: absolute; top: 14px; right: 14px; font-size: .72rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; background: var(--white); border: 1px dashed var(--baby); color: var(--muted); }
+    .reviews-title { margin-top: 64px; }
+
+    /* ---------- Footer ---------- */
+    .footer { background: var(--blue-dark); color: #cfe6f5; padding: 26px 0; font-size: .9rem; }
+    .footer .container { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .footer a { color: var(--white); font-weight: 700; }
+    .footer button.linklike { background: none; border: 0; color: var(--white); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+    dialog { border: 0; border-radius: 20px; padding: 28px; max-width: 560px; width: calc(100% - 32px); color: var(--text); box-shadow: var(--shadow); }
+    dialog::backdrop { background: rgba(15,58,92,.45); backdrop-filter: blur(3px); }
+    dialog h3 { font-weight: 900; margin: 14px 0 6px; }
+    dialog h3:first-child { margin-top: 0; }
+    dialog p { font-size: .92rem; color: var(--muted); }
+    dialog .btn { margin-top: 20px; padding: 10px 22px; font-size: .95rem; }
+
+    @media (max-width: 820px) {
+      .hero { padding-bottom: 130px; }
+      .hero__grid { grid-template-columns: 1fr; margin-top: 36px; gap: 20px; }
+      .hero h1 { font-size: min(3rem, calc((100vw - 32px) / 11)); }
+      .price-drop { width: 240px; order: -1; }
+      .facts, .ba-grid, .reviews, .winter__box { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; gap: 0; }
+      .areas { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 420px) {
+      .topbar__cta { display: none; }
+      .sqm { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .bubble { display: none; }
+      .btn { transition: none; }
+    }
+  </style>
+<style>
+/* Nunito liegt auf diesem Server, nicht bei Google. Beim Aufruf dieser
+   Vorschau wird deshalb keine Verbindung zu fonts.googleapis.com oder
+   fonts.gstatic.com aufgebaut. Variable Schrift: eine Datei fuer 400
+   bis 900. Copyright 2014 The Nunito Project Authors, SIL Open Font
+   License 1.1, siehe fonts/nunito-ofl.txt */
+@font-face { font-family:'Nunito'; font-style:normal; font-weight:400 900;
+  font-display:swap; src:url('fonts/nunito.woff2') format('woff2'); }
+/* Hinweisband der Stilvorschau. Die Seite hat keine fest positionierte
+   Kopfzeile, deshalb genuegt hier ein Band im normalen Textfluss. */
+.eb-band { background:#111; color:#f3eee2; font:500 14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;
+  padding:.7rem 1rem; text-align:center; border-bottom:1px solid rgba(212,175,55,.5); }
+.eb-band strong { color:#c2a24e; font-weight:600; }
+.eb-band a { color:#c2a24e; }
+</style>
+</head>
+<body>
+<div class="eb-band">
+  <strong>Stilvorschau</strong> &middot; Gestaltungsentwurf von
+  <a href="https://ebsolutions.info/">EB&nbsp;Solutions</a> &middot;
+  Diese Seite ist <strong>nicht in Betrieb</strong>. Preise, Kontaktdaten,
+  Bewertungen und Vorher-Nachher-Motive sind Platzhalter.
+</div>
+
+  <!-- Wiederverwendbare Splash-Form -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="splash" viewBox="0 0 400 400">
+        <path fill="currentColor" d="M205 58c22-30 38 8 30 34-6 20 18 26 34 12 22-20 50-6 36 20-10 18 8 30 28 24 34-10 42 28 14 42-20 10-14 32 8 38 30 8 20 44-8 40-22-3-30 16-16 32 20 22-6 46-30 28-18-14-34-2-34 20 0 30-34 36-42 8-6-20-26-22-38-6-18 24-50 10-38-18 8-20-6-34-26-26-30 12-44-22-18-36 18-10 12-30-8-34-30-6-28-42 2-42 22 0 26-20 12-36-20-22 6-50 30-30 18 14 34 6 34-16 0-26 30-34 42-12 8 14 20 12 28 0z"/>
+        <circle fill="currentColor" cx="330" cy="70" r="14"/>
+        <circle fill="currentColor" cx="360" cy="120" r="7"/>
+        <circle fill="currentColor" cx="60" cy="320" r="12"/>
+        <circle fill="currentColor" cx="40" cy="280" r="6"/>
+        <circle fill="currentColor" cx="300" cy="360" r="9"/>
+        <circle fill="currentColor" cx="92" cy="60" r="8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="hero">
+    <svg class="hero__splash hero__splash--a" style="color:#fff" aria-hidden="true"><use href="#splash"/></svg>
+    <svg class="hero__splash hero__splash--b" style="color:#fff" aria-hidden="true"><use href="#splash"/></svg>
+    <div id="bubbles" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C12 2 5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2 12 2z" fill="#fff"/><path d="M9 15a3 3 0 0 0 3 3" stroke="#89cff0" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+          EB Hochdruckreinigung
+        </a>
+        <a class="topbar__cta" href="#anfrage">Anfrage senden</a>
+      </div>
+
+      <div class="hero__grid">
+        <div>
+          <h1>Hochdruckreinigung &amp;&nbsp;Schneedienst <span>aus Erbach im Odenwald.</span></h1>
+          <p class="hero__lead">Für Terrasse, Einfahrt, Hof, Wege und Treppen – im Sommer mit Hochdruck, im Winter mit dem Schneeschieber.</p>
+          <div class="chips">
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3 € pro m²</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ab 5 m² im Umkreis von 100 km</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>ab 45 m² bis 150 km</span>
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3 10.3l3.3.9-.9 3.3M21 13.7l-3.3-.9.9-3.3"/></svg>Schneedienst</span>
+          </div>
+          <a class="btn" href="#anfrage">Jetzt Preis berechnen
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+        </div>
+
+        <div class="price-drop" aria-label="Preis: 3 Euro pro Quadratmeter, ab 5 Quadratmeter">
+          <svg viewBox="0 0 200 250" aria-hidden="true">
+            <defs>
+              <linearGradient id="dropfill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff"/>
+                <stop offset="1" stop-color="#e3f4fd"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 6C100 6 16 110 16 162a84 84 0 0 0 168 0C184 110 100 6 100 6z" fill="url(#dropfill)"/>
+            <path d="M52 170a50 50 0 0 0 34 44" stroke="#89cff0" stroke-width="8" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="price-drop__txt">
+            <div class="price-drop__big">3<small>€</small></div>
+            <div class="price-drop__unit">pro m²</div>
+            <div class="price-drop__min">ab 5 m² · bis 100 km</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#fff" d="M0 64c120 30 240 44 360 30S600 30 720 34s240 50 360 56 240-22 360-40v70H0z"/>
+      <path fill="#fff" opacity=".5" d="M0 40c160 40 300 50 460 30s280-50 440-40 300 60 540 30v100H0z"/>
+    </svg>
+  </header>
+
+  <main>
+    <section class="container facts" aria-label="Das Wichtigste">
+      <div class="fact">
+        <div class="fact__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><strong>3 € pro m²</strong><p>Fester Preis, keine versteckten Kosten.</p></div>
+      </div>
+      <div class="fact">
+        <div class="fact__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div><strong>Ab 5 m² bis 100 km</strong><p>Flächen ab 5 m² im Umkreis von 100 km um Erbach (Odenwald).</p></div>
+      </div>
+      <div class="fact">
+        <div class="fact__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><strong>Ab 45 m² bis 150 km</strong><p>Größere Flächen ab 45 m² auch im Umkreis von 150 km.</p></div>
+      </div>
+    </section>
+
+    <section class="winter" id="winterdienst">
+      <div class="container">
+        <div class="winter__box">
+          <span class="flake" style="width:180px;height:180px;right:-30px;top:-40px" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3 10.3l3.3.9-.9 3.3M21 13.7l-3.3-.9.9-3.3"/></svg></span>
+          <span class="flake" style="width:90px;height:90px;left:45%;bottom:-20px" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3 10.3l3.3.9-.9 3.3M21 13.7l-3.3-.9.9-3.3"/></svg></span>
+          <div>
+            <h2>Auch im Winter für dich da: Schnee schieben</h2>
+            <p>Wir räumen Schnee, damit bei dir niemand ausrutscht – zum selben Preis wie die Flächenreinigung.</p>
+            <ul class="winter__list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Einfahrt &amp; Hof</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gehwege</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Treppen</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Parkplätze</li>
+            </ul>
+          </div>
+          <div class="winter__side">
+            <div class="winter__price">3 € pro m²</div>
+            <small>ab 5 m² im Umkreis von 100 km</small>
+            <a class="btn" href="#anfrage" data-service="Schneedienst">Schneedienst anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="refs" id="referenzen">
+      <div class="container">
+        <h2 class="sec-title">Vorher – Nachher</h2>
+        <p class="sec-sub">Schieb den Regler und sieh selbst, was Hochdruck ausmacht.</p>
+        <!-- Echte Fotos: die beiden div.ba__img durch <img class="ba__img" src="…"> bzw. <img class="ba__img ba__img--after" src="…"> ersetzen -->
+        <div class="ba-grid">
+        <figure class="ba-card">
+          <div class="ba" role="group" aria-label="Vorher-Nachher-Vergleich Terrasse">
+            <div class="ba__img m-terrasse--before" role="img" aria-label="Terrasse vorher"></div>
+            <div class="ba__img ba__img--after m-terrasse--after" role="img" aria-label="Terrasse nachher"></div>
+            <span class="ba__tag ba__tag--l">Vorher</span><span class="ba__tag ba__tag--r">Nachher</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Vergleich verschieben: Terrasse" />
+            <span class="ba__line"></span>
+          </div>
+          <figcaption>Terrasse <small>Moos &amp; Algen</small></figcaption>
+        </figure>
+        <figure class="ba-card">
+          <div class="ba" role="group" aria-label="Vorher-Nachher-Vergleich Einfahrt">
+            <div class="ba__img m-einfahrt--before" role="img" aria-label="Einfahrt vorher"></div>
+            <div class="ba__img ba__img--after m-einfahrt--after" role="img" aria-label="Einfahrt nachher"></div>
+            <span class="ba__tag ba__tag--l">Vorher</span><span class="ba__tag ba__tag--r">Nachher</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Vergleich verschieben: Einfahrt" />
+            <span class="ba__line"></span>
+          </div>
+          <figcaption>Einfahrt <small>Öl &amp; Schmutz</small></figcaption>
+        </figure>
+        <figure class="ba-card">
+          <div class="ba" role="group" aria-label="Vorher-Nachher-Vergleich Treppe">
+            <div class="ba__img m-treppe--before" role="img" aria-label="Treppe vorher"></div>
+            <div class="ba__img ba__img--after m-treppe--after" role="img" aria-label="Treppe nachher"></div>
+            <span class="ba__tag ba__tag--l">Vorher</span><span class="ba__tag ba__tag--r">Nachher</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Vergleich verschieben: Treppe" />
+            <span class="ba__line"></span>
+          </div>
+          <figcaption>Treppe <small>Grünbelag</small></figcaption>
+        </figure>
+        </div>
+
+        <h2 class="sec-title reviews-title">Das sagen unsere Kunden</h2>
+        <p class="sec-sub">Ehrliche Bewertungen aus der Region.</p>
+        <!-- Bewertungen: im Skript unten im Array REVIEWS pflegen -->
+        <div class="reviews" id="reviews"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="anfrage">
+      <svg class="contact__splash" style="color:var(--baby-soft)" aria-hidden="true"><use href="#splash"/></svg>
+      <svg class="contact__splash contact__splash--r" style="color:var(--baby-soft)" aria-hidden="true"><use href="#splash"/></svg>
+      <div class="container">
+        <h2>Anfrage in 1 Minute</h2>
+        <p class="contact__sub">Fläche wählen, Adresse und m² eintragen, Fotos dazu – wir melden uns mit einem Termin.</p>
+
+        <!--
+          Formular-Versand: Trage unten in FORM_ENDPOINT deine E-Mail-Adresse ein
+          (FormSubmit.co – kostenlos, schickt die Anfrage inkl. Fotos als E-Mail).
+          Solange der Platzhalter drinsteht, öffnet das Formular stattdessen das E-Mail-Programm.
+        -->
+        <form class="form" id="form" action="https://formsubmit.co/DEINE-EMAIL@example.de" method="POST" enctype="multipart/form-data" novalidate>
+          <div class="form__body">
+            <input type="hidden" name="_subject" value="Neue Anfrage Hochdruckreinigung" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <fieldset class="field" style="border:0">
+              <legend class="legend">Was brauchst du?</legend>
+              <div class="service">
+                <label class="area"><input type="radio" name="Leistung" value="Flächenreinigung" checked /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 5 10 5 14.5a7 7 0 0 0 14 0C19 10 12 2 12 2z"/></svg>Flächenreinigung</span></label>
+                <label class="area"><input type="radio" name="Leistung" value="Schneedienst" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5M3 10.3l3.3.9-.9 3.3M21 13.7l-3.3-.9.9-3.3"/></svg>Schneedienst</span></label>
+              </div>
+            </fieldset>
+
+
+            <fieldset class="field" style="border:0" data-field="flaeche">
+              <legend class="legend">Welche Fläche?</legend>
+              <div class="areas">
+                <label class="area"><input type="radio" name="Fläche" value="Terrasse" checked /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M5 20V10l7-5 7 5v10M9 20v-5h6v5"/></svg>Terrasse</span></label>
+                <label class="area"><input type="radio" name="Fläche" value="Einfahrt / Hof" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="6" rx="2"/><path d="M5 11l2-5h10l2 5M7 17v2M17 17v2"/></svg>Einfahrt / Hof</span></label>
+                <label class="area"><input type="radio" name="Fläche" value="Gehweg / Pflaster" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21 8 3M20 21 16 3M12 5v2M12 11v2M12 17v2"/></svg>Gehweg / Pflaster</span></label>
+                <label class="area"><input type="radio" name="Fläche" value="Treppe" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg>Treppe</span></label>
+                <label class="area"><input type="radio" name="Fläche" value="Balkon" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M5 12v8M9 12v8M15 12v8M19 12v8M3 20h18M7 12V4h10v8"/></svg>Balkon</span></label>
+                <label class="area"><input type="radio" name="Fläche" value="Andere Bodenfläche" /><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>Andere Bodenfläche</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field" data-field="strasse">
+              <label for="strasse">Straße &amp; Hausnummer des Einsatzortes</label>
+              <input type="text" id="strasse" name="Straße" autocomplete="street-address" placeholder="z. B. Hauptstraße 12" required />
+              <span class="err"></span>
+            </div>
+            <div class="row row--plz">
+              <div class="field" data-field="plz">
+                <label for="plz">PLZ</label>
+                <input type="text" id="plz" name="PLZ" autocomplete="postal-code" inputmode="numeric" maxlength="5" placeholder="64711" required />
+                <span class="err"></span>
+              </div>
+              <div class="field" data-field="ort">
+                <label for="ort">Ort</label>
+                <input type="text" id="ort" name="Ort" autocomplete="address-level2" placeholder="z. B. Erbach" required />
+                <span class="err"></span>
+              </div>
+            </div>
+            <div class="distance" id="distance" aria-live="polite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span id="distanceTxt">PLZ eingeben – wir zeigen dir die Mindestfläche für deinen Ort.</span>
+            </div>
+            <input type="hidden" name="Entfernung ab Erbach" id="distanceField" value="unbekannt" />
+
+            <div class="field" data-field="qm">
+              <label for="qm">Wie viele Quadratmeter?</label>
+              <div class="sqm">
+                <input type="range" id="qmRange" min="5" max="500" step="1" value="60" aria-label="Quadratmeter einstellen" />
+                <div class="sqm__num"><input type="number" id="qm" name="Quadratmeter" min="5" step="1" value="60" inputmode="numeric" required /><em>m²</em></div>
+              </div>
+              <span class="err" id="qmErr"></span>
+            </div>
+
+            <div class="estimate" aria-live="polite">
+              <span class="estimate__label">Dein Preis (3 € × <b id="estQm">60</b> m²)</span>
+              <span class="estimate__value" id="estPrice">180 €</span>
+            </div>
+            <input type="hidden" name="Preis (Schätzung)" id="priceField" value="180 €" />
+
+            <div class="field" data-field="name">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="Name" autocomplete="name" required />
+              <span class="err"></span>
+            </div>
+            <div class="row">
+              <div class="field" data-field="email">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+                <span class="err"></span>
+              </div>
+              <div class="field">
+                <label for="tel">Telefon <span class="opt">(optional)</span></label>
+                <input type="tel" id="tel" name="Telefon" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="wunsch">Sonderwünsche <span class="opt">(optional)</span></label>
+              <textarea id="wunsch" name="Sonderwünsche" placeholder="z. B. Fugen neu einsanden, Imprägnierung, Wunschtermin …"></textarea>
+            </div>
+
+            <div class="field">
+              <span class="legend">Fotos hinzufügen <span class="opt">(optional, max. 5)</span></span>
+              <label class="drop" id="drop">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                <strong>Fotos auswählen oder hierher ziehen</strong>
+                <small>JPG, PNG oder HEIC · je max. 5 MB</small>
+                <input type="file" id="fotos" name="attachment" accept="image/*" multiple />
+              </label>
+              <div class="thumbs" id="thumbs"></div>
+              <span class="err" id="fotoErr"></span>
+            </div>
+
+            <label class="check" data-field="dsgvo">
+              <input type="checkbox" id="dsgvo" required />
+              <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage gespeichert werden. <button type="button" class="linklike" data-open="dlg" style="background:none;border:0;color:var(--blue);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:0">Datenschutz</button></span>
+            </label>
+            <span class="err" id="dsgvoErr" style="display:block;margin:-10px 0 14px"></span>
+
+            <button class="btn" type="submit">Anfragen
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>
+            </button>
+            <p class="form__note">Unverbindlich · Flächen ab 5 m² im Umkreis von 100 km um Erbach (Odenwald) · ab 45 m² bis 150 km</p>
+          </div>
+
+          <div class="success" role="status">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14l-3-3"/></svg>
+            <h3>Danke! Anfrage ist raus.</h3>
+            <p>Wir melden uns so schnell wie möglich bei dir.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="year">2026</span> EB Hochdruckreinigung</span>
+      <span><button type="button" class="linklike" data-open="dlg">Impressum &amp; Datenschutz</button></span>
+    </div>
+  </footer>
+
+  <dialog id="dlg" aria-labelledby="dlgTitle">
+    <h3 id="dlgTitle">Impressum</h3>
+    <p>
+      EB Hochdruckreinigung<br />
+      Vorname Nachname<br />
+      Straße Nr. · PLZ Ort<br />
+      Telefon: 0000 000000 · E-Mail: info@example.de
+    </p>
+    <p><em>Platzhalter – bitte durch die echten Pflichtangaben ersetzen.</em></p>
+    <h3>Datenschutz</h3>
+    <p>Die Angaben aus dem Anfrageformular (inkl. Fotos) werden nur zur Bearbeitung deiner Anfrage verwendet und nicht an Dritte weitergegeben. Der Versand erfolgt über den Formular-Dienst FormSubmit.co. Zur Berechnung der Entfernung wird die eingegebene PLZ an api.zippopotam.us übermittelt. Die Schrift „Nunito“ wird von Google Fonts geladen.</p>
+    <form method="dialog"><button class="btn">Schließen</button></form>
+  </dialog>
+
+  <script>
+    (function () {
+      var PRICE = 3, MAX_FILES = 5, MAX_MB = 5;
+      var CALC_MIN = 5;                          // Preisrechner ab 5 m²
+      var NEAR_KM = 100, MIN_NEAR = 5;           // bis 100 km ab Erbach: 5–45 m² möglich
+      var MAX_KM = 150, MIN_FAR = 45;            // 100–150 km: ab 45 m²
+      var HOME = { lat: 49.6489, lon: 8.997 };   // Erbach (Odenwald), PLZ 64711
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Aufsteigende Wasserblasen im Hero
+      var bubbles = document.getElementById("bubbles");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        for (var i = 0; i < 16; i++) {
+          var b = document.createElement("span");
+          var s = 8 + Math.random() * 26;
+          b.className = "bubble";
+          b.style.width = b.style.height = s + "px";
+          b.style.left = Math.random() * 100 + "%";
+          b.style.animationDuration = 7 + Math.random() * 9 + "s";
+          b.style.animationDelay = -Math.random() * 12 + "s";
+          bubbles.appendChild(b);
+        }
+      }
+
+      // Bewertungen – hier echte Kundenstimmen eintragen und "beispiel: true" entfernen
+      var REVIEWS = [
+        { sterne: 5, text: "Platzhalter: Hier steht bald eine echte Bewertung zu einer Terrassenreinigung.", name: "Kundenname", ort: "Ort", beispiel: true },
+        { sterne: 5, text: "Platzhalter: Hier steht bald eine echte Bewertung zu einer Einfahrt oder einem Hof.", name: "Kundenname", ort: "Ort", beispiel: true },
+        { sterne: 5, text: "Platzhalter: Hier steht bald eine echte Bewertung zu einer Treppenreinigung.", name: "Kundenname", ort: "Ort", beispiel: true }
+      ];
+      var reviewsEl = document.getElementById("reviews");
+      REVIEWS.forEach(function (r) {
+        var el = document.createElement("article");
+        el.className = "review";
+        var stars = document.createElement("div");
+        stars.className = "review__stars";
+        stars.textContent = "★★★★★".slice(0, r.sterne) + "☆☆☆☆☆".slice(0, 5 - r.sterne);
+        stars.setAttribute("aria-label", r.sterne + " von 5 Sternen");
+        var p = document.createElement("p");
+        p.textContent = "„" + r.text + "“";
+        var f = document.createElement("footer");
+        f.textContent = r.name + " · " + r.ort;
+        el.appendChild(stars); el.appendChild(p); el.appendChild(f);
+        if (r.beispiel) { var b = document.createElement("span"); b.className = "review__demo"; b.textContent = "Beispiel"; el.appendChild(b); }
+        reviewsEl.appendChild(el);
+      });
+
+      // Vorher-Nachher-Regler
+      document.querySelectorAll(".ba input").forEach(function (inp) {
+        inp.addEventListener("input", function () { inp.parentNode.style.setProperty("--pos", inp.value + "%"); });
+      });
+
+      // Dialog (Impressum/Datenschutz)
+      var dlg = document.getElementById("dlg");
+      document.querySelectorAll("[data-open]").forEach(function (el) {
+        el.addEventListener("click", function () { dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", ""); });
+      });
+
+      // Entfernung ab Erbach (Luftlinie über die PLZ) → Mindestfläche
+      var distance = null; // km, null = unbekannt
+      var distBox = document.getElementById("distance"), distTxt = document.getElementById("distanceTxt"), distField = document.getElementById("distanceField");
+      var plz = document.getElementById("plz"), ort = document.getElementById("ort");
+      function minFor(km) { return km !== null && km > NEAR_KM ? MIN_FAR : MIN_NEAR; }
+      function km(lat, lon) {
+        var r = Math.PI / 180, dLat = (lat - HOME.lat) * r, dLon = (lon - HOME.lon) * r;
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(HOME.lat * r) * Math.cos(lat * r) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        return Math.round(6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+      }
+      function showDistance(state, text) {
+        distBox.className = "distance" + (state ? " distance--" + state : "");
+        distTxt.textContent = text;
+      }
+      var lookupId = 0, autoOrt = "";
+      plz.addEventListener("input", function () {
+        var v = plz.value.replace(/\D/g, "").slice(0, 5);
+        if (plz.value !== v) plz.value = v;
+        distance = null; distField.value = "unbekannt";
+        if (v.length < 5) { showDistance("", "PLZ eingeben – wir zeigen dir die Mindestfläche für deinen Ort."); update(qm); return; }
+        var id = ++lookupId;
+        showDistance("", "Entfernung wird berechnet …");
+        fetch("https://api.zippopotam.us/de/" + v).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (d) {
+          if (id !== lookupId) return;
+          var p = d.places[0];
+          distance = km(+p.latitude, +p.longitude);
+          distField.value = "ca. " + distance + " km (Luftlinie)";
+          if (!ort.value.trim() || ort.value === autoOrt) ort.value = autoOrt = p["place name"];
+          if (distance > MAX_KM) showDistance("out", "ca. " + distance + " km von Erbach – leider außerhalb unseres Einsatzgebiets (max. " + MAX_KM + " km).");
+          else showDistance("ok", (distance < 3 ? "In Erbach" : "ca. " + distance + " km von Erbach") + " – Aufträge ab " + minFor(distance) + " m² möglich.");
+          setErr("plz", "");
+          update(qm);
+        }).catch(function () {
+          if (id !== lookupId) return;
+          showDistance("", "Entfernung konnte nicht ermittelt werden – wir prüfen das nach deiner Anfrage.");
+          update(qm);
+        });
+      });
+
+      // Quadratmeter + Preis
+      var qm = document.getElementById("qm"), range = document.getElementById("qmRange");
+      var estQm = document.getElementById("estQm"), estPrice = document.getElementById("estPrice"), priceField = document.getElementById("priceField");
+      var fmt = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+      function update(from) {
+        var v = parseInt(from.value, 10);
+        if (from === range) qm.value = v;
+        else if (!isNaN(v)) range.value = Math.min(Math.max(v, CALC_MIN), +range.max);
+        var n = parseInt(qm.value, 10);
+        var ok = !isNaN(n) && n >= CALC_MIN;
+        estQm.textContent = isNaN(n) ? "–" : n;
+        estPrice.textContent = ok ? fmt.format(n * PRICE) : "–";
+        priceField.value = estPrice.textContent;
+        var min = minFor(distance);
+        setErr("qm", ok && n < min ? "Für deinen Ort ist die Mindestfläche " + min + " m² (" + fmt.format(min * PRICE) + ")." : "");
+      }
+      range.addEventListener("input", function () { update(range); });
+      qm.addEventListener("input", function () { update(qm); });
+
+      // Fotos
+      var fileInput = document.getElementById("fotos"), thumbs = document.getElementById("thumbs"), drop = document.getElementById("drop"), fotoErr = document.getElementById("fotoErr");
+      var files = [];
+      function syncFiles() {
+        var dt = new DataTransfer();
+        files.forEach(function (f) { dt.items.add(f); });
+        fileInput.files = dt.files;
+        thumbs.innerHTML = "";
+        files.forEach(function (f, idx) {
+          var d = document.createElement("div");
+          d.className = "thumb";
+          var img = document.createElement("img");
+          img.alt = f.name;
+          img.src = URL.createObjectURL(f);
+          img.onload = function () { URL.revokeObjectURL(img.src); };
+          var x = document.createElement("button");
+          x.type = "button";
+          x.textContent = "×";
+          x.setAttribute("aria-label", "Foto entfernen: " + f.name);
+          x.onclick = function () { files.splice(idx, 1); syncFiles(); };
+          d.appendChild(img); d.appendChild(x);
+          thumbs.appendChild(d);
+        });
+      }
+      function addFiles(list) {
+        var msg = "";
+        Array.prototype.forEach.call(list, function (f) {
+          if (!/^image\//.test(f.type) && !/\.(heic|heif)$/i.test(f.name)) { msg = "Nur Bilddateien sind erlaubt."; return; }
+          if (f.size > MAX_MB * 1024 * 1024) { msg = f.name + " ist größer als " + MAX_MB + " MB."; return; }
+          if (files.length >= MAX_FILES) { msg = "Maximal " + MAX_FILES + " Fotos."; return; }
+          files.push(f);
+        });
+        fotoErr.textContent = msg;
+        syncFiles();
+      }
+      fileInput.addEventListener("change", function () { addFiles(fileInput.files); });
+      ["dragenter", "dragover"].forEach(function (e) { drop.addEventListener(e, function (ev) { ev.preventDefault(); drop.classList.add("is-over"); }); });
+      ["dragleave", "drop"].forEach(function (e) { drop.addEventListener(e, function () { drop.classList.remove("is-over"); }); });
+      drop.addEventListener("drop", function (ev) { ev.preventDefault(); addFiles(ev.dataTransfer.files); });
+
+      // Leistung: Flächenreinigung oder Schneedienst
+      function isWinter() { return !!document.querySelector('input[name="Leistung"][value="Schneedienst"]:checked'); }
+      function syncService() {
+        update(qm);
+      }
+      document.querySelectorAll('input[name="Leistung"]').forEach(function (r) { r.addEventListener("change", syncService); });
+      document.querySelectorAll("[data-service]").forEach(function (a) {
+        a.addEventListener("click", function () {
+          document.querySelector('input[name="Leistung"][value="' + a.getAttribute("data-service") + '"]').checked = true;
+          syncService();
+        });
+      });
+
+      // Validierung + Versand
+      var form = document.getElementById("form");
+      function setErr(key, msg) {
+        var f = form.querySelector('[data-field="' + key + '"]');
+        if (!f) return;
+        f.classList.toggle("is-invalid", !!msg);
+        var e = key === "qm" ? document.getElementById("qmErr") : key === "dsgvo" ? document.getElementById("dsgvoErr") : f.querySelector(".err");
+        if (e) e.textContent = msg;
+      }
+      form.addEventListener("submit", function (ev) {
+        var first = null;
+        function check(key, el, bad, msg) { setErr(key, bad ? msg : ""); if (bad && !first) first = el; }
+        var n = parseInt(qm.value, 10), min = minFor(distance);
+        check("strasse", form["Straße"], !form["Straße"].value.trim(), "Bitte gib Straße und Hausnummer an.");
+        check("plz", plz, !/^\d{5}$/.test(plz.value), "Bitte gib eine 5-stellige PLZ an.");
+        if (distance !== null && distance > MAX_KM) check("plz", plz, true, "Dieser Ort liegt außerhalb unseres Einsatzgebiets (max. " + MAX_KM + " km).");
+        check("ort", ort, !ort.value.trim(), "Bitte gib den Ort an.");
+        check("qm", qm, isNaN(n) || n < min, "Für deinen Ort ist die Mindestfläche " + min + " m².");
+        check("name", form.Name, !form.Name.value.trim(), "Bitte gib deinen Namen an.");
+        check("email", form.email, !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim()), "Bitte gib eine gültige E-Mail an.");
+        var dsgvo = document.getElementById("dsgvo");
+        check("dsgvo", dsgvo, !dsgvo.checked, "Bitte stimme der Verarbeitung zu.");
+        if (first) { ev.preventDefault(); first.focus(); return; }
+
+        // Noch kein Empfänger eingetragen → E-Mail-Programm öffnen
+        if (/DEINE-EMAIL@example\.de/.test(form.action)) {
+          ev.preventDefault();
+          var area = form.querySelector('input[name="Fläche"]:checked').value;
+          var body = [
+            "Leistung: " + form.querySelector('input[name="Leistung"]:checked').value,
+            "Fläche: " + area,
+            "Quadratmeter: " + n + " m²",
+            "Preis (Schätzung): " + priceField.value,
+            "Name: " + form.Name.value,
+            "Einsatzort: " + form["Straße"].value + ", " + plz.value + " " + ort.value,
+            "Entfernung ab Erbach: " + distField.value,
+            "E-Mail: " + form.email.value,
+            "Telefon: " + form.Telefon.value,
+            "Sonderwünsche: " + form["Sonderwünsche"].value,
+            files.length ? "\n(Bitte " + files.length + " Foto(s) an diese E-Mail anhängen.)" : ""
+          ].join("\n");
+          window.location.href = "mailto:info@example.de?subject=" + encodeURIComponent("Anfrage Hochdruckreinigung") + "&body=" + encodeURIComponent(body);
+          form.classList.add("is-sent");
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

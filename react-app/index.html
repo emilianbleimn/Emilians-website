@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EB Solutions — Moderne Websites, persönlich gemacht</title>
+  <meta name="description" content="EB Solutions gestaltet moderne, professionelle Websites – klar, durchdacht und persönlich umgesetzt. Von der Landingpage bis zur Firmen-Website." />
+  <meta name="theme-color" content="#0A0A0B" />
+  <script>
+    /* Theme früh setzen, um Aufblitzen zu vermeiden */
+    (function () {
+      try {
+        var t = localStorage.getItem('eb-theme');
+        if (t !== 'light' && t !== 'dark') { t = 'dark'; }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EB Solutions — Moderne Websites, persönlich gemacht" />
+  <meta property="og:description" content="Moderne, professionelle Websites – persönlich umgesetzt. Von der Landingpage bis zur Firmen-Website." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="EB Solutions" />
+  <meta property="og:url" content="https://ebsolutions.info/" />
+  <link rel="canonical" href="https://ebsolutions.info/" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <!-- Schriften vom eigenen Server vorladen: sie sind damit vor dem
+       ersten Bildaufbau da und die Schrift wechselt nicht sichtbar. -->
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/playfairdisplay-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/playfairdisplay-800.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- Kritisches CSS: verhindert Aufblitzen von unstyled HTML (FOUC) beim Laden/Reload -->
+  <style>
+    /* Farbschema sofort setzen, damit der Browser schon den allerersten
+       Frame dunkel zeichnet und nicht kurz weiss aufblitzt. */
+    :root { color-scheme: dark; }
+    html[data-theme="light"] { color-scheme: light; }
+    html { background: #0A0A0B; }
+    html[data-theme="light"] { background: #FBF9F4; }
+    body { margin: 0; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
